@@ -10,7 +10,7 @@ Intended aims are :-
  * Make it easier for developers to add and edit content by providing web based forms, menus, search-and-select dialogs and other features aimed at streamlining content creatiion.
  * Provide validation of all input and eliminate the mistakes that we get from the current by-hand approach.
 
-#Usage
+## Usage
 
 To access the tool, visit :-
 
@@ -35,13 +35,14 @@ In practice (as of writing this), there will likely only be 1 or 2 entries on th
 
 Note, nobody other myself really needs to add any futher stores or otherwise edit them. All you as developers need to be concerned with is the selection of the active store and the GitHub push/pull features.
 
-### Selecting The Active Store
+## Selecting The Active Store
 
 In most cases you will not need to do this, ash when you first login the first available store in the list will be automatically selected for you. However, if you need to select another store, locate it in the stores table and click on it's Activate button in the top of the Edit Panel.
 Pulling Incoming Changes
 
 It is possible that changes have been made to the data by others externally. For example, a developer may have edited a quest data file directly on GitHub. When you visit the stores page, a check is made (every 2 minutes) to see if there are any such external changes. If there are, a message will be displayed and the button Pull will be visible. Click on the button to retrieve changes.
-The Entity User Interface
+
+# The Entity User Interface
 
 Many pages of the world editor user interface are split up into 4 different areas.
 
