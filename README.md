@@ -1,14 +1,14 @@
-World Editor is a tool for working with the large dataset of game data required for our Earth Etertanl server. It's basic aim is to give content creators (quests, items, creatures and more) the tools they need to be able to do their thing without getting me involved.
+orld Editor is a tool for working with the large dataset of game data required for our Earth Etertanl server. It's basic aim is to give content creators (quests, items, creatures and more) the tools they need to be able to do their thing without getting me involved.
 
 While we have had some delegation of this task, with developers directly editing data files in GitHub, the barrier-to-entry of this is still quite high. This tool is intended to make it possible for non-coders to more easily edit this data.
 
 Intended aims are :-
 
- * Remove the need for most developers to directly edit game server data files
- * Eases use of Git for the simple task of pushing and pulling new content.
- * Make it easier for developers to locate existing data with searches and sortable, filterable tables.
- * Make it easier for developers to add and edit content by providing web based forms, menus, search-and-select dialogs and other features aimed at streamlining content creatiion.
- * Provide validation of all input and eliminate the mistakes that we get from the current by-hand approach.
+ 1. Remove the need for most developers to directly edit game server data files
+ 1. Eases use of Git for the simple task of pushing and pulling new content.
+ 1. Make it easier for developers to locate existing data with searches and sortable, filterable tables.
+ 1. Make it easier for developers to add and edit content by providing web based forms, menus, search-and-select dialogs and other features aimed at streamlining content creatiion.
+ 1. Provide validation of all input and eliminate the mistakes that we get from the current by-hand approach.
 
 #Usage
 
