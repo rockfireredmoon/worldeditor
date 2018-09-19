@@ -1,4 +1,4 @@
-World Editor is a tool for working with the large dataset of game data required for [iceee](http://github.com/rockfireredmoon/iceee), our [Earth Etertnal](http://www.theanubianwar.com) server. It's basic aim is to give content creators (quests, items, creatures and more) the tools they need to be able to do their thing without getting involved in editing raw data files.
+World Editor is a tool for working with the large dataset of [game data](https://github.com/rockfireredmoon/iceee-data) required for [iceee](http://github.com/rockfireredmoon/iceee), our [Earth Etertnal](http://www.theanubianwar.com) server. It's basic aim is to give content creators (quests, items, creatures and more) the tools they need to be able to do their thing without getting involved in editing raw data files.
 
 While we have had some delegation of this task, with developers directly editing data files in GitHub, the barrier-to-entry of this is still quite high. This tool is intended to make it possible for non-coders to more easily edit this data.
 
