@@ -4,11 +4,11 @@ While we have had some delegation of this task, with developers directly editing
 
 Intended aims are :-
 
- 1. Remove the need for most developers to directly edit game server data files
- 1. Eases use of Git for the simple task of pushing and pulling new content.
- 1. Make it easier for developers to locate existing data with searches and sortable, filterable tables.
- 1. Make it easier for developers to add and edit content by providing web based forms, menus, search-and-select dialogs and other features aimed at streamlining content creatiion.
- 1. Provide validation of all input and eliminate the mistakes that we get from the current by-hand approach.
+ * Remove the need for most developers to directly edit game server data files
+ * Eases use of Git for the simple task of pushing and pulling new content.
+ * Make it easier for developers to locate existing data with searches and sortable, filterable tables.
+ * Make it easier for developers to add and edit content by providing web based forms, menus, search-and-select dialogs and other features aimed at streamlining content creatiion.
+ * Provide validation of all input and eliminate the mistakes that we get from the current by-hand approach.
 
 #Usage
 
@@ -20,14 +20,14 @@ http://www.theanubianwar.com:8880
 
 Once you have logged on, you will be present with a page showing a table of 'entities' taking up most of the left of the screen, with a slimmer Create/Edit panel to the right.
 
-    Choose the type of entity to edit using the menu bar at the top of the window. Some entities are in submenus.
-    Click on any entity in the table to select it for editing
-    Narrow down what is displayed in the tables using filters in the table column headers
-    You can resort the table by clicking the column headers
-    Click on the New button at the top of the screen to create a new entity
-    When creating a new entity, depending on the type of entity you will have different options for choosing an ID. This application will try to choose the default ID for you so in most cases you do not need to worry about it. Some entity types have no ID generation (usually non-numeric ones)
-    When you have entered all the details for any entity,click Save at the bottom to either create a new entity or update an existing one.
-    When you have finished making your changes, you should go the Stores page and Commit/Push the store. This sends the changes to GitHub so other people (and the development server) can be updated with your changes.
+ 1. Choose the type of entity to edit using the menu bar at the top of the window. Some entities are in submenus.
+ 1. Click on any entity in the table to select it for editing
+ 1. Narrow down what is displayed in the tables using filters in the table column headers
+ 1. You can resort the table by clicking the column headers
+ 1. Click on the New button at the top of the screen to create a new entity
+ 1. When creating a new entity, depending on the type of entity you will have different options for choosing an ID. This application will try to choose the default ID for you so in most cases you do not need to worry about it. Some entity types have no ID generation (usually non-numeric ones)
+ 1. When you have entered all the details for any entity,click Save at the bottom to either create a new entity or update an existing one.
+ 1. When you have finished making your changes, you should go the Stores page and Commit/Push the store. This sends the changes to GitHub so other people (and the development server) can be updated with your changes.
 
 World Editor is capable of editing mulitple branches of the Earth Eternal game data. These branches are of course stored at  GitHub. The stores page is used to define what branches are available for editing, for you to choose with branch you are working in, and for you to push/pull changes to and from GitHub.
 
