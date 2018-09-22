@@ -57,7 +57,7 @@ import org.slf4j.LoggerFactory;
 
 public class Application extends WebApplication implements IAuthenticator {
 	final static Logger LOG = LoggerFactory.getLogger(Application.class);
-	public static final String KEY = "dbfe";
+	public static final String KEY = "worldeditor";
 	private StaticDataDatabase staticDatabase;
 	private IUserData userData;
 	private DefaultSiteData siteData;
@@ -134,7 +134,7 @@ public class Application extends WebApplication implements IAuthenticator {
 		} catch (FileSystemException e) {
 			throw new RuntimeException(e);
 		}
-		addResourceReplacement(WiQueryCoreThemeResourceReference.get(), new WiQueryCoreThemeResourceReference("eedbfe"));
+		addResourceReplacement(WiQueryCoreThemeResourceReference.get(), new WiQueryCoreThemeResourceReference("worldeditor"));
 		getSessionStore().registerBindListener(new BindListener() {
 			@Override
 			public void bindingSession(Request request, Session newSession) {

@@ -52,7 +52,7 @@ import org.eclipse.jetty.webapp.WebXmlConfiguration;
 
 public class Main {
 	private static final String DEFAULT_KEYSTORE_PASSWORD = "changeit";
-	public final static String APPLICATION_NAME = "DBFE";
+	public final static String APPLICATION_NAME = "WorldEditor";
 	protected Log log;
 	private Options options;
 	private String level = null;

@@ -1,4 +1,4 @@
-function dbfe_resize(el, maxWidth, maxHeight) {
+function we_resize(el, maxWidth, maxHeight) {
 
     var ratio = 0;  // Used for aspect ratio
     var width = el.width();    // Current image width
@@ -98,7 +98,7 @@ $(document).ready(function() {
 	   });
 	});	
     $('img.avatar').each(function() {
-    	dbfe_resize($(this), 64, 64);
+    	we_resize($(this), 64, 64);
     });
     
 

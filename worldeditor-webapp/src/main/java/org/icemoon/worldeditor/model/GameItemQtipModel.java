@@ -38,7 +38,7 @@ public class GameItemQtipModel extends Model<String> {
 			return "";
 		}
 		
-		String tipContent = " { text: 'Loading ...', ajax: { url:'/dbfe/itemtip.html?id=" + gameItem.getEntityId() + "' } }";
+		String tipContent = " { text: 'Loading ...', ajax: { url:'/itemtip.html?id=" + gameItem.getEntityId() + "' } }";
 		
 		return "$(\"#" + getItemId() + "\").qtip({ content: " + tipContent + ", show: 'mouseover', hide: 'mouseout' });";
 	}

@@ -230,7 +230,7 @@ public class MapUtil {
 		}
 		List<String> spawnPackages = new ArrayList<String>();
 		List<Scenery<IDatabase>> l = new ArrayList<Scenery<IDatabase>>();
-		if(!System.getProperty("dbfe.enableSpawns", "false").equals("true"))
+		if(!System.getProperty("worldeditor.enableSpawns", "false").equals("true"))
 			return l;
 		
 		for (SpawnPackage sp : db.getSpawnPackages().values()) {
