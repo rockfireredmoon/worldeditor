@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    
+<html 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:wicket="http://wicket.sourceforge.net/" 
+	xml:lang="en" 
+	lang="en">  
+	<body>
+   		<div wicket:id="header">
+   			Header
+   		</div>
+   		<div id="mainContent">
+   		   <div class="leftBar">
+   		       <div class="detailsArea">
+                   <h2><wicket:message key="quest">[Quest]</wicket:message></h2>
+                   <div class="inner">
+                       <div class="photoContainer">
+                            <img wicket:id="photo" class="photo thumbnail"/>
+                       </div>
+                       <img wicket:id="repeatImage" class="repeatImage"/>
+			           <div class="formRow">
+			                <h3 wicket:id="title"/>
+	                   </div>
+	                   <div class="formRow">
+	                        <h4>Level <span wicket:id="level"/></h4>
+	                   </div>
+                       <div class="inner questActions">
+                       <a href="#" wicket:id="uploadPhoto" class="uploadLink"><wicket:message key="uploadPhoto">[Upload Photo]</wicket:message></a>
+                       <div wicket:id="uploadPhotoDialog">
+                            <span wicket:id="uploadPhotoPanel"/>
+                       </div>
+                       </div>
+                   </div>
+   		       </div>
+   		       
+   		       
+               <div class="rewardsArea">
+                   <h2><wicket:message key="rewards">[Rewards]</wicket:message></h2>
+                   <div class="inner">
+                       <div class="formRow">
+                            <div wicket:id="coin">
+                            </div>
+                       </div>
+                       <div class="formRow">
+                            <wicket:message key="exp">[XP]</wicket:message> <span wicket:id="exp"/>
+                       </div>
+                       <wicket:enclosure child="rewards">
+	                       <div class="hr"><hr/></div>
+	                       <div class="formRow rewards">
+					           <div wicket:id="rewards" class="reward">
+					                <span wicket:id="reward">
+					                </span>
+					           </div>
+				           </div>
+			           </wicket:enclosure>
+                    </div>
+               </div>
+   		       
+	       </div>  
+	       
+           
+           <div wicket:id="tabs" class="questTabs"> 
+	           <ul> 
+                   <li><a href="#tab1">Summary</a></li>
+	           </ul> 
+	           
+	           
+               <div id="tab1">   
+                    <div class="questNav">
+                        <wicket:enclosure child="requiresLink">
+	                        <div class="requires">
+	                            Requires:
+	                            <a href="#" wicket:id="requiresLink">
+	                                <span wicket:id="requiresLabel"></span>
+	                            </a>
+	                        </div>
+                        </wicket:enclosure>
+                        <wicket:enclosure child="leadsToContainer">
+	                        <div wicket:id="leadsToContainer" class="leadsTo">	                        
+	                            Leads To:
+	                            <div class="leadsToQuests">
+		                            <div wicket:id="leadsTo" class="leadsToQuest">
+			                            <a href="#" wicket:id="leadsToLink">
+			                                <span wicket:id="leadsToLabel"></span>
+			                            </a>
+		                            </div>
+	                            </div>
+	                        </div>
+                        </wicket:enclosure>
+                        <div class="hr"><hr/></div>
+                    </div>
+               
+                   <div class="characterLink">
+                        <a href="#" wicket:id="viewGiver"><span wicket:id="giver"/></a>
+                   </div>
+                   <h4><wicket:message key="start">[Start]</wicket:message></h4>                   
+                   <div wicket:id="bodyText" class="questText">[Body Text]</div>
+                   
+                   <div class="hr"><hr/></div>
+                   
+                   <div wicket:id="acts" class="act">
+                        <span wicket:id="actNumber" class="actNumber">[1]</span>
+                        <span wicket:id="actText" class="actText questText">[Act Text]</span>
+                        
+                        <div class="objectives">
+	                        <div wicket:id="objectives" class="objective">
+	                            <img wicket:id="objectiveImage"/>
+	                            <span wicket:id="objectiveText">[Objective]</span>
+	                        </div>
+                        </div>
+                   </div>
+                   
+                   <div class="hr"><hr/></div>
+                   <div class="characterLink">
+                        <a href="#" wicket:id="viewEnder"><span wicket:id="ender"/></a>
+                   </div>
+                   <h4><wicket:message key="completion">[Completion]</wicket:message></h4>
+                   <div wicket:id="completeText" class="questText">[Complete Text]</div>
+                   <div class="hr"><hr/></div>  
+		           <div wicket:id="mapPanel">
+		           </div> 
+               </div> 
+	           
+             </div>
+   		</div>
+   		<div wicket:id="footer">
+   			Footer Component
+   		</div>
+	</body>
+</html>
+

@@ -1,0 +1,28 @@
+#mainContent {
+    width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left {
+    float: left;
+    width: 430px;
+}
+
+.right {
+    float: left;
+    width: 430px;
+}
+
+.eonArea, .widgetArea {
+	margin-top: 8px;
+    width: 100%;
+    border: 1px solid #295D0A;
+    background-color: white;
+    font-size: 9pt;
+}
+
+.eonArea textarea {
+	width: 100%;
+	height: 20em;
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div wicket:id="header">Header</div>
+	<div id="mainContent">
+		<div class="left">
+			<div class="searchArea">
+				<form class="searchForm" wicket:id="searchForm">
+					<h2>
+						<wicket:message key="search">[Search]</wicket:message>
+					</h2>
+					<div class="inner">
+						<div class="inner">
+							<label for="searchText" class="lowlight"><wicket:message
+									key="searchText">[Search]</wicket:message>:</label> <input
+								wicket:id="searchText" id="searchText" type="text" size="13" />
+							<input type="submit" wicket:id="search" value="Search" /> <input
+								type="submit" wicket:id="lucky" id="lucky"
+								value="I'm Feeling Lucky" />
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="changePasswordArea">
+				<form class="changePasswordForm" wicket:id="changePasswordForm">
+					<h2>
+						<wicket:message key="changePassword">[Change Password]</wicket:message>
+					</h2>
+					<div wicket:id="changePasswordFeedback"></div>
+					<div class="inner">
+						<div class="formRow">
+							<label for="newPassword" class="required"><wicket:message
+									key="newPassword">[New Password]</wicket:message>:</label> <input
+								wicket:id="newPassword" id="newPassword" type="password"
+								size="20" />
+						</div>
+						<div class="formRow">
+							<label for="warpName" class="required"><wicket:message
+									key="confirmNewPassword">[Confirm Password]</wicket:message>:</label> <input
+								wicket:id="confirmNewPassword" id="confirmNewPassword"
+								type="password" size="20" />
+						</div>
+						<div class="formActions">
+							<input type="submit" wicket:id="submitNewPassword" value="Save" />
+							<input type="reset" value="Reset" />
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="mailArea">
+				<form class="mailForm" wicket:id="mailForm">
+					<h2>
+						<wicket:message key="mail">[Mail]</wicket:message>
+					</h2>
+					<div wicket:id="mailFeedback"></div>
+					<div class="inner">
+						<span class="lowlight vspace"><wicket:message key="text">[Text]</wicket:message>
+						</span>
+						<div class="formRow">
+							<label for="recipient" class="required"><wicket:message
+									key="recipient">[Mail To]</wicket:message>:</label> <span
+								wicket:id="recipient"> </span>
+						</div>
+						<div class="formRow">
+							<label for="item" class="required"><wicket:message
+									key="item">[Item]</wicket:message>:</label> <span wicket:id="item">
+							</span>
+						</div>
+						<div class="formActions">
+							<input type="submit" wicket:id="sendMail" value="Send" /> <input
+								type="reset" value="Reset" />
+						</div>
+					</div>
+				</form>
+			</div>
+
+
+		</div>
+
+		<div class="right">
+
+			<div class="yourCharactersArea">
+				<h2>
+					<wicket:message key="yourCharacters">[Your Characters]</wicket:message>
+				</h2>
+				<div wicket:id="confirmDeleteCharacterDialog"></div>
+				<div wicket:id="yourCharactersContainer" class="inner">
+					<div wicket:id="yourCharacters" class="character">
+						<div class="avatarContainer">
+							<img wicket:id="avatar" class="avatar thumbnail" />
+						</div>
+						<a href="#" wicket:id="removeCharacter"
+							title="Remove character from account" class="removeAction">Remove</a>
+						<a href="#" wicket:id="viewCharacter" title="View this character">
+							<span wicket:id="characterName" class="characterName">[Character]</span>
+						</a> <span wicket:id="characterDetails" class="characterDetails">[Character
+							Details]</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="mapsArea">
+				<h2>
+					<wicket:message key="maps">[Maps]</wicket:message>
+				</h2>
+				<div class="inner">
+					<span class="lowlight vspace">Maps your characters are
+						currently visible on.</span>
+					<div wicket:id="mapsContainer" class="mapsContainer">
+						<div wicket:id="maps" class="map">
+							<a href="#" wicket:id="viewMap" title="View this map"> <span
+								wicket:id="mapName">[Map]</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="groves">
+				<form class="groveForm" wicket:id="groveForm">
+
+					<h2>
+						<wicket:message key="groves">[Groves]</wicket:message>
+					</h2>
+					<div wicket:id="confirmDeleteGroveDialog"></div>
+
+					<div class="groveItems">
+						<div wicket:id="groves" class="groveItem">
+							<a href="#" wicket:id="removeGrove"
+								title="Remove grove from character" class="removeAction">Remove</a>
+							<a href="#" wicket:id="viewGrove"
+								title="View and configure this grove"> <span
+								wicket:id="groveName">[Grove]</span>
+							</a>
+						</div>
+					</div>
+					<div wicket:id="noGrove">
+						<span><wicket:message key="noGrove">[You have no grove]</wicket:message></span>
+					</div>
+					<div class="hr">
+						<hr />
+					</div>
+					<div wicket:id="groveFeedback"></div>
+					<div class="formRow">
+						<label for="groveName" class="required"><wicket:message
+								key="groveName">[Name]</wicket:message>:</label> <input
+							wicket:id="groveName" id="groveName" type="text" size="20" />
+					</div>
+					<div class="formRow">
+						<label for="groveTemplate" class="required"><wicket:message
+								key="groveTemplate">[Template]</wicket:message>:</label> <select
+							wicket:id="groveTemplate" id="groveTemplate">
+						</select>
+					</div>
+					<div class="formActions">
+						<input type="submit" wicket:id="createGrove" value="Create Grove" />
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div wicket:id="footer">Footer Component</div>
+</body>
+</html>
+

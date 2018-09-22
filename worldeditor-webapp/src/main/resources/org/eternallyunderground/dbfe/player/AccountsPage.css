@@ -1,0 +1,28 @@
+td.actions {
+	width: 100px;
+}
+
+.permissions {
+	padding-top: 8px;
+}
+
+.permissions input {
+	float: left;
+}
+
+.permissions br {
+	clear: both;
+}
+
+.permissions label {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size: 10pt;
+	width: 200px;
+}
+
+.characterItems {
+	padding-top: 8px;
+    padding-bottom: 8px;
+}
+

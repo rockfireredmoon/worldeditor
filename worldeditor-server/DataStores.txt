@@ -1,0 +1,6 @@
+[ENTRY]
+ID=ValkalsShadow
+Source=GIT
+URL=https://github.com/rockfireredmoon/iceee.git
+Creator=emerald
+Branch=valkals_shadow

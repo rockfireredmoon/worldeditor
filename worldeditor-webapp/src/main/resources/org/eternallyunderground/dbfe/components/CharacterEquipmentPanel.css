@@ -1,0 +1,102 @@
+.equipmentPanel .bodypart {
+    position: absolute;
+    display: block;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+}
+
+.equipmentPanel .head {
+    left: 52px;
+    top: 10px;
+}
+
+.equipmentPanel .neck {
+    left: 52px;
+    top: 48px;
+}
+
+.equipmentPanel .chest {
+    left: 52px;
+    top: 90px;
+}
+
+.equipmentPanel .waist {
+    left: 52px;
+    top: 128px;
+}
+
+.equipmentPanel .arms {
+    left: 12px;
+    top: 108px;
+}
+
+.equipmentPanel .hands {
+    left: 92px;
+    top: 144px;
+}
+
+.equipmentPanel .feet {
+    left: 52px;
+    top: 208px;
+}
+
+.equipmentPanel .legs {
+    left: 52px;
+    top: 170px;
+}
+
+.equipmentPanel .ring_1 {
+    left: 12px;
+    top: 184px;
+}
+
+.equipmentPanel .ring_2 {
+    left: 92px;
+    top: 184px;
+}
+
+.equipmentPanel .weapon_1 {
+    left: 12px;
+    top: 246px;
+}
+
+.equipmentPanel .weapon_2 {
+    left: 52px;
+    top: 246px;
+}
+
+.equipmentPanel .weapon_3 {
+    left: 92px;
+    top: 246px;
+}
+
+.equipmentPanel .amulet {
+    left: 12px;
+    top: 48px;
+}
+
+.equipmentPanel .shoulders {
+    left: 92px;
+    top: 74px;
+}
+
+.equipmentPanel .bag_1 {
+    left: 0px;
+    top: 0px;
+}
+
+.equipmentPanel .bag_2 {
+    left: 36px;
+    top: 0px;
+}
+
+.equipmentPanel .bag_3 {
+    left: 72px;
+    top: 0px;
+}
+
+.equipmentPanel .bag_4 {
+    left: 108px;
+    top: 0px;
+}

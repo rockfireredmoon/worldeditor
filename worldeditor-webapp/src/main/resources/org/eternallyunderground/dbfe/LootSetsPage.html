@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div wicket:id="header">Header</div>
+	<div id="mainContent">
+		<div class="mainFeedback" wicket:id="feedback"></div>
+		<div wicket:id="confirmDeleteDialog"></div>
+		<div wicket:id="confirmCloneDialog"></div>
+		<div class="editArea">
+			<form class="itemForm" wicket:id="form">
+				<h2>
+					<span wicket:id="editTitle">[Edit Loot Set Package]</span>
+				</h2>
+				<div class="inner">
+					<h4>
+						<wicket:message key="basic">[Basic]</wicket:message>
+					</h4>
+					<wicket:enclosure>
+						<div class="formRow">
+							<label for="entityId" class="required"><wicket:message
+									key="entityId">[ID]</wicket:message>:</label> <input type="text"
+								wicket:id="entityId" id="entityId" />
+						</div>
+					</wicket:enclosure>
+					<div class="formRow">
+						<label for="rarity"><wicket:message key="rarity">[Rarity]</wicket:message>:</label>
+						<select wicket:id="rarity" id="rarity">
+						</select>
+					</div>
+					<wicket:enclosure>
+						<div class="formRow">
+							<label for="rate"><wicket:message key="rate">[Rate]</wicket:message>:</label>
+							<input type="text" wicket:id="rate" id="rate" />
+						</div>
+					</wicket:enclosure>
+                    <div class="formRow">
+                        <label for="comment"><wicket:message key="comment">[Comment]</wicket:message>:</label>
+                        <textarea rows="6" cols="40" wicket:id="comment" id="comment">
+                           </textarea>
+                    </div>
+                    <div class="formRow">
+                        <input type="checkbox" wicket:id="autoComment"/>
+                        <label for="autoComment"><wicket:message key="autoComment">[Auto Comment]</wicket:message>:</label>
+                    </div>
+					<div class="hr">
+						<hr />
+					</div>
+					<h4>
+						<wicket:message key="items">[Items]</wicket:message>
+					</h4>
+					<span id="gameItems" wicket:id="items"> </span>
+					<div class="hr">
+						<hr />
+					</div>
+
+					<div class="formActions">
+						<input type="submit" wicket:id="nextButton" class="nextButton"
+							value="Next" /> <input type="submit" wicket:id="previousButton"
+							class="previousButton" value="Previous" /> <input type="submit"
+							wicket:id="saveButton" value="Save" /> <input type="submit"
+							wicket:id="resetButton" value="Reset" />
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="contentArea">
+			<div wicket:id="entityActions"></div>
+			<form class="filterForm" wicket:id="filterForm">
+				<table class="items" wicket:id="table">
+				</table>
+			</form>
+		</div>
+	</div>
+	<div wicket:id="footer">Footer Component</div>
+</body>
+</html>
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div wicket:id="header">Header</div>
+	<div id="mainContent">
+		<div class="mainFeedback" wicket:id="feedback"></div>
+		<div class="left">
+			<div class="eonArea">
+				<form class="eonForm" wicket:id="eonForm">
+					<h2>
+						<wicket:message key="eonParser">[EON Parser]</wicket:message>
+					</h2>
+					<div class="inner">
+						<div class="formRow">
+							<h4>
+								<wicket:message key="objectString">[Object String]</wicket:message>
+							</h4>
+							<textarea wicket:id="objectString" id="objectString" rows="10" />
+						</div>
+						<div class="hr">
+							<hr />
+						</div>
+						<div class="formRow">
+							<h4>
+								<wicket:message key="formatted">[Formatted]</wicket:message>
+							</h4>
+							<textarea wicket:id="formatted" id="formatted" rows="10" />
+						</div>
+						<div class="formActions">
+							<input type="submit" wicket:id="parse" value="Parse" />
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="widgetArea">
+				<form class="widgetForm" wicket:id="widgetForm">
+					<h2>Widgets</h2>
+					<div class="inner">
+						<div class="formRow">
+							<label for="color">Color:</label> <span wicket:id="color" />
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div wicket:id="footer">Footer Component</div>
+</body>
+</html>
+

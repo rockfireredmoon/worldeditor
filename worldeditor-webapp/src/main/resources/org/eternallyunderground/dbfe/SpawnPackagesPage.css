@@ -1,0 +1,49 @@
+td.entityId {
+}
+
+td.actions {
+    text-align: center;
+    width: 72px;
+}
+
+td.package {
+    width: 80px;
+}
+
+.newSpawnForm {
+	padding-top: 10px;
+}
+
+.newSpawnForm .browse, .newSpawnForm .clear {
+	float: none;
+}
+
+.spawnItem {
+    height: 24px;
+    margin: 6px 0;
+}
+
+.spawnItem a {
+    float: left;
+}
+
+.spawnItem span.spawnName {
+	font-weight: bold;
+	display: inline-block;
+	width: 200px;
+}
+
+.spawnItem span.spawnNumber {
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.spawnItem span.spawnComment {
+	font-size: 8pt;
+	font-style: italic;
+}
+
+.removeAction {
+    padding-right: 4px;
+}
+

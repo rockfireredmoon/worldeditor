@@ -1,0 +1,22 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+<span class="colorField">
+<input type="text" wicket:id="rgb" size="6" class="rgb"/>
+<script type="text/javascript" wicket:id="pickerFragment">
+$(document).ready(function() {
+    $('#rgbPicker').css("background-color", $('#rgbField').val());
+	$('#rgbField').ColorPicker({
+	    onSubmit: function(hsb, hex, rgb, el) {
+	    	hex = "#" + hex;
+	        $(el).val(hex);
+	        $(el).ColorPickerHide();
+	        $('#rgbPicker').css("background-color", hex);
+	    },
+	    onBeforeShow: function () {
+	        $(this).ColorPickerSetColor(this.value);
+	    }
+	});
+});
+</script>
+<span wicket:id="picker" class="picker">&nbsp;</span>
+</span>
+</wicket:panel>

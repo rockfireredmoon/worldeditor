@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div id="dropProfilesPage">
+		<div wicket:id="header">Header</div>
+		<div id="mainContent">
+			<div class="mainFeedback" wicket:id="feedback"></div>
+			<div wicket:id="confirmDeleteDialog"></div>
+			<div wicket:id="confirmCloneDialog"></div>
+			<div class="editArea">
+				<form class="itemForm" wicket:id="form" onsubmit="">
+					<h2>
+						<span wicket:id="editTitle">[Edit Terrain Template]</span>
+					</h2>
+					<div class="inner">
+						<div class="formRow">
+							<label for="entityId"><wicket:message key="entityId">[ID]</wicket:message></label>:
+							<input wicket:id="entityId" id="entityId" type="text" size="15" />
+						</div>
+						<div class="hr">
+							<hr />
+						</div>
+						
+						<div class="formActions">
+							<input type="submit" wicket:id="nextButton" class="nextButton"
+								value="Next" /> <input type="submit" wicket:id="previousButton"
+								class="previousButton" value="Previous" /> <input type="submit"
+								wicket:id="saveButton" value="Save" /> <input type="submit"
+								wicket:id="resetButton" value="Reset" />
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="contentArea">
+				<div wicket:id="entityActions"></div>
+				<form class="filterForm" wicket:id="filterForm">
+					<table class="items" wicket:id="table">
+					</table>
+				</form>
+			</div>
+		</div>
+		<div wicket:id="footer">Footer Component</div>
+	</div>
+</body>
+</html>
+

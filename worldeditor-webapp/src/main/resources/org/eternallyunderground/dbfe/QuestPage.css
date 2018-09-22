@@ -1,0 +1,115 @@
+.leftBar {
+    width: 300px;
+    float: left;
+}
+
+.detailsArea {
+    width: 100%;
+    border:1px solid #F69603;
+    background-color: #333;
+    font-size: 9pt;
+    margin-bottom: 12px;
+}
+
+
+.rewardsArea {
+    width: 100%;
+    border:1px solid #F69603;
+    background-color: #333;
+    font-size: 9pt;
+    margin-bottom: 12px;
+}
+
+.detailsArea .formRow {
+    padding: 1px 0;
+}
+
+.questTabs {
+    margin-left: 12px;
+    width: 570px;
+    height: 100%;
+    float: left;
+}
+
+.questActions {
+    clear: both;
+    width: 100%;
+    text-align: left;
+}
+
+a.uploadLink, a.uploadLink:visited {;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.photoContainer {
+    height: 96px;
+    width: 96px;
+    text-align: center;
+    float: left;
+    margin-right: 8px;
+}
+
+.photo {
+    margin-right: 8px;
+    width: 96px;
+}
+
+.characterLink {
+	padding: 4px 0;
+	float: right;
+}
+
+.reward {
+	display: block;
+	height: 24px;
+	padding: 4px 0;
+}
+
+.actNumber {
+	float: left;
+	font-size: 14pt;
+	padding-right: 4px;
+	padding-bottom: 4px;
+}
+
+.act {
+	padding: 6px 0;
+}
+
+.questText {
+	font-size: 10pt;
+}
+
+.objective {
+	margin: 4px 0 4px 24px;
+	font-size: 9pt;
+	font-style: italic;
+}
+
+.objective img {
+    width: 16px;	
+}
+
+.questNav {
+	width: 100%;
+	margin-bottom: 4px;
+	clear: both;
+}
+
+.questNav .requires {
+	float: left;
+}
+
+.questNav .leadsTo {
+    float: right;
+}
+
+.questNav .leadsToQuests {	
+	padding-left: 6px;
+    float: right;
+}
+
+.repeatImage {
+    float: right;
+}

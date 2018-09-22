@@ -1,0 +1,138 @@
+table select {
+	max-width: 60px !important;
+}
+
+.items tr {
+	height: 32px;
+}
+
+.items td.actions {
+    text-align: center;
+    width: 72px;
+}
+
+.items td.level {
+	width: 28px;
+}
+
+.items td.entityId {
+	width: 50px;
+}
+
+.items td.quality {
+	font-size: 0pt;
+	width: 11px;
+    max-width: 20px;
+}
+
+.items td.equipType {
+    width: 64px;
+}
+
+.items td.type {
+	width: 64px;
+}
+
+.items td.equipType {
+    max-width: 60px;
+}
+
+.items td.displayName {
+    max-width: 60px;
+}
+
+
+#resistance table {
+    width: 100%;
+}
+
+#resistance td {
+    text-align: center;
+}
+
+.charmMods .formRow {
+	float: left;
+	width: 160px;
+	height: 20px;
+}
+
+.charmMods .formRow label {
+    float: left;
+    width: 90px;
+}
+
+#stats table  {
+    margin: 0 auto 1em auto;
+}
+
+#stats td {
+    text-align: center;
+}
+
+.craftItems {
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 2px;
+	height: 8em;
+	overflow: scroll;
+	overflow-x: hidden;
+	overflow-y: scroll;
+    border:1px solid #295D0A;
+    width: 190px;
+}
+.craftItems span {
+	vertical-align: top;
+}
+
+.icons label {
+	padding-top: 2px;
+	width: 36px;
+}
+
+.icons .formRow {
+	width: 270px;
+	height: 20px;
+}
+
+.icons .selector span {
+	display: inline-block;
+	height: 12px;
+    width: 40%;
+    overflow: hidden;
+}
+
+.iconPreview {
+	width: 32px;
+    height: 32px;
+    overflow: hidden;
+    padding: 12px 12px 0 0;
+    float: right;
+}
+
+.selector input[type=button] {
+	float: none;
+}
+
+.selectorItems td.icon {
+	width: 48px;
+	text-align: center;
+}
+
+.swapAction {
+	margin-top: 16px;
+	float: right;
+}
+
+.clothingColours {
+    width: 220px;
+    display: inline-block;
+}
+
+.clothingColours ul {
+    padding: 0; 
+    margin: 0;
+}
+
+.clothingColours li {
+    list-style-type: none;
+}

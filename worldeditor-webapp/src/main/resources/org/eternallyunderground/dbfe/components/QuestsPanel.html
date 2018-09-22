@@ -1,0 +1,22 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+	<form wicket:id="questsForm">
+		<div id="quests" wicket:id="questsContainer">
+			<h4>
+				<wicket:message key="quests">[Quests]</wicket:message>
+			</h4>
+			<p class="lowlight">
+				<wicket:message key="questsDescription">[Description]</wicket:message>
+			</p>
+			<div class="questItems">
+				<div wicket:id="quests" class="questItem">
+					<span class="questLink"> <a href="#" wicket:id="viewQuest"
+						title="View this quest"> <span class="questName"
+							wicket:id="questName">[Quest]</span>
+					</a>
+					</span> <span wicket:id="partySize" class="partySize"></span> <span
+						wicket:id="level" class="level"></span>
+				</div>
+			</div>
+		</div>
+	</form>
+</wicket:panel>

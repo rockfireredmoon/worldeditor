@@ -1,0 +1,19 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+    <div wicket:id="chooseLocationDialog" class="chooseLocationDialog">
+        <form wicket:id="chooseLocationDialogForm">
+	        <div class="chooseLocationDialogText">
+	            <span wicket:id="chooseLocationDialogText">[Confirm text]</span>
+	        </div>
+	        <div wicket:id="spawnsContainer" class="inner spawns">
+	           <div wicket:id="spawns">
+	               <a href="#" wicket:id="useSpawn">
+	                   <span wicket:id="spawn"></span>
+	               </a>
+	           </div>
+	        </div>
+	        <div class="chooseLocationDialogActions">
+		        <input type="button" wicket:id="chooseLocationDialogClose" value="Close"/>
+	        </div>
+        </form>
+	</div>
+</wicket:panel>

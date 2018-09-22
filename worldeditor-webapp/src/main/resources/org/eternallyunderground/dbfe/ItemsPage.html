@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div id="questsPage">
+		<div wicket:id="header">Header</div>
+		<div id="mainContent">
+			<div class="mainFeedback" wicket:id="feedback"></div>
+			<div wicket:id="appearanceEditorDialog"></div>
+			<div wicket:id="confirmDeleteDialog"></div>
+			<div wicket:id="confirmCloneDialog"></div>
+			<div class="editArea">
+				<form class="itemForm" wicket:id="form">
+					<div class="editHeader">
+						<h2>
+							<span wicket:id="editTitle">[Edit Item]</span>
+						</h2>
+						<input type="submit" wicket:id="view" value="View"
+							class="additionalEntityActions" />
+					</div>
+					<div class="inner">
+						<h4>
+							<wicket:message key="basic">[Basic]</wicket:message>
+						</h4>
+
+						<div class="formRow">
+							<label class="required" for="file"><wicket:message
+									key="file">[File]</wicket:message>:</label> <select wicket:id="file" />
+						</div>
+						<wicket:enclosure>
+							<div class="formRow">
+								<label class="required" for="idType"><wicket:message
+										key="idType">[ID Type]</wicket:message>:</label> <select
+									wicket:id="idType" />
+							</div>
+						</wicket:enclosure>
+						<div class="formRow">
+							<label for="entityId" class="required"><wicket:message
+									key="entityId">[ID]</wicket:message>:</label> <input
+								wicket:id="entityId" id="entityId" type="text" size="15" />
+						</div>
+						<div class="formRow">
+							<label for="displayName"><wicket:message
+									key="displayName">[Display Name]</wicket:message>:</label> <input
+								wicket:id="displayName" id="displayName" type="text" size="20" />
+						</div>
+						<wicket:enclosure child="subText">
+							<div class="formRow">
+								<label for="subText"><wicket:message key="subText">[Subtext]</wicket:message>:</label>
+								<input wicket:id="subText" id="subText" type="text" size="20" />
+							</div>
+						</wicket:enclosure>
+						<div class="formRow">
+							<label for="flavorText"><wicket:message key="flavorText">[Flavor]</wicket:message>:</label>
+							<input wicket:id="flavorText" id="flavorText" type="text"
+								size="20" />
+						</div>
+
+
+						<div class="formRow">
+							<label for="type"><wicket:message key="type">[Type]</wicket:message>:</label>
+							<div class="styledSelection">
+								<select wicket:id="type"></select>
+							</div>
+						</div>
+
+						<wicket:enclosure child="book">
+							<div class="formRow">
+								<label for="book"><wicket:message key="book">[Book]</wicket:message>:</label>
+								<div wicket:id="book"></div>
+							</div>
+							<div class="formRow">
+								<label for="bookPage"><wicket:message key="bookPage">[Book Page]</wicket:message>:</label>
+								<input type="text" wicket:id="bookPage" size="3" />
+							</div>
+						</wicket:enclosure>
+
+						<wicket:enclosure>
+							<div class="formRow">
+								<label for="bindingType"><wicket:message
+										key="bindingType">[Binding Type]</wicket:message>:</label>
+								<div class="styledSelection">
+									<select wicket:id="bindingType"></select>
+								</div>
+							</div>
+						</wicket:enclosure>
+
+						<wicket:enclosure>
+							<div class="formRow">
+								<label for="equipType"><wicket:message key="equipType">[Equip Type]</wicket:message>:</label>
+								<div class="styledSelection">
+									<select wicket:id="equipType"></select>
+								</div>
+							</div>
+						</wicket:enclosure>
+
+						<div class="formRow">
+							<label for="quality"><wicket:message key="quality">[Quality]</wicket:message>:</label>
+							<div class="styledSelection">
+								<select wicket:id="quality"></select>
+							</div>
+						</div>
+
+						<div class="formRow" wicket:id="armourTypeContainer">
+							<label for="armourType"><wicket:message key="armourType">[Armour Type]</wicket:message>:</label>
+							<div class="styledSelection">
+								<select wicket:id="armourType"></select>
+							</div>
+						</div>
+
+						<div class="formRow" wicket:id="weaponTypeContainer">
+							<label for="weaponType"><wicket:message key="weaponType">[Weapon Type]</wicket:message>:</label>
+							<div class="styledSelection">
+								<select wicket:id="weaponType"></select>
+							</div>
+						</div>
+
+						<div class="formRow" wicket:id="specialItemTypeContainer">
+							<label for="specialItemType"><wicket:message
+									key="specialItemType">[Special Item Type]</wicket:message>:</label>
+							<div class="styledSelection">
+								<select wicket:id="specialItemType"></select>
+							</div>
+						</div>
+
+						<div class="formRow">
+							<label for="value"><wicket:message key="value">[Value]</wicket:message>:</label>
+							<span wicket:id="value" id="value" />
+						</div>
+
+						<wicket:enclosure>
+							<div class="formRow">
+								<label for="level"><wicket:message key="level">[Level]</wicket:message>:</label>
+								<input wicket:id="level" id="level" type="text" size="2" />
+							</div>
+						</wicket:enclosure>
+
+						<wicket:enclosure>
+							<div class="formRow">
+								<label for="minUseLevel"><wicket:message
+										key="minUseLevel">[Min Use Level]</wicket:message>:</label> <input
+									wicket:id="minUseLevel" id="minUseLevel" type="text" size="2" />
+							</div>
+						</wicket:enclosure>
+
+						<div class="formRow" wicket:id="bagContainer">
+							<label for="containerSlots"><wicket:message
+									key="containerSlots">[Container Slots]</wicket:message>:</label> <input
+								wicket:id="containerSlots" id="containerSlots" type="text"
+								size="2" />
+						</div>
+
+
+						<div wicket:id="damage" id="damage">
+							<div class="hr">
+								<hr />
+							</div>
+							<h4>
+								<wicket:message key="damage">[Damage]</wicket:message>
+							</h4>
+							<div class="formRow">
+								<label for="weaponDamageMin"><wicket:message
+										key="weaponDamageMin">[Damage Min.]</wicket:message>:</label> <input
+									wicket:id="weaponDamageMin" id="weaponDamageMin" type="text"
+									size="3" />
+							</div>
+							<div class="formRow">
+								<label for="weaponDamageMax"><wicket:message
+										key="weaponDamageMax">[Damage Max]</wicket:message>:</label> <input
+									wicket:id="weaponDamageMax" id="weaponDamageMax" type="text"
+									size="3" />
+							</div>
+						</div>
+
+						<div wicket:id="resistance" id="resistance">
+							<div class="hr">
+								<hr />
+							</div>
+							<h4>
+								<wicket:message key="resistance">[Resistance]</wicket:message>
+							</h4>
+							<table>
+								<thead>
+									<td><wicket:link>
+											<img src="melee22.png" />
+										</wicket:link></td>
+									<td><wicket:link>
+											<img src="fire22.png" />
+										</wicket:link></td>
+									<td><wicket:link>
+											<img src="frost22.png" />
+										</wicket:link></td>
+									<td><wicket:link>
+											<img src="mystic22.png" />
+										</wicket:link></td>
+									<td><wicket:link>
+											<img src="death22.png" />
+										</wicket:link></td>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input wicket:id="armourResistMelee"
+											title="Melee Resist" id="armourResistMelee" type="text"
+											size="3" /></td>
+										<td><input wicket:id="armourResistFire"
+											title="Fire Resist" id="armourResistFire" type="text"
+											size="3" /></td>
+										<td><input wicket:id="armourResistFrost"
+											title="Frost Resist" id="armourResistFrost" type="text"
+											size="3" /></td>
+										<td><input wicket:id="armourResistMystic"
+											title="Mystic Resist" id="armourResistMystic" type="text"
+											size="3" /></td>
+										<td><input wicket:id="armourResistDeath"
+											title="Death Resist" id="armourResistDeath" type="text"
+											size="3" /></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+
+						<div wicket:id="bonuses">
+							<div class="hr">
+								<hr />
+							</div>
+							<div id="stats">
+								<h4>
+									<wicket:message key="bonuses">[Bonuses]</wicket:message>
+								</h4>
+								<table>
+									<thead>
+										<td><wicket:message key="bonusDexterity">[Dexterity]</wicket:message></td>
+										<td><wicket:message key="bonusConstitution">[Constitution]</wicket:message></td>
+										<td><wicket:message key="bonusPsyche">[Psyche]</wicket:message></td>
+										<td><wicket:message key="bonusSpirit">[Spirit]</wicket:message></td>
+										<td><wicket:message key="bonusStrength">[Strength]</wicket:message></td>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input wicket:id="bonusDexterity" title="Dexterity"
+												id="bonusDexterity" type="text" size="3" /></td>
+											<td><input wicket:id="bonusConstitution"
+												title="Constitution" id="bonusConstitution" type="text"
+												size="3" /></td>
+											<td><input wicket:id="bonusPsyche" id="bonusPsyche"
+												title="Psyche" type="text" size="3" /></td>
+											<td><input wicket:id="bonusSpirit" id="bonusSpirit"
+												title="Spirit" type="text" size="3" /></td>
+											<td><input wicket:id="bonusStrength" id="bonusStrength"
+												title="Stength" type="text" size="3" /></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div wicket:id="appearance">
+							<div class="hr">
+								<hr />
+							</div>
+							<div id="appearance">
+								<h4>
+									<wicket:message key="appearance">[Appearance]</wicket:message>
+								</h4>
+								<div class="formRow">
+									<textarea wicket:id="appearanceString" id="appearanceString"
+										rows="5" cols="30" />
+								</div>
+								<input type="submit" wicket:id="editAppearance"
+									class="editAppearance" value="Edit" />
+							</div>
+						</div>
+
+						<div wicket:id="weaponPlan">
+							<div class="hr">
+								<hr />
+							</div>
+							<div id="plans">
+								<h4>
+									<wicket:message key="plans">[Plans]</wicket:message>
+								</h4>
+								<div class="formRow">
+									<label for="resultItemId"><wicket:message
+											key="resultItemId">[Result]</wicket:message></label>
+									<div wicket:id="resultItemId" class="readonly"></div>
+								</div>
+								<div class="formRow">
+									<label for="keyComponentId"><wicket:message
+											key="keyComponentId">[Key Component]</wicket:message></label>
+									<div wicket:id="keyComponentId" class="readonly"></div>
+								</div>
+
+								<div class="formRow" wicket:id="craftItemIdsContainer">
+									<label for="craftItems"><wicket:message
+											key="craftItems">[Recipe]</wicket:message></label>
+									<div class="craftItems">
+										<div wicket:id="craftItemIds" class="craftItem">
+											<a href="#" wicket:id="removeCraftItem"
+												title="Remove item from recipe" class="removeAction">Remove</a>
+											<span wicket:id="craftItemName">[Craft Item]</span>
+										</div>
+									</div>
+									<input type="submit" wicket:id="newCraftItem" value="Add Item" />
+									<div wicket:id="newCraftItemSelector"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="hr">
+							<hr />
+						</div>
+						<div class="icons">
+							<h4>
+								<wicket:message key="icons">[Icons]</wicket:message>
+							</h4>
+							<span wicket:id="iconPreview" class="iconPreview" /> <a
+								wicket:id="swap" href="#" class="swapAction">Swap</a>
+							<div class="formRow">
+								<label for="icon1"><wicket:message key="icon1">[Icon 1]</wicket:message></label>
+								<span wicket:id="icon1Preview"></span><span wicket:id="icon1"
+									class="readonly"></span>
+							</div>
+							<div class="formRow">
+								<label for="icon2"><wicket:message key="icon2">[Icon 2]</wicket:message></label>
+								<span wicket:id="icon2Preview"></span><span wicket:id="icon2"
+									class="readonly"></span>
+							</div>
+						</div>
+
+						<div wicket:id="charmMods">
+							<div class="hr">
+								<hr />
+							</div>
+							<div class="charmMods">
+								<h4>
+									<wicket:message key="charmMods">[Charm Mods]</wicket:message>
+								</h4>
+
+								<div class="formRow">
+									<label for="healingMod"><wicket:message
+											key="healingMod">[Healing]</wicket:message></label> <input
+										wicket:id="healingMod" id="healingMod" type="text" size="3" />
+								</div>
+								<div class="formRow">
+									<label for="regenHealthMod"><wicket:message
+											key="regenHealthMod">[Regen. Health]</wicket:message></label> <input
+										wicket:id="regenHealthMod" id="regenHealthMod" type="text"
+										size="3" />
+								</div>
+								<div class="formRow">
+									<label for="meleeHitMod"><wicket:message
+											key="meleeHitMod">[Melee Hit.]</wicket:message></label> <input
+										wicket:id="meleeHitMod" id="meleeHitMod" type="text" size="3" />
+								</div>
+								<div class="formRow">
+									<label for="meleeCritMod"><wicket:message
+											key="meleeCritMod">[Melee Crit.]</wicket:message></label> <input
+										wicket:id="meleeCritMod" id="meleeCritMod" type="text"
+										size="3" />
+								</div>
+								<div class="formRow">
+									<label for="magicHitMod"><wicket:message
+											key="magicHitMod">[Magic Hit.]</wicket:message></label> <input
+										wicket:id="magicHitMod" id="magicHitMod" type="text" size="3" />
+								</div>
+								<div class="formRow">
+									<label for="magicCritMod"><wicket:message
+											key="magicCritMod">[Magic Crit.]</wicket:message></label> <input
+										wicket:id="magicCritMod" id="magicCritMod" type="text"
+										size="3" />
+								</div>
+								<div class="formRow">
+									<label for="castSpeedMod"><wicket:message
+											key="castSpeedMod">[Cast Speed.]</wicket:message></label> <input
+										wicket:id="castSpeedMod" id="castSpeedMod" type="text"
+										size="3" />
+								</div>
+								<div class="formRow">
+									<label for="attackSpeedMod"><wicket:message
+											key="attackSpeedMod">[Attack Speed.]</wicket:message></label> <input
+										wicket:id="attackSpeedMod" id="attackSpeedMod" type="text"
+										size="3" />
+								</div>
+								<div class="formRow">
+									<label for="blockMod"><wicket:message key="blockMod">[Block]</wicket:message></label>
+									<input wicket:id="blockMod" id="blockMod" type="text" size="3" />
+								</div>
+								<div class="formRow">
+									<label for="parryMod"><wicket:message key="parryMod">[Parry]</wicket:message></label>
+									<input wicket:id="parryMod" id="parryMod" type="text" size="3" />
+								</div>
+								<div class="formRow">
+									<label for="runSpeedMod"><wicket:message
+											key="runSpeedMod">[Run Speed]</wicket:message></label> <input
+										wicket:id="runSpeedMod" id="runSpeedMod" type="text" size="3" />
+								</div>
+							</div>
+						</div>
+
+						<div class="hr">
+							<hr />
+						</div>
+						<h4>
+							<wicket:message key="other">[Other]</wicket:message>
+						</h4>
+						<div class="checkRow">
+							<input type="checkbox" wicket:id="ownershipRestriction" /> <label
+								for="ownershipRestriction"><wicket:message
+									key="ownershipRestriction">[Ownership restriction]</wicket:message></label>
+						</div>
+
+						<div class="formActions">
+							<input type="submit" wicket:id="nextButton" class="nextButton"
+								value="Next" /> <input type="submit" wicket:id="previousButton"
+								class="previousButton" value="Previous" /> <input type="submit"
+								wicket:id="saveButton" value="Save" /> <input type="reset"
+								wicket:id="resetButton" value="Reset" />
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="contentArea">
+				<div wicket:id="entityActions"></div>
+				<form class="filterForm" wicket:id="filterForm">
+					<table class="items" wicket:id="table">
+					</table>
+				</form>
+			</div>
+		</div>
+		<div wicket:id="footer">Footer Component</div>
+		<script type="text/javascript">
+			$('input[title]').qtip();
+		</script>
+	</div>
+</body>
+</html>
+

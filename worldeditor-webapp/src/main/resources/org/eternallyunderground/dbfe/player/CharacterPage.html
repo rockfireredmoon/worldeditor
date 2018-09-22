@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div wicket:id="header">Header</div>
+	<div id="mainContent">
+		<div class="leftBar">
+			<div class="youArea">
+				<h2>
+					<wicket:message key="you">[You]</wicket:message>
+				</h2>
+				<div class="inner">
+					<div class="avatarContainer">
+						<img wicket:id="avatar" class="avatar thumbnail" />
+					</div>
+					<img wicket:id="professionImage" class="professionImage" />
+					<div class="formRow">
+						<h3 wicket:id="displayName" />
+					</div>
+					<div class="formRow">
+						<h4>
+							Level <span wicket:id="level" /> <span wicket:id="gender" /> <span
+								wicket:id="race" /> <span wicket:id="profession" />
+						</h4>
+					</div>
+					<div class="formRow">
+						<div wicket:id="copper"></div>
+					</div>
+					<div class="formRow">
+						XP: <span wicket:id="exp" />
+					</div>
+					<div class="inner characterActions">
+						<a href="#" wicket:id="uploadAvatar" class="uploadLink"><wicket:message
+								key="uploadAvatar">[Upload Avatar]</wicket:message></a>
+						<div wicket:id="uploadAvatarDialog">
+							<span wicket:id="uploadAvatarPanel" />
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="statusArea">
+				<form class="statusForm" wicket:id="statusForm">
+					<h2>
+						<wicket:message key="status">[Your Status]</wicket:message>
+					</h2>
+					<div class="inner">
+						<div wicket:id="statusFeedback"></div>
+						<div class="inner">
+							<label for="newStatus" class="lowlight"><wicket:message
+									key="newStatus">[New Status]</wicket:message>:</label> <input
+								wicket:id="newStatus" id="newStatus" type="text" size="13" /> <input
+								type="submit" wicket:id="submitNewStatus" value="Save" />
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="sessionArea">
+				<h2>
+					<wicket:message key="session">[Session]</wicket:message>
+				</h2>
+				<div class="inner">
+					<div wicket:id="session"></div>
+				</div>
+			</div>
+
+			<div class="privacyArea">
+				<form class="privacyForm" wicket:id="privacyForm">
+					<h2>
+						<wicket:message key="privacy">[Privacy]</wicket:message>
+					</h2>
+					<div class="inner">
+						<div>
+							<span class="privacyText lowlight"><wicket:message
+									key="privacyText">[Text]</wicket:message></span>
+						</div>
+
+						<div wicket:id="privacyFeedback"></div>
+						<div class="formRow">
+							<label for="publishMyStats"><wicket:message
+									key="publishMyStats" /></label> <input id="publishMyStats"
+								wicket:id="publishMyStats" type="checkbox" />
+						</div>
+						<div class="formRow">
+							<label for="publishMyLocation"><wicket:message
+									key="publishMyLocation" /></label> <input id="publishMyLocation"
+								wicket:id="publishMyLocation" type="checkbox" />
+						</div>
+						<div class="formRow">
+							<label for="publishMyBags"><wicket:message
+									key="publishMyBags" /></label> <input id="publishMyBags"
+								wicket:id="publishMyBags" type="checkbox" />
+						</div>
+						<div class="formRow">
+							<label for="publishMyEquipment"><wicket:message
+									key="publishMyEquipment" /></label> <input id="publishMyEquipment"
+								wicket:id="publishMyEquipment" type="checkbox" />
+						</div>
+						<div class="formRow">
+							<label for="publishMyQuests"><wicket:message
+									key="publishMyQuests" /></label> <input id="publishMyQuests"
+								wicket:id="publishMyQuests" type="checkbox" />
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div wicket:id="tabs" class="creatureTabs">
+			<ul>
+				<li><a href="#tab1">Map</a></li>
+				<li><a href="#tab2">Inventory and Equipment</a></li>
+				<li><a href="#tab3">Quests</a></li>
+				<li><a href="#tab4">Tweaking</a></li>
+			</ul>
+
+
+			<div id="tab1">
+				<div wicket:id="mapPanel"></div>
+			</div>
+
+			<div id="tab2">
+				<div class="inventory">
+					<h3>Inventory</h3>
+					<div wicket:id="inventory"></div>
+				</div>
+				<div class="equipment">
+					<h3>Equipment</h3>
+					<div wicket:id="equipment"></div>
+				</div>
+				<div class="bags">
+					<h3>Bags</h3>
+					<div wicket:id="bags"></div>
+				</div>
+			</div>
+
+			<div id="tab3">
+				<form wicket:id="questsForm">
+					<div wicket:id="confirmAbandonQuestDialog"></div>
+					<div id="quests" wicket:id="questsContainer">
+						<h4>
+							<wicket:message key="quests">[Quests]</wicket:message>
+						</h4>
+						<div class="questItems">
+							<div wicket:id="quests" class="questItem">
+								<span class="questLink"> <a href="#"
+									wicket:id="abandonQuest" title="Abandon quest"
+									class="removeAction">Remove</a> <a href="#"
+									wicket:id="viewQuest" title="View this quest"> <span
+										class="questName" wicket:id="questName">[Quest]</span>
+								</a>
+								</span> <span wicket:id="partySize" class="partySize"></span> <span
+									wicket:id="level" class="level"></span>
+							</div>
+						</div>
+						<h4>
+							<wicket:message key="completeQuests">[Complete Quests]</wicket:message>
+						</h4>
+						<div class="completeQuestItems">
+							<div wicket:id="completeQuests" class="questItem">
+								<span class="questLink"> <a href="#"
+									wicket:id="viewQuest" title="View this quest"> <span
+										class="questName" wicket:id="questName">[Quest]</span>
+								</a>
+								</span> <span wicket:id="partySize" class="partySize"></span> <span
+									wicket:id="level" class="level"></span>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div id="tab4">
+				<form wicket:id="tweakForm">
+					<h4>
+						<wicket:message key="tweak">[Create Armour Set From Tweak]</wicket:message>
+					</h4>
+					<p>
+						You can create a new armour set from your current <b>Tweaked
+							Appearance</b> by entering a set name here and clicking Create. A
+						tweaked appearance is created using <i>/creatureTweak</i> in Game
+						when you have <b>no items including bags</b> equipped.
+					</p>
+					<p>This set is refashioning only as it will have no stats. It
+						will be added to your inventory.</p>
+
+					<div wicket:id="tweakFeedback" class="mainFeedback"></div>
+					<div class="inner">
+						<div class="formRow">
+							<label for="setName"><wicket:message key="setName">[Set Name]</wicket:message>:</label>
+							<input wicket:id="setName" id="setName" type="text" size="30" />
+						</div>
+						<div class="formRow">
+							<input wicket:id="suffixSetName" id="suffixSetName"
+								type="checkbox" /> <label for="suffixSetName"><wicket:message
+									key="suffixSetName">[Suffix Set Name]</wicket:message>:</label>
+						</div>
+						<div class="formRow">
+							<label for="armourType"><wicket:message key="armourType">[Armour Type]</wicket:message>:</label>
+							<select wicket:id="armourType" id="armourType">
+							</select>
+						</div>
+						<div class="formRow">
+							<label for="backgroundIcon"><wicket:message
+									key="backgroundIcon">[Background Icon]</wicket:message></label> <span
+								wicket:id="backgroundIconPreview"></span><span
+								wicket:id="backgroundIcon" class="readonly"></span>
+						</div>
+						<div class="hr">
+							<hr />
+						</div>
+						<p class="lowlight">The individual items names will be
+							automatically created as you type the set name, but you may
+							adjust these individually before creating the set.</p>
+						<div class="formRow setItemNames"
+							wicket:id="setItemNamesContainer">
+							<div wicket:id="setItemNames" class="setItemName">
+								<label for="setItemName" wicket:id="setItemNameLabel" /> <span
+									wicket:id="setItemIconPreview"></span> <span
+									wicket:id="setItemIcon" class="readonly"></span> <input
+									wicket:id="setItemName" id="setItemName" type="text" size="30" />
+							</div>
+						</div>
+						<div class="hr">
+							<hr />
+						</div>
+						<div class="inner">
+							<div class="checkRow">
+								<input wicket:id="addSet" id="addSet" type="checkbox" /> <label
+									for="addSet"><wicket:message key="addSet">[Add set]</wicket:message>:</label>
+							</div>
+							<div class="checkRow">
+								<input wicket:id="wearSet" id="wearSet" type="checkbox" /> <label
+									for="wearSet"><wicket:message key="wearSet">[Wear set]</wicket:message>:</label>
+							</div>
+							<div class="checkRow">
+								<input wicket:id="storeSet" id="storeSet" type="checkbox" /> <label
+									for="storeSet"><wicket:message key="storeSet">[Store set]</wicket:message>:</label>
+							</div>
+							<div class="checkRow">
+								<input wicket:id="exportSet" id="exportSet" type="checkbox" /> <label
+									for="exportSet"><wicket:message key="exportSet">[Export set]</wicket:message>:</label>
+							</div>
+						</div>
+						<input type="submit" wicket:id="submitTweak" value="Create" />
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div wicket:id="footer">Footer Component</div>
+</body>
+</html>
+

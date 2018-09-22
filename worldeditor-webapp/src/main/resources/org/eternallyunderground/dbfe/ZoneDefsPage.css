@@ -1,0 +1,18 @@
+td.actions {
+    text-align: center;
+	width: 72px;
+}
+
+td.environmentType {
+    width: 120px;
+}
+
+td.warpName {
+	width: 120p;
+}
+
+td.entityId {
+	width: 80px;
+	text-align: right;
+}
+

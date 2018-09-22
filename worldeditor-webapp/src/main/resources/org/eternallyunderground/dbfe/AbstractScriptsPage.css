@@ -1,0 +1,20 @@
+#aiScriptsPage .contentArea {
+	width: 330px;
+}
+
+#aiScriptsPage .editArea {
+	width: 560px;
+}
+
+td.actions {
+    text-align: center;
+    width: 72px;
+}
+
+textarea.script {
+	margin: 1em;
+	padding: 4px;
+    width: 522px;
+    height: 30em;	
+}
+

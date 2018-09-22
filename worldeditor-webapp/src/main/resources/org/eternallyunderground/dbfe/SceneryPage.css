@@ -1,0 +1,57 @@
+td.entityId {
+	width: 72px;
+}
+
+td.tile {
+    width: 72px;
+}
+
+td.actions {
+    text-align: center;
+    width: 72px;
+}
+
+td.spawnPackage {
+    text-align: left;
+    max-width: 72px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+td.asset {
+    text-align: left;
+    max-width: 96px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.selector input[type=button] {
+    float: right;
+}
+
+.selector a {
+	display: inline-block;
+	width: 130px;
+	height: 16px;
+	overflow: hidden;
+}
+
+.contentArea {
+    width: 470px;
+}
+
+.editArea {
+    width: 420px;
+}
+
+.formRow .xyz {
+	display: inline;
+}
+
+.spawnFlagsContainer {
+	margin-left: 2em;
+	margin-bottom: 1em;
+}

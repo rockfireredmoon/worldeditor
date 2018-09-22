@@ -1,0 +1,28 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+	<div class="selectionBuilder" wicket:id="selectionBuilder">
+		<div class="selectionBuilderItems">
+			<div wicket:id="items" class="selectionBuilderItem">
+				<a href="#" wicket:id="editItem" title="Edit entity"
+					class="editAction">Edit</a> <a href="#" wicket:id="removeItem"
+					title="Remove entity" class="removeAction">Remove</a> <a
+					href="#" wicket:id="viewItem" title="View entity"> <span
+					class="itemName" wicket:id="itemName">[Item]</span>
+				</a>
+			</div>
+		</div>
+        <input type="submit" wicket:id="newItem" value="New"/>
+		<form wicket:id="newItemForm" class="newItemForm">
+			<wicket:enclosure child="itemSelector">
+				<div class="newItemInner">
+					<span wicket:id="itemSelector"> </span>
+				</div>
+                <div class="formRow">
+				    <label><wicket:message key="comment">[Comment]</wicket:message></label>:
+                    <input type="text" wicket:id="comment" value="Add" />
+                </div>
+				<input type="submit" wicket:id="createItem" value="Add" />
+				<input type="submit" wicket:id="saveItem" value="Update" />
+			</wicket:enclosure>
+		</form>
+	</div>
+</wicket:panel>

@@ -1,0 +1,29 @@
+table.selectorItems  {
+	width: 100%;
+}
+
+.selectorItems .actions {
+	width: 72px;
+}
+
+.selectorFilterArea {
+	padding-bottom: 8px;
+}
+
+.navigation {
+	background-color: inherit;
+	padding: 4px 0 4px 0;
+}
+
+.selector {
+	display: inline-block;
+}
+
+.selector a {
+	text-decoration: none;
+}
+
+.selector input[type=button] {
+    margin-left: 4px;
+    margin-bottom: 4px;
+}

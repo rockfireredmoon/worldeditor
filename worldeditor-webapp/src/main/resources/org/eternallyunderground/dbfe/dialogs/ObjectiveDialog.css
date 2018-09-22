@@ -1,0 +1,61 @@
+.objectiveLeft {
+    width: 360px;
+	float: left;
+}
+
+.objectiveLeft textarea {
+	width: 200px;
+}
+
+.objectiveRight {
+	width: 350px;
+    float: right;
+}
+
+.objectiveForm, .objectiveForm input {
+    font-size: 9pt;
+}
+
+.objectiveForm .formActions {
+	width: 100%;
+	clear: both;
+}
+
+.markerNumber {
+	font-size: 14pt;
+	margin-right: 4px;
+}
+
+.markerLocation a {
+	display: block;
+	float: right;
+	height: 20px;
+}
+
+.markerLocations {
+	height: 22px;
+}
+
+.markerLocations a {
+    float: right;
+    padding-top: 2px;
+}
+
+.newMarker {
+	padding-top: 8px;
+}
+
+.addButton {
+	float: left;
+}
+
+.newMarker input[type=text] {
+    margin-right: 12px;
+	width: 5em;
+}
+
+.locationInstance, .xyz {
+	margin-left: 50px; 
+	width: 280px;
+	clear: none;
+}

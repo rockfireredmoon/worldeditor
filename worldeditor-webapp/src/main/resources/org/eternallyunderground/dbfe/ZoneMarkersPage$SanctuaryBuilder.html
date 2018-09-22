@@ -1,0 +1,37 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+	<div class="selectionBuilder" wicket:id="selectionBuilder">
+		<div class="selectionBuilderItems">
+			<div wicket:id="items" class="selectionBuilderItem">
+				<a href="#" wicket:id="editItem" title="Edit entity"
+					class="editAction">Edit</a> 
+				<a href="#" wicket:id="removeItem"
+					title="Remove entity" class="removeAction">Remove</a> 
+				<span
+					class="itemName" wicket:id="itemName">[Item]</span>
+			</div>
+		</div>
+        <input type="submit" wicket:id="newItem" value="New" />
+		<form wicket:id="newItemForm" class="newItemForm">
+			<wicket:enclosure child="itemDisplay">
+				<div class="newItemInner">
+					<span wicket:id="itemDisplay"> </span>
+				</div>
+                <div class="formRow">
+                    <label><wicket:message key="description">[Comment]</wicket:message></label>:
+                    <input type="text" wicket:id="description" size="20"/>
+                </div>
+                <div class="formRow">
+                    <label><wicket:message key="location">[Location]</wicket:message></label>:
+                    <span wicket:id="location" id="location">
+                    </span>
+                </div>
+                <div class="formRow">
+                    <label><wicket:message key="map">[Map]</wicket:message></label>:
+                    <input type="text" wicket:id="map" id="map" size="20"/>
+                </div>
+				<input type="submit" wicket:id="createItem" value="Add" />
+				<input type="submit" wicket:id="saveItem" value="Update" />
+			</wicket:enclosure>
+		</form>
+	</div>
+</wicket:panel>

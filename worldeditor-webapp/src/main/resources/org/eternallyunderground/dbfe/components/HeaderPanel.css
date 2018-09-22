@@ -1,0 +1,41 @@
+.banner {
+    background-image: url('header.jpg');
+    background-repeat:no-repeat;
+    width: 100%;
+    background-color: #FF6100;
+    height: 90px;
+}
+
+.header {
+    padding: 0 1px 1px;
+    margin-left: 0;
+    margin-bottom: 8px;
+    font-size: 10pt;
+}
+
+.infoArea {
+	position: relative;
+	top: 26px;
+	right: 150px;
+    float: right;
+    font-weight: bold;
+    color: white;	
+}
+
+a.signOut {
+    padding: 6px 4px 0 0;
+    float: right;
+}
+
+a.signOut:HOVER {
+    color: white;
+}
+
+a.switchLink {
+	padding: 3px 4px 0 0;
+	float: right;
+}
+
+a.switchLink, a.switchLink:hover,a.switchLink:visited {
+    color: white;
+}

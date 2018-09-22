@@ -1,0 +1,10 @@
+.colorField .picker {
+	width: 20px;
+	height: 19px;
+	display: inline-block;
+	background: url('picker.gif') no-repeat;
+}
+
+#colorPickerArea {
+	z-index: 1200;
+}

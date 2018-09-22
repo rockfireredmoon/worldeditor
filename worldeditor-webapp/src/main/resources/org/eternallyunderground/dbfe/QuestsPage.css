@@ -1,0 +1,99 @@
+#questsPage .contentArea {
+    width: 430px;
+}
+
+#questsPage .editArea {
+    width: 460px;
+}
+
+td.entityId {
+    width: 60px;
+}
+
+td.actions {
+    text-align: center;
+    width: 72px;
+}
+
+td.level {
+    width: 48px;    
+}
+
+td.exp {
+	width: 32px;
+}
+
+textarea.text {
+    margin: 1em;
+    padding: 4px;
+    width: 422px;
+    height: 8em;   
+}
+
+.location {
+	width: 350px;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.actsActions {
+    padding: 8px 0 8px 0;	
+}
+.actsActions input {
+	padding-right: 8px;
+}
+
+.selector input[type=button] {
+    float: right;
+}
+
+.addButton {
+    float: left;
+    margin-right: 1em;
+}
+
+.copyDown {
+	float: left;
+}
+
+.leadsTo {
+	width: 260px;
+	float: left;
+}
+
+.leadsTo ul {
+	padding: 0;	
+	margin: 0;
+}
+
+.leadsTo li {
+	list-style-type: none;
+}
+
+.tree-node a, .tree-node a:VISITED {
+	text-decoration: none;
+    font-size: 10pt;
+}
+.tree-subtree a {
+	font-size: 8pt;
+	font-style: italic;
+	padding-left: 20px;
+} 
+
+.tree-node a.selected {
+	background-color: #F69603;
+	color: white;
+}
+
+.tree-node a.tree-folder-open {
+}
+
+.checkInsert {
+	margin-left: 5em;
+	width: 180px;
+	height: 7em;
+}
+
+.checkInsert .timeUnit {
+	float: right;
+}

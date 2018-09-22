@@ -1,0 +1,40 @@
+td.entityId {
+}
+
+td.actions {
+    text-align: center;
+    width: 72px;
+}
+
+td.auto {
+    width: 80px;
+}
+
+.newSetForm {
+    padding-top: 10px;
+}
+
+.newSetForm .browse, .newSetForm .clear {
+    float: none;
+}
+
+.setItem {
+    height: 24px;
+    margin: 6px 0;
+}
+
+.setItem a {
+    float: left;
+}
+
+.setItem span.itemName {
+    font-weight: bold;
+    display: inline-block;
+    width: 200px;
+}
+
+.removeAction {
+    padding-right: 4px;
+}
+
+

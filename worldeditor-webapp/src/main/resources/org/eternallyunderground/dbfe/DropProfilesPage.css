@@ -1,0 +1,26 @@
+#dropProfilesPage .contentArea {
+    width: 330px;
+}
+
+#dropProfilesPage .editArea {
+    width: 560px;
+}
+
+.editTable thead td {
+	font-weight: bold;
+	text-align: center;
+	font-size: 8pt;
+}
+
+.editTable td:NTH-CHILD(1) {
+	width: 7em;
+}
+
+.editTable td {
+	width: 5em;
+}
+
+.pageInfoArea {	
+    font-size: 8pt;
+    padding: 1em;
+}

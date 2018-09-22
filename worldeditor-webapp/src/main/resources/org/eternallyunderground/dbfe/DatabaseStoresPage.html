@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div wicket:id="header">Header</div>
+	<div id="mainContent">
+		<div class="mainFeedback" wicket:id="feedback"></div>
+		<div wicket:id="confirmDeleteDialog"></div>
+		<div wicket:id="confirmCloneDialog"></div>
+		<div class="editArea">
+			<form class="itemForm" wicket:id="form">
+				<h2>
+					<span wicket:id="editTitle">[Edit Database Store]</span>
+				</h2>
+				<div class="inner">
+					<input type="submit" wicket:id="activate" class="activate"
+						value="Activate" /> <label for="activate"><wicket:message
+							key="activate.text">[Activate]</wicket:message>:</label>
+
+					<div class="hr">
+						<hr />
+					</div>
+					<div class="formRow">
+						<label for="entityId" class="required"><wicket:message
+								key="entityId">[ID]</wicket:message>:</label> <input
+							wicket:id="entityId" id="entityId" type="text" size="10" />
+					</div>
+					<div class="formRow">
+						<label for="source" class="required"><wicket:message
+								key="source">[Source]</wicket:message>:</label> <select
+							wicket:id="source"></select>
+					</div>
+					<div class="formRow">
+						<label for="url" class="required"><wicket:message
+								key="url">[URL]</wicket:message>:</label> <input wicket:id="url"
+							id="url" type="text" size="20" />
+					</div>
+					<div class="formRow">
+						<label for="branch" class="required"><wicket:message
+								key="branch">[Branch]</wicket:message>:</label> <input
+							wicket:id="branch" id="branch" type="text" size="20" />
+					</div>
+					<div class="formRow">
+						<label for="creator" class="required"><wicket:message
+								key="creator">[Creator]</wicket:message>:</label> <input
+							wicket:id="creator" id="creator" type="text" size="20" />
+					</div>
+
+
+					<div class="hr">
+						<hr />
+					</div>
+					<div class="formActions">
+						<input type="submit" wicket:id="nextButton" class="nextButton"
+							value="Next" /> <input type="submit" wicket:id="previousButton"
+							class="previousButton" value="Previous" /> <input type="submit"
+							wicket:id="saveButton" value="Save" /> <input type="submit"
+							wicket:id="resetButton" value="Reset" />
+					</div>
+					<div class="hr">
+						<hr />
+					</div>
+					<h4>
+						<wicket:message key="status">[Status]</wicket:message>
+					</h4>
+
+					<wicket:enclosure>
+						<div class="formRow">
+							<input type="submit" wicket:id="pull" class="pull" value="Pull" />
+							<wicket:message key="pull.text">[Pull]</wicket:message>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure>
+						<div class="formRow">
+							<input type="submit" wicket:id="checkout" class="checkout"
+								value="Checkout" />
+							<wicket:message key="checkout.text">[Checkout]</wicket:message>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="push">
+						<div class="formRow">
+							<input type="submit" wicket:id="push" class="push" value="Push" />
+							<wicket:message key="push.text">[Push]</wicket:message>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="commitPush">
+						<div class="formRow">
+							<input type="submit" wicket:id="commitPush" class="commitPush"
+								value="Commit/Push" />
+							<wicket:message key="commitPush.text">[Commit/Push]</wicket:message>
+						</div>
+
+						<div class="formRow">
+							<label for="email" class="required"><wicket:message
+									key="email">[Email]</wicket:message>:</label> <input wicket:id="email"
+								id="email" type="text" size="20" />
+						</div>
+						<div class="formRow">
+							<label for="message" class="required"><wicket:message
+									key="message">[Message]</wicket:message>:</label>
+							<textarea wicket:id="message" id="message" rows="4" cols="30" />
+						</div>
+
+					</wicket:enclosure>
+
+					<div class="formRow" wicket:id="upToDate">
+						<wicket:message key="upToDate.text">[Up To Date]</wicket:message>
+					</div>
+
+					<div class="formRow" wicket:id="available">
+						<wicket:message key="available.text">[Available]</wicket:message>
+					</div>
+
+					<wicket:enclosure child="gitUsername">
+						<div class="git-details">
+							<div class="info-text">
+								<img wicket:id="githubLogo" src="GitHub-Mark-Light-64px.png"
+									style="float: left;" /> The username and password below are
+								your <a href="http://github.com">GitHub</a> credentials, not
+								your website or game credentials.
+							</div>
+							<div class="formRow">
+								<label for="gitUsername" class="required"><wicket:message
+										key="gitUsername">[Git Username]</wicket:message>:</label> <input
+									wicket:id="gitUsername" id="gitUsername" type="text" size="20" />
+							</div>
+							<div class="formRow">
+								<label for="gitPassword" class="required"><wicket:message
+										key="gitPassword">[Git Password]</wicket:message>:</label> <input
+									wicket:id="gitPassword" id="gitPassword" type="password"
+									size="20" />
+							</div>
+						</div>
+					</wicket:enclosure>
+				</div>
+			</form>
+		</div>
+		<div class="contentArea">
+			<div wicket:id="entityActions"></div>
+			<form class="filterForm" wicket:id="filterForm">
+				<table class="items" wicket:id="table">
+				</table>
+			</form>
+		</div>
+
+	</div>
+	<div wicket:id="footer">Footer Component</div>
+</body>
+</html>
+

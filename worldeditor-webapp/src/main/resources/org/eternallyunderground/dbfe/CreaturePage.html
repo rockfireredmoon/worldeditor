@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div wicket:id="header">Header</div>
+	<div id="mainContent">
+
+		<div class="leftBar">
+			<div class="youArea">
+				<h2>
+					<wicket:message key="creature">[Creature]</wicket:message>
+				</h2>
+				<div class="inner">
+					<div class="avatarContainer">
+						<img wicket:id="avatar" class="avatar thumbnail" />
+					</div>
+					<img wicket:id="professionImage" class="professionImage" />
+					<div class="formRow">
+						<h3 wicket:id="displayName" />
+					</div>
+					<div class="formRow">
+						<h4>
+							Level <span wicket:id="level" /> <span wicket:id="gender" /> <span
+								wicket:id="race" /> <span wicket:id="profession" />
+						</h4>
+					</div>
+					<div class="inner characterActions">
+						<a href="#" wicket:id="uploadAvatar" class="uploadLink"><wicket:message
+								key="uploadPhoto">[Upload Photo]</wicket:message></a>
+						<div wicket:id="uploadAvatarDialog">
+							<span wicket:id="uploadAvatarPanel" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div wicket:id="tabs" class="creatureTabs">
+			<ul>
+				<li><a href="#tab1">Map</a></li>
+				<li><a href="#tab2">Quests</a></li>
+			</ul>
+
+			<div id="tab1">
+				<div wicket:id="mapPanel"></div>
+			</div>
+			<div id="tab2">
+				<div wicket:id="questsPanel"></div>
+			</div>
+		</div>
+	</div>
+	<div wicket:id="footer">Footer Component</div>
+</body>
+</html>
+

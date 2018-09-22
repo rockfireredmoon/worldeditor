@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div wicket:id="header">Header</div>
+	<div id="mainContent">
+		<div class="mainFeedback" wicket:id="feedback"></div>
+		<div wicket:id="confirmDeleteDialog"></div>
+		<div wicket:id="confirmCloneDialog"></div>
+		<div class="editArea">
+			<form class="itemForm" wicket:id="form">
+				<h2>
+					<span wicket:id="editTitle">[Edit Spawn Package]</span>
+				</h2>
+				<div class="inner">
+					<h4>
+						<wicket:message key="basic">[Basic]</wicket:message>
+					</h4>
+					<div class="formRow">
+						<label for="name" class="required"><wicket:message
+								key="entityId">[ID]</wicket:message>:</label> <input
+							wicket:id="entityId" id="entityId" type="text" size="20" />
+					</div>
+					<div class="formRow">
+						<label class="required" for="file"><wicket:message
+								key="file">[File]</wicket:message>:</label> <select wicket:id="file" />
+					</div>
+					<div class="hr">
+						<hr />
+					</div>
+					<div wicket:id="flags" />
+					<div class="hr">
+						<hr />
+					</div>
+					<div id="spawns" wicket:id="spawnsContainer">
+						<h4>
+							<wicket:message key="spawns">[Spawns]</wicket:message>
+						</h4>
+						<div class="formRow">
+							<label for="shares"><wicket:message key="shares">[Shares]</wicket:message>:</label>
+							<input wicket:id="shares" id="shares" type="text" size="3" />
+						</div>
+						<div class="spawnItems">
+							<div wicket:id="spawns" class="spawnItem">
+								<a href="#" wicket:id="editSpawn"
+									title="Edit spawn in this package" class="editAction">Edit</a>
+								<a href="#" wicket:id="removeSpawn"
+									title="Remove spawn from package" class="removeAction">Remove</a>
+								<a href="#" wicket:id="viewSpawn" title="View this spawn"> <span
+									class="spawnName" wicket:id="spawnName">[Spawn]</span>
+								</a> <span wicket:id="spawnNumber" class="spawnNumber"></span>
+								<div>
+									<span class="spawnComment" wicket:id="spawnComment">[Comment]</span>
+								</div>
+							</div>
+						</div>
+						<form wicket:id="newSpawnForm" class="newSpawnForm">
+							<input type="submit" wicket:id="newSpawn" value="New" />
+							<wicket:enclosure child="spawnSelector">
+								<div class="newSpawnInner">
+									<span wicket:id="spawnSelector"> </span>
+								</div>
+								<span>Chance:</span>
+								<input type="text" wicket:id="newChance" size="3" />
+								<span>Comment:</span>
+								<input type="text" wicket:id="newComment" size="15" />
+								<input type="submit" wicket:id="createSpawn" value="Add" />
+								<input type="submit" wicket:id="saveSpawn" value="Save" />
+							</wicket:enclosure>
+						</form>
+					</div>
+					<div class="hr">
+						<hr />
+					</div>
+					<h4>
+						<wicket:message key="advanced">[Advanced]</wicket:message>
+					</h4>
+					<div class="formRow">
+						<label for="uniquePoints"><wicket:message
+								key="uniquePoints">[Divide Share Threshold]</wicket:message>:</label> <input
+							wicket:id="uniquePoints" id="uniquePoints" type="text" size="3" />
+					</div>
+					<div class="formRow">
+						<label for="loyaltyRadius"><wicket:message
+								key="loyaltyRadius">[loyaltyRadius]</wicket:message>:</label> <input
+							wicket:id="loyaltyRadius" id="loyaltyRadius" type="text" size="3" />
+					</div>
+					<div class="formRow">
+						<label for="spawnDelay"><wicket:message key="spawnDelay">[spawnDelay]</wicket:message>:</label>
+						<input wicket:id="spawnDelay" id="spawnDelay" type="text" size="3" />
+					</div>
+					<div class="formRow">
+						<label for="wanderRadius"><wicket:message
+								key="wanderRadius">[loyaltyRadius]</wicket:message>:</label> <input
+							wicket:id="wanderRadius" id="wanderRadius" type="text" size="3" />
+					</div>
+					<div class="formRow">
+						<label for="divideOrient" class="required"><wicket:message
+								key="divideOrient">[Mode]</wicket:message>:</label> <select
+							wicket:id="divideOrient"></select>
+					</div>
+					<div class="formRow">
+						<label for="divide"><wicket:message key="divide">[Divide Location]</wicket:message>:</label>
+						<input wicket:id="divide" id="divide" type="text" size="5" />
+					</div>
+					<div class="formRow">
+						<label for="divideShareThreshold"><wicket:message
+								key="divideShareThreshold">[Divide Share Threshold]</wicket:message>:</label>
+						<input wicket:id="divideShareThreshold" id="divideShareThreshold"
+							type="text" size="3" />
+					</div>
+					<div class="checkRow">
+						<input type="checkbox" wicket:id="sequential" /> <label
+							for="sequential"><wicket:message key="sequential">[Sequential]</wicket:message></label>
+					</div>
+					<div class="checkRow">
+						<input type="checkbox" wicket:id="scriptCall" /> <label
+							for="scriptCall"><wicket:message key="scriptCall">[Script Call]</wicket:message></label>
+					</div>
+					<div class="hr">
+						<hr />
+					</div>
+					<div class="formActions">
+						<input type="submit" wicket:id="nextButton" class="nextButton"
+							value="Next" /> <input type="submit" wicket:id="previousButton"
+							class="previousButton" value="Previous" /> <input type="submit"
+							wicket:id="saveButton" value="Save" /> <input type="submit"
+							wicket:id="resetButton" value="Reset" />
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="contentArea">
+			<div wicket:id="entityActions"></div>
+			<form class="filterForm" wicket:id="filterForm">
+				<table class="items" wicket:id="table">
+				</table>
+			</form>
+		</div>
+	</div>
+	<div wicket:id="footer">Footer Component</div>
+</body>
+</html>
+

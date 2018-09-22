@@ -1,0 +1,14 @@
+
+
+.options {
+    position: relative;
+    z-index: 100;
+    clear: right;
+    width: 110px;
+    float: right;
+    height: 110px;
+}
+
+.options form label {
+    font-size: 8pt; 
+}

@@ -1,0 +1,15 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+<input type="button" wicket:id="remove" class="clear" alt="Remove this item" value=" " />
+<wicket:enclosure>
+Node:
+<input wicket:id="node" type="text" class="node" size="10"/>
+</wicket:enclosure>
+Ass.:
+<span wicket:id="asset" class="asset"/>
+<input wicket:id="addColour" type="submit" class="addColour" value="+"/>
+<span class="colours">
+<span wicket:id="colours">
+     <span wicket:id="colour" class="colorPickerField assetColour"/>
+</span>
+</span>
+</wicket:panel>

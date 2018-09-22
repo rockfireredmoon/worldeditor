@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:wicket="http://wicket.sourceforge.net/" 
+	xml:lang="en" 
+	lang="en">  
+<head>
+	<link rel="stylesheet" href="AbstractPage.css"/>
+    <link rel="stylesheet" href="EntityActionsPanel.css"/>
+</head>
+<body>
+	<wicket:panel>
+	   <div class="actionsArea">
+		    <form wicket:id="entityActionsForm" id="entityActionsForm">
+                <h2><span wicket:id="entity">[Actions]</span></h2>
+                <div class="inner">
+			         <input type="submit" wicket:id="newEntity" value="New" />
+                     <input type="submit" wicket:id="raw" value="Raw" />
+                     <input type="submit" wicket:id="exportList" value="Export" />
+                </div>
+                <div wicket:id="rawDialog" class="rawDialog">
+                    <textarea wicket:id="rawText"/>
+                    <input type="submit" wicket:id="saveRaw" value="save"/>
+                </div>
+		    </form>
+       </div>
+	</wicket:panel>
+</body>
+</html>

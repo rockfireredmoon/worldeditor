@@ -1,0 +1,40 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+	<div wicket:id="dialog">
+		<form wicket:id="itemAppearanceForm">
+
+			<div class="mainFeedback" wicket:id="itemAppearanceFeedback"></div>
+
+			<div wicket:id="tabs" class="itemAppearanceTabs">
+				<ul>
+					<li><a href="#tab1">Raw</a></li>
+					<li><a href="#tab2">Make From Tweak</a></li>
+				</ul>
+
+				<div id="tab1">
+					<div wicket:id="rawContainer">
+					   Use this tab to paste in or edit the <b>raw item appearance string</b>. Remember, this
+					   is NOT the same as that produce by tweak, although the format is similar and you can
+					   manually make an appearance string from a creature tweak string if you know you what you are
+					   doing. 
+						<textarea wicket:id="raw" rows="24" cols="802">
+                         </textarea>
+						<input wicket:id="apply" type="submit" value="Apply" />
+					</div>
+				</div>
+
+                <div id="tab2">
+                    TODO: This tab will be used to build a new appearance given a 
+                    CreatureTweak string. You will be able to choose which parts
+                    of the appearance to add to the item. You may want to tweak
+                    the individual parts afterwards 
+                </div>
+			</div>
+
+                <div class="formActions">
+                    <input type="submit" wicket:id="saveButton" value="Save" />
+                </div>
+
+
+		</form>
+	</div>
+</wicket:panel>

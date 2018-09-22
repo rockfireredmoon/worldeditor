@@ -1,0 +1,12 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+<span wicket:id="type" class="typeLabel">[Type]</span>
+Ass.: <span wicket:id="asset" class="asset"/>
+<input wicket:id="addColour" type="submit" class="addColour" value="+"/>
+<div class="colours">
+<span wicket:id="colours">
+     <span wicket:id="colour" class="colorPickerField assetColour"/>
+</span>
+</div>
+<input type="button" wicket:id="remove" class="clear" alt="Remove this item" value=" " />
+<input type="button" wicket:id="copy" alt="Copy this item's colours and asset to all other items" class="copy" value="Copy" />
+</wicket:panel>

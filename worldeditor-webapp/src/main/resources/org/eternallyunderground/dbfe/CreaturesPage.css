@@ -1,0 +1,55 @@
+td.entityId {
+    width: 60px;
+}
+
+td.actions {
+    text-align: center;
+    width: 78px;
+}
+
+td.level {
+    width: 48px;    
+}
+
+td.profession {
+	width: 32px;
+	text-align: center;
+}
+
+td.profession img {
+	height: 16px;
+	width: 16px;
+}
+
+.dexterity {
+	float: left;
+}
+
+#resistance table {
+	width: 100%;
+}
+
+#resistance td {
+	text-align: center;
+}
+
+#stats table  {
+	margin: 0 auto 1em auto;
+}
+
+#stats td {
+    text-align: center;
+}
+
+.selector input[type=button] {
+    float: right;
+}
+
+.spawnsArea {
+    width: 350px;
+    margin-top: 8px;
+    margin-left: 8px;
+    float: right;
+    border:1px solid #F69603;
+    background-color: #333;
+}

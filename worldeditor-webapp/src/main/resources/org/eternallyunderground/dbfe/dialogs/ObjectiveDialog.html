@@ -1,0 +1,121 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+	<div wicket:id="objectiveDialogWidget" class="objectiveDialog">
+		<form wicket:id="objectiveForm" class="objectiveForm">
+		    <div class="mainFeedback" wicket:id="objectiveFeedback">
+		    </div>
+		    <div class="objectiveLeft">
+		        <h4><wicket:message key="basic">[Basic]</wicket:message></h4>
+			    <div class="formRow">
+			        <label for="objectiveType"><wicket:message key="objectiveType">[Type]</wicket:message>:</label>
+			        <select wicket:id="type"></select>
+			    </div>
+			    <div class="formRow">
+			        <label for="description" class="required"><wicket:message key="description">[Description]</wicket:message>:</label>
+			        <textarea wicket:id="description" cols="20" rows="5"/>
+			    </div> 
+			    <wicket:enclosure child="distance">
+		            <div class="selectorRow">
+		                <label for="activateArea"><wicket:message key="activateArea">[Activate Area]</wicket:message>:</label>
+		                <span wicket:id="activateArea" class="readonly">
+		                </span>
+		            </div>
+		            <div class="formRow">
+		                <label for="distance"><wicket:message key="distance">[Distance]</wicket:message>:</label>
+		                <input wicket:id="distance" type="text" size="3"/>
+		            </div>
+		        </wicket:enclosure>
+				 <wicket:enclosure>
+		            <div class="formRow">
+		                <label for="quantity"><wicket:message key="quantity">[Quantity]</wicket:message>:</label>
+		                <input wicket:id="quantity" type="text" size="3"/>
+		            </div>
+		        </wicket:enclosure>
+				
+		        <wicket:enclosure>
+				    <div class="selectorRow">
+				        <label for="creatureId" class="required"><wicket:message key="creatureId">[Creature]</wicket:message>:</label>
+				        <span wicket:id="creatureId" class="readonly">
+				        </span>
+				    </div>
+		        </wicket:enclosure>
+		        
+		        <wicket:enclosure>
+				    <div class="selectorRow">
+				        <label for="itemId"><wicket:message key="itemId">[Item]</wicket:message>:</label>
+				        <span wicket:id="itemId" class="readonly">
+				        </span>
+				    </div>
+				</wicket:enclosure>
+				
+		        <wicket:enclosure>
+				    <div class="formRow">
+				        <label for="completeText"><wicket:message key="completeText">[Complete Text]</wicket:message>:</label>
+				        <textarea wicket:id="completeText" cols="20" rows="2"/>
+				    </div>
+		        </wicket:enclosure>
+		        
+		         <wicket:enclosure child="creaturesContainer">
+		           <div class="hr"><hr/></div>
+		           <h4><wicket:message key="creatures">[Creatures]</wicket:message></h4>
+		            <div class="formRow">
+                        <div wicket:id="creaturesContainer">
+			                <div wicket:id="creatures" class="creatures">
+			                    <a href="#" wicket:id="removeCreature" title="Remove creature from objective" class="removeAction">Remove</a>
+			                    <a href="#" wicket:id="viewCreature" title="View this character">
+			                        <span wicket:id="creature"></span>
+			                    </a>
+			                </div>
+		                </div>
+		            </div>
+		            <div class="formRow">
+		                <span wicket:id="newCreature" class="newCreature">
+		                </span>
+		            </div>
+		         </wicket:enclosure>
+		    </div>
+		    <div class="objectiveRight">
+		       <h4><wicket:message key="markers">[Markers]</wicket:message></h4>
+			   <div class="formRow">
+			       <div class="formRow">
+			            <div wicket:id="markerContainer">
+			                <div wicket:id="markerLocations" class="markerLocations">
+			                    <span wicket:id="markerNumber" class="markerNumber">[1]</span>
+			                    <span wicket:id="markerLocation"></span>
+			                    <a href="#" wicket:id="removeMarker" title="Remove marker from objective" class="removeAction">Remove</a>
+			                </div>
+		                </div>
+		            </div>
+		            <div class="formRow">
+		                <span wicket:id="newMarker" class="newMarker">
+		                </span>
+                    </div>
+                    <div class="formRow">
+                        <input type="submit" wicket:id="submitNewMarker" id="addMarkButton" value="Add" class="addButton"/>
+		            </div>
+			   </div>
+			   <wicket:enclosure child="activateText">
+			       <div class="hr"><hr/></div>
+			       <h4><wicket:message key="activate">[Activate]</wicket:message></h4>
+			       <div class="formRow">
+			           <label for="activateText"><wicket:message key="activateText">[Activate Text]</wicket:message>:</label>
+			           <textarea wicket:id="activateText" cols="20" rows="2"/>
+			       </div>
+			       <div class="formRow">
+		               <label for="activateTime"><wicket:message key="activateTime">[Activate Time]</wicket:message>:</label>
+		               <input wicket:id="activateTime" type="text" size="4"/>ms
+		           </div>
+		       </wicket:enclosure>
+		       <div class="hr"><hr/></div>
+		       <h4><wicket:message key="other">[Other]</wicket:message></h4>
+		       <div class="checkRow">
+		            <input type="checkbox" wicket:id="complete"/>
+		            <label for="complete"><wicket:message key="complete">[Complete]</wicket:message></label>
+		       </div>
+		    </div>
+		    <div class="formActions">
+		        <input type="submit" wicket:id="saveObjective" value="Save"/>
+		    </div>
+		</form>
+	</div>
+</wicket:panel>
+	

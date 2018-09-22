@@ -1,0 +1,36 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>DBFE</display-name>
+  
+     <filter>
+        <filter-name>worldeditor</filter-name>
+        <filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+        <init-param>
+          <param-name>applicationClassName</param-name>
+          <param-value>org.icemoon.worldeditor.Application</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>worldeditor</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+   
+    <servlet><servlet-name>OEmbedCompressor</servlet-name>
+    	<display-name>OEmbedCompressor</display-name>
+    	<description></description>
+    	<servlet-class>oembedcompressor.OEmbedCompressor</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>OEmbedCompressor</servlet-name>
+    	<url-pattern>/OEmbedCompressor</url-pattern>
+    </servlet-mapping>
+    <env-entry>
+	    <env-entry-name>serverpath</env-entry-name>
+	    <env-entry-type>java.lang.String</env-entry-type>
+	    <!-- Must provide real path in container configuration -->
+	    <env-entry-value>EEServer/Data</env-entry-value>
+	</env-entry>
+</web-app>

@@ -1,0 +1,139 @@
+.tab1 .hr {
+	padding: 1px 0;
+}
+
+.appearanceTabs .ui-tabs-panel {
+    overflow: auto;
+    height: 290px;
+}
+
+.appearanceTabs #tab4 textarea {
+    width: 54em;
+    height: 18em;
+}
+
+.clothingItem {
+}
+
+.clothingItem .typeLabel {
+	display: inline-block;
+	width: 120px;
+}
+
+.clothingItem .colours {
+	display: inline-block;
+	width: 410px;
+}
+
+.clothingItem input {
+	margin-bottom: 6px;
+}
+
+.clothingItem .clear {
+	float:right;
+	padding-right: 0;
+	margin-right: 0;
+}
+
+.clothingItem .typeLabel {
+	font-size: 9pt;
+	width: 64px;
+}
+
+.clothingItem .copy {
+    float:right;
+    margin-right: 6px;
+}
+
+.clothingItem .asset {
+	width: 7em;
+	font-size: 8pt;
+}
+
+.skinElement input {
+    margin-bottom: 6px;
+}
+
+.skinElement input[type=text] {
+    margin-bottom: 6px;
+    font-size: 9pt;
+}
+
+.skinElement {
+	float: left; 
+	width: 210px;
+}
+
+.ui-menu {
+	height: 200px;
+	overflow: scroll;
+}
+
+.addNewClothingItem, .addNewSkinElement {
+	width: 100%;
+	text-align: enter;
+	clear: both;
+	padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 9pt;
+}
+
+.addColour {
+	font-size: 9pt
+}
+
+input.assetColour, input.skinElementColour {
+    font-size: 9pt;
+	width: 44px;
+}
+
+.subformFeedback {
+	padding-top: 8px;
+	width: 100%;
+	clear: both;
+}
+
+.subformFeedback .feedbackPanelERROR {
+	color: #ff0000;
+}
+
+.topRow {
+	float: left;
+	width: 240px;
+}
+
+.appearanceBasic {
+	height: 88px;
+}
+
+.appearanceBasic label {
+    font-size: 10pt;
+    font-weight: bold;
+    width: 80px !important;
+}
+
+.colorPickerField .rgb {
+    font-size: 9pt;
+    font-family: monospace;
+    width: 5em;
+}
+
+.attachmentItem {
+    font-size: 9pt;
+}
+
+.attachmentItem .clear {
+	width: 16px;
+}
+
+.attachmentItem .colours {
+	width: 450px;
+	display: inline-block;
+}
+
+.attachmentItem .colours input[type=text] {
+	padding-bottom: 2px;
+}
+
+.attachmentItem input[type=text] {
+}

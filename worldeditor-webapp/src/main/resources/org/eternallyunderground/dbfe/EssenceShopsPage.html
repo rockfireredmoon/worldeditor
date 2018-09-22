@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div wicket:id="header">Header</div>
+	<div id="mainContent">
+		<div class="mainFeedback" wicket:id="feedback"></div>
+		<div wicket:id="confirmDeleteDialog"></div>
+		<div wicket:id="confirmCloneDialog"></div>
+		<div class="editArea">
+			<form class="itemForm" wicket:id="form">
+				<h2>
+					<span wicket:id="editTitle">[Edit Essence Shop]</span>
+				</h2>
+				<div class="inner">
+					<div class="formRow">
+						<label for="zone" class="required"><wicket:message
+								key="zone">[Zone]</wicket:message>:</label> <span wicket:id="zone">
+						</span>
+					</div>
+					<div class="formRow">
+						<label for="creature" class="required"><wicket:message
+								key="creature">[Creature]</wicket:message>:</label> <span
+							wicket:id="creature"> </span>
+					</div>
+					<div class="formRow">
+						<label for="essence" class="required"><wicket:message
+								key="essence">[Essence]</wicket:message>:</label> <span
+							wicket:id="essence"> </span>
+					</div>
+					<div class="formRow">
+						<label for="comment"><wicket:message key="comment">[Commment]</wicket:message>:</label>
+						<textarea wicket:id="comment" cols="30" rows="6">
+                           </textarea>
+					</div>
+					<div class="hr">
+						<hr />
+					</div>
+					<h4>
+						<wicket:message key="items">[Items]</wicket:message>
+					</h4>
+					<div wicket:id="items"></div>
+					<div class="hr">
+						<hr />
+					</div>
+					<div class="formActions">
+						<input type="submit" wicket:id="nextButton" class="nextButton"
+							value="Next" /> <input type="submit" wicket:id="previousButton"
+							class="previousButton" value="Previous" /> <input type="submit"
+							wicket:id="saveButton" value="Save" /> <input type="submit"
+							wicket:id="resetButton" value="Reset" />
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="contentArea">
+			<div wicket:id="entityActions"></div>
+			<form class="filterForm" wicket:id="filterForm">
+				<table class="items" wicket:id="table">
+				</table>
+			</form>
+		</div>
+
+	</div>
+	<div wicket:id="footer">Footer Component</div>
+</body>
+</html>
+

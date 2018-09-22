@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div id="booksPage">
+		<div wicket:id="header">Header</div>
+		<div id="mainContent">
+			<div class="mainFeedback" wicket:id="feedback"></div>
+			<div wicket:id="confirmDeleteDialog"></div>
+			<div wicket:id="confirmCloneDialog"></div>
+			<div wicket:id="confirmDeletePageDialog"></div>
+			<div class="editArea">
+				<form class="itemForm" wicket:id="form" onsubmit="">
+					<h2>
+						<span wicket:id="editTitle">[Edit Book]</span>
+					</h2>
+					<div class="inner">
+						<wicket:enclosure>
+							<div class="formRow">
+								<label class="required" for="idType"><wicket:message
+										key="idType">[ID Type]</wicket:message>:</label> <select
+									wicket:id="idType" />
+							</div>
+						</wicket:enclosure>
+						<div class="formRow">
+							<label for="entityId"><wicket:message key="entityId">[ID]</wicket:message></label>:
+							<input wicket:id="entityId" id="entityId" type="text" size="15" />
+						</div>
+						<div class="formRow">
+							<label for="title"><wicket:message key="title">[Title]</wicket:message></label>:
+							<input wicket:id="title" id="title" type="text" size="15" />
+						</div>
+						<div class="hr">
+							<hr />
+						</div>
+						<div
+						 wicket:id="additionalContainer">
+							<div class="additional">
+	                            <h4>
+	                                <wicket:message key="itemAndCreature">[Item And Creature]</wicket:message>
+	                            </h4>
+	                            <div class="pageInfoArea">
+                                    <wicket:message key="itemAndCreature.info">[Info]</wicket:message>
+                                </div>
+                                
+		                        <div class="formRow">
+		                            <label class="required" for="prop"><wicket:message key="prop">[Prop]</wicket:message></label>:
+		                            <input wicket:id="prop" id="prop" type="text" size="15" />
+		                        </div>
+                                <div class="formRow">
+                                    <label class="required" for="propDisplayName"><wicket:message key="propDisplayName">[Prop Name]</wicket:message></label>:
+                                    <input wicket:id="propDisplayName" id="propDisplayName" type="text" size="15" />
+                                </div>
+	                            <div class="formRow">
+	                                <label for="propSize"><wicket:message key="propSize">[Prop Size]</wicket:message></label>:
+	                                <input wicket:id="propSize" id="propSize" type="text" size="5" />
+	                            </div>
+	                            <div class="icons">
+		                            <span wicket:id="iconPreview" class="iconPreview" /> <a
+		                                wicket:id="swap" href="#" class="swapAction">Swap</a>
+		                            <div class="formRow">
+		                                <label class="required" for="icon1"><wicket:message key="icon1">[Icon 1]</wicket:message></label>
+		                                <span wicket:id="icon1Preview"></span><span wicket:id="icon1"
+		                                    class="readonly"></span>
+		                            </div>
+		                            <div class="formRow">
+		                                <label class="required" for="icon2"><wicket:message key="icon2">[Icon 2]</wicket:message></label>
+		                                <span wicket:id="icon2Preview"></span><span wicket:id="icon2"
+		                                    class="readonly"></span>
+		                            </div>
+		                        </div>
+		                        <div class="hr">
+		                            <hr />
+		                        </div>
+	                        </div>
+                        </div>
+
+						<div class="pageActions">
+							<input type="button" wicket:id="newPage" class="newPage"
+								value="New" /> <input type="submit" wicket:id="deletePage"
+								class="deletePage" value="Delete" /> <input type="checkbox"
+								wicket:id="preview" class="preview" /> <span><wicket:message
+									key="preview">[Preview]</wicket:message></span>
+						</div>
+						<div wicket:id="navContainer">
+							<div class="pageNav">
+								<span><wicket:message key="page">[Page]</wicket:message></span>:
+								<ul>
+									<li wicket:id="pageList"><a wicket:id="pageLink"><span
+											wicket:id="pageLabel">[Page]</span></a></li>
+								</ul>
+							</div>
+						</div>
+						
+						<div wicket:id="editorContainer">
+                                
+                            <wicket:enclosure child="item">
+	                            <div class="formRow">
+	                                <label for="item"><wicket:message key="item">[Item]</wicket:message></label>:
+	                                <a wicket:id="item" id="item" href="#"><span wicket:id="itemLabel"/></a>
+	                            </div>
+                            </wicket:enclosure>
+                            
+                            <wicket:enclosure child="creature">
+	                            <div class="formRow">
+	                                <label for="creature"><wicket:message key="creature">[Creature]</wicket:message></label>:
+	                                <a wicket:id="creature" id="creature" href="#"><span wicket:id="creatureLabel"/></a>
+	                            </div>
+	                        </wicket:enclosure>
+						
+							<textarea wicket:id="content" id="content" rows="20" cols="30">
+                            </textarea>
+							<div wicket:id="previewContainer" class="previewContainer">
+								<div wicket:id="previewContent" class="previewContent"></div>
+							</div>
+						</div>
+
+						<div class="pageInfoArea">
+							<wicket:message key="info">[Info]</wicket:message>
+						</div>
+						<div class="hr">
+							<hr />
+						</div>
+						<div class="formActions">
+							<input type="submit" wicket:id="nextButton" class="nextButton"
+								value="Next" /> <input type="submit" wicket:id="previousButton"
+								class="previousButton" value="Previous" /> <input type="submit"
+								wicket:id="saveButton" value="Save" /> <input type="submit"
+								wicket:id="resetButton" value="Reset" />
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="contentArea">
+				<div wicket:id="entityActions"></div>
+				<form class="filterForm" wicket:id="filterForm">
+					<table class="items" wicket:id="table">
+					</table>
+				</form>
+			</div>
+		</div>
+		<div wicket:id="footer">Footer Component</div>
+	</div>
+</body>
+</html>
+

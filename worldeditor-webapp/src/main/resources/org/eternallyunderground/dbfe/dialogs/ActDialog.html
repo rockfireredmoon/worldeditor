@@ -1,0 +1,57 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+    <div wicket:id="actDialogWidget" class="actDialog">
+		<form wicket:id="actForm">
+		    <div class="mainFeedback" wicket:id="actFeedback">
+		    </div>
+		    <div class="formRow">
+                <textarea wicket:id="text" rows="3" cols="30"/>
+            </div>
+            
+            
+            <wicket:enclosure child="newRewardForm">
+                <h4><wicket:message key="rewards">[Rewards]</wicket:message></h4>                   
+                <div class="hr"><hr/></div>
+                <div wicket:id="rewards" class="actReward">
+                    <a href="#" wicket:id="removeReward" title="Remove reward from this act" class="removeAction">Remove</a>
+                    <span wicket:id="reward">
+                    </span>
+                </div>      
+                <span wicket:id="noRewards">
+                    <span>There are no rewards for this act. Add between 1 and 4 below</span>
+                </span>     
+                <div class="hr"><hr/></div>
+                <div class="formRow">
+                    <form wicket:id="newRewardForm">
+                        <div wicket:id="newReward" class="newReward"/>
+                        <input type="submit" wicket:id="saveNewReward" class="addButton" value="Add"/>
+                    </form>
+                </div>                  
+            </wicket:enclosure>
+            <div class="hr"><hr/></div>
+            <h4><wicket:message key="script">[Script]</wicket:message></h4>
+            <div class="formRow">
+                <label for="scriptAcceptCondition"><wicket:message key="scriptAcceptCondition">[Script Accept Condition]</wicket:message>:</label>
+                <textarea wicket:id="scriptAcceptCondition" rows="2" cols="30">
+                </textarea>
+            </div>
+            <div class="formRow">
+                <label for="scriptAcceptAction"><wicket:message key="scriptAcceptAction">[Script Accept Action]</wicket:message>:</label>
+                <textarea wicket:id="scriptAcceptAction" rows="2" cols="30">
+                </textarea>
+            </div>
+             <div class="formRow">
+                <label for="scriptCompleteCondition"><wicket:message key="scriptCompleteCondition">[Script Complete Condition]</wicket:message>:</label>
+                <textarea wicket:id="scriptCompleteCondition" rows="2" cols="30">
+                </textarea>
+            </div>
+            <div class="formRow">
+                <label for="scriptCompleteAction"><wicket:message key="scriptCompleteAction">[Script Complete Action]</wicket:message>:</label>
+                <textarea wicket:id="scriptCompleteAction" rows="2" cols="30">
+                </textarea>
+            </div>
+            <div class="formActions">
+                <input type="submit" wicket:id="saveAct" value="Save"/>
+            </div>
+        </form>
+	</div>
+</wicket:panel>

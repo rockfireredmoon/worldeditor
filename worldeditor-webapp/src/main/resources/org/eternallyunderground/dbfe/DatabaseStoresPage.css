@@ -1,0 +1,40 @@
+table.items {
+	width: 540px;
+}
+
+td.actions {
+    text-align: center;
+    width: 10%;
+	max-width: 92px;
+}
+
+td.entityId {
+    width: 20%;
+}
+
+td.url {
+    width: 100px;
+    max-width: 100px;
+    overflow: hidden;
+}
+
+td.status {
+    width: 20%;
+}
+
+.git-details img {
+	float: left;
+	margin-right: 8px;
+}
+
+.git-details .info-text {
+	font-size: 12pt;
+	font-weight: bold;
+	margin: 1em 0;
+}
+
+.git-details .formRow {
+	clear: left;
+	padding-left: 2em;
+}
+

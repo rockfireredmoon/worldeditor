@@ -1,0 +1,32 @@
+td.entityId {
+}
+
+td.actions {
+    text-align: center;
+    width: 72px;
+}
+
+td.classification {
+	width: 80px;
+}
+
+td.type {
+    width: 80px;
+}
+
+.location {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	padding: 8px 0 8px 0;
+}
+
+
+.selector input[type=button] {
+    float: right;
+}
+
+
+.editArea .formRow .selector {
+    width: 200px;
+} 

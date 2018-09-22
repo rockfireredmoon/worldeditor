@@ -1,0 +1,12 @@
+.chooseLocationDialogActions {
+	padding-top: 16px;
+	width: 100%;
+	text-align: right;
+}
+
+.chooseLocationDialog .spawns {
+	height: 10em;
+	overflow: scroll;
+	border: 1px solid grey;
+	background-color: #dddddd;
+}

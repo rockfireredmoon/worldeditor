@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div wicket:id="header">Header</div>
+	<div id="mainContent">
+		<div class="mainFeedback" wicket:id="feedback"></div>
+		<div wicket:id="confirmDeleteDialog"></div>
+		<div wicket:id="confirmCloneDialog"></div>
+		<div class="editArea">
+			<form class="itemForm" wicket:id="form">
+				<h2>
+					<span wicket:id="editTitle">[Edit Instance]</span>
+				</h2>
+				<div class="inner">
+					<wicket:enclosure>
+						<div class="formRow">
+							<label class="required" for="idType"><wicket:message
+									key="idType">[ID Type]</wicket:message>:</label> <select
+								wicket:id="idType" />
+						</div>
+					</wicket:enclosure>
+					<div class="formRow">
+						<label for="entityId" class="required"><wicket:message
+								key="entityId">[ID]</wicket:message>:</label> <input
+							wicket:id="entityId" id="entityId" type="text" size="10" />
+					</div>
+					<div class="formRow">
+						<label for="name" class="required"><wicket:message
+								key="name">[Name]</wicket:message>:</label> <input wicket:id="name"
+							id="name" type="text" size="20" />
+					</div>
+					<div class="formRow">
+						<label for="description" class="required"><wicket:message
+								key="description">[Description]</wicket:message>:</label> <input
+							wicket:id="description" id="description" type="text" size="20" />
+					</div>
+					<div class="formRow">
+						<label for="environmentType"><wicket:message
+								key="environmentType">[Environment Type]</wicket:message>:</label>
+						<div wicket:id="environmentType"></div>
+					</div>
+                    <div class="formRow">
+                        <label for="timeOfDay"><wicket:message
+                                key="timeOfDay">[Time Of Day]</wicket:message>:</label>
+                        <select wicket:id="timeOfDay"></select>
+                    </div>
+					<div class="formRow">
+						<label for="mapName"><wicket:message key="mapName">[Map Name]</wicket:message>:</label>
+						<input wicket:id="mapName" id="mapName" type="text" size="20" />
+					</div>
+					<div class="formRow">
+						<label for="pageSize"><wicket:message key="pageSize">[Page Size]</wicket:message>:</label>
+						<input wicket:id="pageSize" id="pageSize" type="text" size="6" />
+					</div>
+					<div class="formRow">
+						<label for="terrainConfig"><wicket:message
+								key="terrainConfig">[Terrain Config]</wicket:message>:</label> <input
+							wicket:id="terrainConfig" id="terrainConfig" type="text"
+							size="24" />
+					</div>
+					<div class="formRow">
+						<label for="regions"><wicket:message key="regions">[Regions]</wicket:message>:</label>
+						<input wicket:id="regions" id="regions" type="text" size="24" />
+					</div>
+					<div class="formRow">
+						<label for="warpName" class="required"><wicket:message
+								key="warpName">[Warp Name]</wicket:message>:</label> <input
+							wicket:id="warpName" id="warpName" type="text" size="20" />
+					</div>
+					<div class="formRow">
+						<label for="shardName" class="required"><wicket:message
+								key="shardName">[Shard]</wicket:message>:</label>
+						<div wicket:id="shardName" id="shardName"></div>
+					</div>
+					<div class="formRow">
+						<div wicket:id="location" class="xyz"></div>
+					</div>
+					<div class="formRow">
+						<label for="maxAggroRange"><wicket:message
+								key="maxAggroRange">[Max Aggro Range]</wicket:message>:</label> <input
+							wicket:id="maxAggroRange" id="maxAggroRange" type="text" size="6" />
+					</div>
+					<div class="formRow">
+						<label for="maxLeashRange"><wicket:message
+								key="maxLeashRange">[Max Aggro Range]</wicket:message>:</label> <input
+							wicket:id="maxLeashRange" id="maxLeashRange" type="text" size="6" />
+					</div>
+					<div class="formRow">
+						<label for="dropRateProfile"><wicket:message
+								key="dropRateProfile">[Drop Rate Profile]</wicket:message>:</label>
+						<div wicket:id="dropRateProfile"></div>
+					</div>
+					<div class="formRow">
+						<label for="areaEnvironment"><wicket:message
+								key="areaEnvironment">[Area Environment]</wicket:message>:</label>
+						<textarea wicket:id="areaEnvironment" id="areaEnvironment" />
+					</div>
+                    <div class="formRow">
+                        <label for="minLevel"><wicket:message key="minLevel">[Min Level]</wicket:message>:</label>
+                        <input wicket:id="minLevel" id="minLevel" type="text" size="5" />
+                    </div>
+                    <div class="formRow">
+                        <label for="maxLevel"><wicket:message key="maxLevel">[Max Level]</wicket:message>:</label>
+                        <input wicket:id="maxLevel" id="maxLevel" type="text" size="5" />
+                    </div>
+					<div class="formRow">
+						<label for="mode" class="required"><wicket:message
+								key="mode">[Mode]</wicket:message>:</label> <select wicket:id="mode"></select>
+					</div>
+					<div class="checkRow">
+						<input type="checkbox" wicket:id="persist" /> <label for="persist"><wicket:message
+								key="persist">[Persist]</wicket:message></label>
+					</div>
+					<div class="checkRow">
+						<input type="checkbox" wicket:id="audit" /> <label for="audit"><wicket:message
+								key="audit">[Audit]</wicket:message></label>
+					</div>
+					<div class="checkRow">
+						<input type="checkbox" wicket:id="grove" /> <label for="grove"><wicket:message
+								key="grove">[Grove]</wicket:message></label>
+					</div>
+					<div class="checkRow">
+						<input type="checkbox" wicket:id="arena" /> <label for="arena"><wicket:message
+								key="arena">[Arena]</wicket:message></label>
+					</div>
+					<div class="checkRow">
+						<input type="checkbox" wicket:id="guildHall" /> <label
+							for="guildHall"><wicket:message key="guildHall">[Guild Hall]</wicket:message></label>
+					</div>
+					<div class="checkRow">
+						<input type="checkbox" wicket:id="instance" /> <label
+							for="instance"><wicket:message key="instance">[Instance]</wicket:message></label>
+					</div>
+					<div class="checkRow">
+						<input type="checkbox" wicket:id="environmentCycle" /> <label
+							for="environmentCycle"><wicket:message
+								key="environmentCycle">[Environment Cycle]</wicket:message></label>
+					</div>
+					<div class="formActions">
+						<input type="submit" wicket:id="nextButton" class="nextButton"
+							value="Next" /> <input type="submit" wicket:id="previousButton"
+							class="previousButton" value="Previous" /> <input type="submit"
+							wicket:id="saveButton" value="Save" /> <input type="submit"
+							wicket:id="resetButton" value="Reset" />
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="contentArea">
+			<div wicket:id="entityActions"></div>
+			<form class="filterForm" wicket:id="filterForm">
+				<table class="items" wicket:id="table">
+				</table>
+			</form>
+		</div>
+
+	</div>
+	<div wicket:id="footer">Footer Component</div>
+</body>
+</html>
+

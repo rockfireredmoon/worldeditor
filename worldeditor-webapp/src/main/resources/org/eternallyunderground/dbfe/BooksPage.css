@@ -1,0 +1,102 @@
+#booksPage .contentArea {
+	width: 350px;
+}
+
+#booksPage .editArea {
+	width: 540px;
+}
+
+td.actions {
+    text-align: center;
+    width: 72px;
+}
+
+.pageNav {
+	margin: 6px;
+}
+
+.pageNav ul {
+    display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.pageNav li {
+	list-style: none;
+	display: inline-block;
+	margin: 0 16px 0 0;
+}
+
+.pageNav span {
+}
+
+.pageNav li a {
+    list-style: none;
+    padding: 6px;
+}
+
+.itemForm #title {
+	width: 32em;
+}
+
+.pageActions {
+	margin-top: 8px;
+	float: right;
+}
+
+td.entityId {
+    width: 40px;
+}
+
+.previewContainer {
+	height: 30em;
+	margin: 1em auto;
+	width: 90%;
+	color: black;
+	background-size: 100% 100%;
+	background-image: url(DefaultSkin-Border-Paper-1.png);
+	overflow-y: auto;
+	overflow-x: hidden;
+    border:1px solid #F69603;
+    font-family: Maiandra;	
+}
+
+.previewContent {
+	margin: 1em;
+}
+
+.pageInfoArea {
+	margin: 4px;
+    font-style: italic;	
+}
+
+
+.icons label {
+    padding-top: 2px;
+    /* width: 36px; */
+}
+
+.icons .formRow {
+    width: 210px;
+    height: 20px;
+}
+
+.icons .selector span {
+    display: inline-block;
+    height: 12px;
+    width: 40%;
+    overflow: hidden;
+}
+
+.icons .iconPreview {
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    padding: 12px 12px 0 0;
+    float: right;
+}
+
+.icons .swapAction {
+    margin-top: 16px;
+    float: right;
+}

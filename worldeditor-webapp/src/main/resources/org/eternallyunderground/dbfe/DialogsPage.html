@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div id="booksPage">
+		<div wicket:id="header">Header</div>
+		<div id="mainContent">
+			<div class="mainFeedback" wicket:id="feedback"></div>
+			<div wicket:id="confirmDeleteDialog"></div>
+			<div wicket:id="confirmCloneDialog"></div>
+			<div wicket:id="confirmDeleteParagraphDialog"></div>
+			<div class="editArea">
+				<form class="itemForm" wicket:id="form" onsubmit="">
+					<h2>
+						<span wicket:id="editTitle">[Edit Dialog]</span>
+					</h2>
+					<div class="inner">
+						<div class="formRow">
+							<label for="entityId"><wicket:message key="entityId">[ID]</wicket:message></label>:
+							<input wicket:id="entityId" id="entityId" type="text" size="15" />
+						</div>
+						<div class="hr">
+							<hr />
+						</div>
+						<div class="formRow">
+                            <label for="sequence"><wicket:message key="sequence">[Sequence]</wicket:message>:</label>
+                            <div class="styledSelection">
+                                <select wicket:id="sequence"></select>
+                            </div>
+                        </div>
+                        <div class="formRow">
+                            <label for="minInterval"><wicket:message key="minInterval">[Min Interval]</wicket:message>:</label>
+                            <input wicket:id="minInterval" id="minInterval" type="text" size="5" />
+                        </div>
+                        <div class="formRow">
+                            <label for="maxInterval"><wicket:message key="maxInterval">[Max Interval]</wicket:message>:</label>
+                            <input wicket:id="maxInterval" id="maxInterval" type="text" size="5" />
+                        </div>
+                        <div class="hr">
+                            <hr />
+                        </div>
+						<div class="pageActions">
+							<input type="button" wicket:id="newParagraph" class="newParagraph"
+								value="New" /> <input type="submit" wicket:id="deleteParagraph"
+								class="deleteParagraph" value="Delete" /> 
+						</div>
+						<div wicket:id="navContainer">
+							<div class="pageNav">
+								<span><wicket:message key="paragraph">[Paragraph]</wicket:message></span>:
+								<ul>
+									<li wicket:id="paragraphList"><a wicket:id="paragraphLink"><span
+											wicket:id="paragraphLabel">[Page]</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<div id="editorContainer" wicket:id="editorContainer">
+							<div class="formRow">
+	                            <label for="paragraphType"><wicket:message key="paragraphType">[Paragraph Type]</wicket:message>:</label>
+	                            <div class="styledSelection">
+	                                <select wicket:id="paragraphType"></select>
+	                            </div>
+	                        </div>
+							<textarea wicket:id="sayValue" id="value" rows="20" cols="30">
+                            </textarea>
+                            
+                            <wicket:enclosure>
+	                            <div class="formRow">
+	                                <label for="value"><wicket:message key="emotion">[Emotion]</wicket:message>:</label>
+		                            <div class="styledSelection">
+		                                <select wicket:id="emoteValue"></select>
+		                            </div>
+	                            </div>
+                            </wicket:enclosure>
+                            <wicket:enclosure>
+                                <div class="formRow">
+                                    <label for="value"><wicket:message key="wait">[Wait]</wicket:message>:</label>
+                                    <input wicket:id="waitValue" type="text" id="value" size="5"/>
+                                </div>
+                            </wicket:enclosure>
+                            
+						</div>
+						<div class="hr">
+							<hr />
+						</div>
+						<div class="formActions">
+							<input type="submit" wicket:id="nextButton" class="nextButton"
+								value="Next" /> <input type="submit" wicket:id="previousButton"
+								class="previousButton" value="Previous" /> <input type="submit"
+								wicket:id="saveButton" value="Save" /> <input type="submit"
+								wicket:id="resetButton" value="Reset" />
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="contentArea">
+				<div wicket:id="entityActions"></div>
+				<form class="filterForm" wicket:id="filterForm">
+					<table class="items" wicket:id="table">
+					</table>
+				</form>
+			</div>
+		</div>
+		<div wicket:id="footer">Footer Component</div>
+	</div>
+</body>
+</html>
+

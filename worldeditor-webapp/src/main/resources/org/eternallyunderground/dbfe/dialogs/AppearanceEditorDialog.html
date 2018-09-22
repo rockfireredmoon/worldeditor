@@ -1,0 +1,138 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+	<input type="button" wicket:id="choose" value=".." />
+	<div wicket:id="dialog">
+		<form wicket:id="appearanceForm">
+
+			<div class="mainFeedback" wicket:id="appearanceFeedback"></div>
+			<div wicket:id="appearanceContainer">
+
+				<div class="appearanceBasic">
+
+					<div class="formRow topRow">
+						<label for="name"><wicket:message key="name">[Name]</wicket:message></label>
+						<select wicket:id="name">
+						</select>
+					</div>
+					<div class="formRow topRow">
+						<label for="size"><wicket:message key="size">[Size]</wicket:message></label>
+						<input wicket:id="size" id="size" type="text" size="5" />
+					</div>
+					
+					<wicket:enclosure>
+						<div class="formRow topRow">
+							<label for="gender"><wicket:message key="gender">[Gender]</wicket:message></label>
+							<select wicket:id="gender">
+							</select>
+						</div>
+					</wicket:enclosure>
+
+                    <wicket:enclosure>
+						<div class="formRow topRow">
+							<label for="race"><wicket:message key="race">[Race]</wicket:message></label>
+							<select wicket:id="race">
+							</select>
+						</div>
+					</wicket:enclosure>
+					
+                    <wicket:enclosure>
+						<div class="formRow topRow">
+							<label for="body"><wicket:message key="body">[Body]</wicket:message></label>
+							<select wicket:id="body">
+							</select>
+						</div>
+					</wicket:enclosure>
+					
+                    <wicket:enclosure>
+						<div class="formRow topRow">
+							<label for="head"><wicket:message key="head">[Head]</wicket:message></label>
+							<select wicket:id="head">
+							</select>
+						</div>
+                    </wicket:enclosure>
+                    <wicket:enclosure>
+	                    <div class="formRow topRow">
+	                        <label for="asset"><wicket:message key="asset">[Asset]</wicket:message></label>
+	                        <input wicket:id="asset" id="asset" type="text" size="15" />
+	                    </div>
+                    </wicket:enclosure>
+				</div>
+			</div>
+
+			<div wicket:id="tabs" class="appearanceTabs">
+				<ul>
+					<li wicket:id="clothingTabHeader"><a href="#tab1">Clothing</a></li>
+					<li wicket:id="attachmentsTabHeader"><a href="#tab2">Attachments</a></li>
+					<li wicket:id="skinTabHeader"><a href="#tab3">Skin</a></li>
+					<li><a href="#tab4">Raw</a></li>
+				</ul>
+
+
+				<div id="tab1">
+					<div wicket:id="clothingContainer">
+						<div wicket:id="clothing">
+							<div wicket:id="clothingItem" class="clothingItem"></div>
+							<div class="hr">
+								<hr />
+							</div>
+						</div>
+					</div>
+					<form wicket:id="newClothingForm">
+						<div class="addNewClothingItem">
+							<wicket:message key="addNewClothingItem">[Add New]</wicket:message>
+							<select wicket:id="newType">
+							</select> <input wicket:id="addNew" type="submit" value="+" />
+						</div>
+					</form>
+				</div>
+
+				<div id="tab2">
+					<div wicket:id="attachmentsContainer">
+						<div wicket:id="attachment">
+							<div wicket:id="attachmentItem" class="attachmentItem"></div>
+							<div class="hr">
+								<hr />
+							</div>
+						</div>
+					</div>
+					<form wicket:id="newAttachmentForm">
+						<span wicket:id="newAttachmentItem"></span> <input
+							wicket:id="addNewAttachment" type="submit" value="+" />
+					</form>
+				</div>
+
+				<div id="tab3">
+					<div wicket:id="skinContainer">
+						<div wicket:id="skin">
+							<div wicket:id="skinElement" class="skinElement"></div>
+						</div>
+					</div>
+					<form wicket:id="newSkinForm">
+						<div class="addNewSkinElement">
+							<wicket:message key="addNewSkinElement">[Add New]</wicket:message>
+							<input wicket:id="name" type="text" size="10"
+								title="Skin Element Name" /> <span wicket:id="colour"
+								class="colorPickerField skinElementColour" /> <input
+								wicket:id="submitNew" type="submit" value="+" />
+						</div>
+					</form>
+				</div>
+
+				<div id="tab4">
+					<div wicket:id="rawContainer">
+						<textarea wicket:id="raw" rows="24" cols="802">
+                         </textarea>
+						<input wicket:id="apply" type="submit" value="Apply" />
+					</div>
+				</div>
+			</div>
+
+
+
+                <div class="formActions">
+                    <input type="submit" wicket:id="saveButton" value="Save" />
+                </div>
+
+
+		</form>
+	</div>
+</wicket:panel>

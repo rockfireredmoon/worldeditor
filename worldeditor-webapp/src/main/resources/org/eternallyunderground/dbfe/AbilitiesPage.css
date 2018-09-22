@@ -1,0 +1,49 @@
+td.entityId {
+    width: 48px;
+}
+
+td.actions {
+    text-align: center;
+    width: 72px;
+}
+
+td.name {
+    width: 94px;
+    min-width: 94px;
+    max-width: 94px;
+    overflow: hidden;
+}
+
+td.cooldownCategory, td.category {
+    width: 68px;
+    min-width: 68px;
+    max-width: 68px;
+    overflow: hidden;
+}
+
+td.level {
+    width: 34px;
+    max-width: 34px;
+}
+
+.icons .formRow {
+	height: 20px;
+}
+
+.icons .icon1Preview, .icons .icon2Preview, .icons .iconSelector {
+	display: inline-block;
+}
+
+.icons .iconSelector {
+	margin-top: 2px;
+}
+.icons .iconPreview {
+    margin-top: 10px;
+    float: right;
+}
+
+.icons .swapAction {
+    margin-right: 96px;
+    margin-top: 14px;
+	float: right;
+}

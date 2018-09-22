@@ -1,0 +1,46 @@
+.rewardItem {
+	font-size: 9pt;
+}
+
+.rewardItem .rewardIcon {
+    display: inline-block;
+    padding: 0 6px;
+    height: 24px;
+}
+
+.rewardItem .itemCount {
+    width: 2em;
+}
+.rewardItem .itemCountContainer {
+    display: inline-block;
+    width: 100px;
+    height: 24px;
+    vertical-align: text-bottom;
+}
+
+.rewardItem .itemId {
+	width: 180px;
+	display: inline-block;
+	overflow: hidden;
+    padding-top: 3px;
+    height: 24px;
+}
+
+
+.rewardItem .itemId .selectorLink {
+    width: 140px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.rewardItem .itemRequired {
+    display: inline-block;
+    width: 120px;
+    height: 24px;
+    vertical-align: text-bottom;
+}
+
+.rewardItem input[type=submit] {
+    height: 16px;
+    line-height: 16px;
+}

@@ -1,0 +1,23 @@
+#aiScriptsPage .contentArea {
+	width: 370px;
+}
+
+#aiScriptsPage .editArea {
+	width: 520px;
+}
+
+td.actions {
+    text-align: center;
+    width: 72px;
+}
+
+td.entityId {
+    width: 94px;
+    min-width: 94px;
+    max-width: 94px;
+    overflow: hidden;
+}
+
+.selector input[type=button] {
+    float: right;
+}

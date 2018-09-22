@@ -1,0 +1,28 @@
+.newItemForm {
+    padding-top: 10px;
+}
+
+.newItemForm .browse, .newItemForm .clear {
+    float: none;
+}
+
+.itemItem {
+    height: 24px;
+    margin: 6px 0;
+}
+
+.itemItem a {
+    float: left;
+}
+
+.itemItem span.itemName {
+    font-weight: bold;
+    display: inline-block;
+    width: 200px;
+}
+
+.removeAction {
+    padding-right: 4px;
+}
+
+

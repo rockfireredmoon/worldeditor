@@ -1,0 +1,79 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+<div wicket:id="imageContainer" class="imageContainer">
+      <img wicket:id="backgroundImage" class="backgroundImage" usemap="#imageMap"/>
+      <map name="imageMap" wicket:id="imageMap">
+            <area shape="circle" wicket:id="mapPoint"/>
+      </map>
+      
+    <script type="text/javascript" wicket:id="imageMapTooltips">
+       // Use the each() method to gain access to each elements attributes
+       $(document).ready(function() {
+    	   $('area[alt]').each(function(index) {
+    		   var contentId = $(this).attr('id') + "Content"
+    		   $(this).qtip({
+			             content: {
+			            	 text: $('#' + contentId)
+			             },
+                         style: {
+                        	 width: 320
+                         }
+			          }).show();
+    	   });
+       });
+    </script>
+    <div type="text/javascript" wicket:id="individualTooltips">
+    </div>
+    <script type="text/javascript" wicket:id="individualTooltipsScript">
+    </script>
+    <div style="display:none">
+        <div wicket:id="mapPointTooltipContent">
+            <div wicket:id="mapPointTooltipContent">
+            </div>
+        </div>
+    </div>    
+</div>
+<div class="mapNavigator">
+       <a href="#" wicket:id="left">
+           <wicket:link>
+               <img class="left" src="arrow_left_alt1_32x32.png"/>
+           </wicket:link>
+       </a>
+       <a href="#" wicket:id="center">
+           <wicket:link>
+               <img class="center" src="aperture_16x16.png"/>
+           </wicket:link>
+       </a>
+       <a href="#" wicket:id="right">
+           <wicket:link>
+               <img class="right" src="arrow_right_alt1_32x32.png"/>
+           </wicket:link>
+       </a>
+       <a href="#" wicket:id="up">
+           <wicket:link>
+               <img class="up" src="arrow_up_alt1_32x32.png"/>
+           </wicket:link>
+       </a>
+       <a href="#" wicket:id="down">
+           <wicket:link>
+               <img class="down" src="arrow_down_alt1_32x32.png"/>
+           </wicket:link>
+       </a>
+       <a href="#" wicket:id="zoomin">
+           <wicket:link>
+               <img class="zoomin" src="zoomin_32x32.png"/>
+           </wicket:link>
+       </a>
+       <a href="#" wicket:id="zoomout">
+           <wicket:link>
+               <img class="zoomout" src="zoomout_32x32.png"/>
+           </wicket:link>
+       </a>
+</div>
+<div class="mapOptions">
+    <form wicket:id="mapForm">
+     <span><wicket:message key="map">[Map]</wicket:message>:</span>
+     <select wicket:id="map">
+     </select> 
+    </form>
+</div>
+</wicket:panel>

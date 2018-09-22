@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div id="dropProfilesPage">
+		<div wicket:id="header">Header</div>
+		<div id="mainContent">
+			<div class="mainFeedback" wicket:id="feedback"></div>
+			<div wicket:id="confirmDeleteDialog"></div>
+			<div wicket:id="confirmCloneDialog"></div>
+			<div class="editArea">
+				<form class="itemForm" wicket:id="form" onsubmit="">
+					<h2>
+						<span wicket:id="editTitle">[Edit Drop Profile]</span>
+					</h2>
+					<div class="inner">
+						<div class="formRow">
+							<label for="entityId"><wicket:message key="entityId">[ID]</wicket:message></label>:
+							<input wicket:id="entityId" id="entityId" type="text" size="15" />
+						</div>
+						<div class="hr">
+							<hr />
+						</div>
+						
+						<table class="editTable">
+							<thead>
+								<tr>
+                                    <td></td>
+									<td style="color: #202020;">Default</td>
+                                    <td style="color: #202020;">Common</td>
+                                    <td style="color: #00D400;">Uncommon</td>
+                                    <td style="color: #0066FF;">Rare</td>
+                                    <td style="color: #CC00CC;">Epic</td>
+                                    <td style="color: #FFFF00;">Legendary</td>
+                                    <td style="color: #FF4411;">Artifact</td>
+								</tr>
+							</thead>
+							<tbody>
+							 <tr>
+							     <td>Rate (1 in X)</td>
+							     <td><input type="text" wicket:id="qL0None" size="4"/></td>
+                                 <td><input type="text" wicket:id="qL1Norm" size="4"/></td>
+                                 <td><input type="text" wicket:id="qL2Unc" size="4"/></td>
+                                 <td><input type="text" wicket:id="qL3Rare" size="4"/></td>
+                                 <td><input type="text" wicket:id="qL4Epic" size="4"/></td>
+                                 <td><input type="text" wicket:id="qL5Leg" size="4"/></td>
+                                 <td><input type="text" wicket:id="qL6Art" size="4"/></td>
+							 </tr>
+                             <tr>
+                                 <td>Min. Lvl</td>
+                                 <td><input type="text" wicket:id="qL0NoneL" size="3"/></td>
+                                 <td><input type="text" wicket:id="qL1NormL" size="3"/></td>
+                                 <td><input type="text" wicket:id="qL2UncL" size="3"/></td>
+                                 <td><input type="text" wicket:id="qL3RareL" size="3"/></td>
+                                 <td><input type="text" wicket:id="qL4EpicL" size="3"/></td>
+                                 <td><input type="text" wicket:id="qL5LegL" size="3"/></td>
+                                 <td><input type="text" wicket:id="qL6ArtL" size="3"/></td>
+                             </tr>
+                             <tr>
+                                 <td>Restrictions</td>
+                                 <td><input type="text" wicket:id="qL0NoneF" size="3"/></td>
+                                 <td><input type="text" wicket:id="qL1NormF" size="3"/></td>
+                                 <td><input type="text" wicket:id="qL2UncF" size="3"/></td>
+                                 <td><input type="text" wicket:id="qL3RareF" size="3"/></td>
+                                 <td><input type="text" wicket:id="qL4EpicF" size="3"/></td>
+                                 <td><input type="text" wicket:id="qL5LegF" size="3"/></td>
+                                 <td><input type="text" wicket:id="qL6ArtF" size="3"/></td>
+                             </tr>
+							</tbody>
+						</table>
+						
+                        <div class="pageInfoArea">
+                            <wicket:message key="restrictions.info">[Info]</wicket:message>
+                        </div>
+                        
+                        <div class="hr">
+                            <hr />
+                        </div>
+                        
+                        <table class="editTable">
+                            <thead>
+                                <tr>
+                                    <td></td>
+                                    <td >Default</td>
+                                    <td>1 Item</td>
+                                    <td>2 Items</td>
+                                    <td>3 Items</td>
+                                    <td>4 Items</td>
+                                    <td>5 Items</td>
+                                    <td>6 Items</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                             <tr>
+                                 <td>Amounts</td>
+                                 <td><input type="text" wicket:id="a0" size="3"/></td>
+                                 <td><input type="text" wicket:id="a1" size="3"/></td>
+                                 <td><input type="text" wicket:id="a2" size="3"/></td>
+                                 <td><input type="text" wicket:id="a3" size="3"/></td>
+                                 <td><input type="text" wicket:id="a4" size="3"/></td>
+                                 <td><input type="text" wicket:id="a5" size="3"/></td>
+                                 <td><input type="text" wicket:id="a6" size="3"/></td>
+                             </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="pageInfoArea">
+                            <wicket:message key="amounts.info">[Amounts]</wicket:message>
+                        </div>
+
+						<div class="formActions">
+							<input type="submit" wicket:id="nextButton" class="nextButton"
+								value="Next" /> <input type="submit" wicket:id="previousButton"
+								class="previousButton" value="Previous" /> <input type="submit"
+								wicket:id="saveButton" value="Save" /> <input type="submit"
+								wicket:id="resetButton" value="Reset" />
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="contentArea">
+				<div wicket:id="entityActions"></div>
+				<form class="filterForm" wicket:id="filterForm">
+					<table class="items" wicket:id="table">
+					</table>
+				</form>
+			</div>
+		</div>
+		<div wicket:id="footer">Footer Component</div>
+	</div>
+</body>
+</html>
+

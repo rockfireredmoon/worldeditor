@@ -1,0 +1,7 @@
+table.rectangle {
+    border: 0;
+}
+
+.rectangle thead {
+    color: grey;
+}

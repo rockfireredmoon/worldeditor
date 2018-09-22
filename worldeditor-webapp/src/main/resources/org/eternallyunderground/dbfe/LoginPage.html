@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div id="mainContent">
+		<div class="loginFrame">
+			<div class="loginHeader">
+				<span><wicket:message key="title">[Login]</wicket:message></span>
+			</div>
+			<div wicket:id="loginFeedback"></div>
+			<form wicket:id="loginForm" class="loginForm">
+				<div class="formRow">
+					<label for="username"><wicket:message key="username">[Username:]</wicket:message></label>
+					<input type="text" wicket:id="username" size="20" />
+				</div>
+				<div class="formRow">
+					<label for="password"><wicket:message key="password">[Password:]</wicket:message></label>
+					<input type="password" id="password" wicket:id="password" size="20" />
+				</div>
+				<div class="formActions">
+					<input type="submit" wicket:id="login" value="Login" />
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
+

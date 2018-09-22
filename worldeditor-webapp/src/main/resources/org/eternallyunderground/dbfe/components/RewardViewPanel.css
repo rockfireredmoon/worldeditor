@@ -1,0 +1,23 @@
+.rewardView {
+    font-size: 9pt;
+    text-decoration: none;
+}
+
+.rewardView .gameIconContainer {
+    display: inline-block;
+    float: left;
+    padding: 0 6px;
+}
+
+.rewardView a {
+    width: 160px;
+    display: block;
+    float: left;
+    overflow: hidden;
+    padding-top: 3px;
+}
+
+
+
+
+

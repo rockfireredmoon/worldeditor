@@ -1,0 +1,10 @@
+Package: worldeditor
+Version: [[build.application.version.withBuildNumber]]
+Section: comm 
+Priority: optional
+Architecture: all
+Depends: openjdk-8-jre | openjdk-8-jdk | oracle-java8-installer | sun-java7-jre | sun-java7-jre | java7-runtime | openjdk-7-jre-headless | openjdk-7-jre
+Installed-Size: 1024
+Maintainer: Icemoon <emerald.icemoon@gmail.com>
+Description: Earth Eternal World Editor
+ A web-based world editor for Earth Eternal, for creating and editing Quests, Creatures, Items and more.

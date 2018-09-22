@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div wicket:id="header">Header</div>
+	<div id="mainContent">
+		<form wicket:id="searchForm">
+			<div class="searchRow">
+				<input type="text" wicket:id="searchText" id="searchText" size="30" />
+				<input type="submit" wicket:id="search" id="searchText"
+					value="Search" />
+			</div>
+		</form>
+		<div class="results">
+			<div class="inner result" wicket:id="results">
+				<div class="avatarContainer">
+					<img wicket:id="image" class="avatar thumbnail" />
+				</div>
+				<div class="formRow">
+					<span class="resultType" wicket:id="resultType">[Result
+						type]</span>
+				</div>
+				<div class="formRow">
+					<a href="#" wicket:id="activate" class="displayName"><span
+						wicket:id="displayName" /></a>
+				</div>
+				<div class="formRow">
+					<span wicket:id="description" class="description" />
+				</div>
+				<div class="formRow">
+					<span class="lowlight subtext" wicket:id="subtext" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div wicket:id="footer">Footer Component</div>
+</body>
+</html>
+

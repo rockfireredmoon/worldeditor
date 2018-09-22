@@ -1,0 +1,38 @@
+#mainContent {
+	margin-top: 4px;
+    width: 100%;
+    border:1px solid #295D0A ;
+    background-color: white;
+    font-size: 9pt;
+    margin-bottom: 12px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    padding-top: 6em;
+    padding-bottom: 6em;
+}
+
+form {
+	display: block;
+    margin: 0 auto;
+}
+
+.searchRow {
+    width: 400px;
+	margin: 2em auto;
+}
+
+.searchRow input {
+    width: 100%;
+}
+
+.actionsRow {
+	padding-top: 1em;
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.banner {
+	display: block;
+	margin: 0 auto;
+}

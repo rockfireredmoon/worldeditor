@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div id="questsPage">
+		<div wicket:id="header">Header</div>
+		<div id="mainContent">
+			<div class="mainFeedback" wicket:id="feedback"></div>
+			<div wicket:id="confirmDeleteDialog"></div>
+			<div wicket:id="confirmCloneDialog"></div>
+			<div class="editArea">
+				<form class="itemForm" wicket:id="form">
+
+					<div class="editHeader">
+						<h2>
+							<span wicket:id="editTitle">[Edit Quest]</span>
+						</h2>
+						<input type="submit" wicket:id="view" value="View"
+							class="additionalEntityActions" />
+					</div>
+
+					<div class="inner">
+						<h4>
+							<wicket:message key="basic">[Basic]</wicket:message>
+						</h4>
+
+
+						<div class="formRow">
+							<label class="required" for="file"><wicket:message
+									key="file">[File]</wicket:message>:</label> <select wicket:id="file" />
+						</div>
+						<wicket:enclosure>
+							<div class="formRow">
+								<label class="required" for="idType"><wicket:message
+										key="idType">[ID Type]</wicket:message>:</label> <select
+									wicket:id="idType" />
+							</div>
+						</wicket:enclosure>
+						<div class="formRow">
+							<label for="entityId"><wicket:message key="entityId">[Name]</wicket:message>:</label>
+							<input wicket:id="entityId" id="entityId" type="text" size="15" />
+						</div>
+						<div class="formRow">
+							<label for="title"><wicket:message key="title">[Title]</wicket:message>:</label>
+							<input wicket:id="title" id="title" type="text" size="30" />
+						</div>
+						<div class="formRow">
+							<label for="level"><wicket:message key="level">[Level]</wicket:message>:</label>
+							<input wicket:id="level" id="level" type="text" size="3" />
+						</div>
+                        <div class="formRow">
+                            <label for="level"><wicket:message key="maxLevel">[Max Level]</wicket:message>:</label>
+                            <input wicket:id="maxLevel" id="maxLevel" type="text" size="3" />
+                        </div>
+                        <div class="formRow">
+                            <label for="level"><wicket:message key="suggestedLevel">[Suggested Level]</wicket:message>:</label>
+                            <input wicket:id="suggestedLevel" id="suggestedLevel" type="text" size="3" />
+                        </div>
+						<div class="formRow">
+							<label for="exp"><wicket:message key="exp">[Exp.]</wicket:message>:</label>
+							<input wicket:id="exp" id="exp" type="text"
+								title="Experience rewarded" size="4" />
+						</div>
+						<div class="formRow">
+							<label for="numRewards"><wicket:message key="numRewards">[No. Rewards.]</wicket:message>:</label>
+							<input wicket:id="numRewards" id="numRewards" type="text"
+								title="Number of rewards" size="4" />
+						</div>
+						<div class="formRow">
+							<label for="heroism"><wicket:message key="heroism">[Heroism]</wicket:message>:</label>
+							<input wicket:id="heroism" id="heroism" type="text"
+								title="Heroism given on completion" size="4" />
+						</div>
+						<div class="formRow">
+							<label for="partySize"><wicket:message key="partySize">[Party Size]</wicket:message>:</label>
+							<select wicket:id="partySize"></select>
+						</div>
+						<div class="formRow">
+							<label for="coin"><wicket:message key="coin">[Coin]</wicket:message>:</label>
+							<div wicket:id="coin"></div>
+						</div>
+						<div class="formRow">
+							<label for="requires"><wicket:message key="requires">[Requires]</wicket:message>:</label>
+							<div wicket:id="requires" class="readonly"></div>
+						</div>
+						<div class="formRow">
+							<label><wicket:message key="leadsTo">[Leads To]</wicket:message>:</label>
+							<div class="leadsTo">
+								<ul wicket:id="leadsToContainer">
+									<li wicket:id="leadsTo" class="leadsToQuest"><a href="#"
+										wicket:id="leadsToLink"> <span wicket:id="leadsToLabel"></span>
+									</a></li>
+								</ul>
+							</div>
+							<input type="submit" wicket:id="newLeadsTo" value="New" />
+						</div>
+
+						<div class="hr">
+							<hr />
+						</div>
+						<h4>
+							<wicket:message key="start">[Start]</wicket:message>
+						</h4>
+						<div class="formRow">
+							<label for="giverId"><wicket:message key="character">[Character]</wicket:message></label>
+							<div wicket:id="giverId" class="readonly"></div>
+							<div wicket:id="autoFillGiverDialog"></div>
+						</div>
+
+						<div class="formRow">
+							<textarea wicket:id="bodyText" class="text" rows="8" cols="24" />
+						</div>
+
+						<div class="formRow">
+
+							<input type="submit" wicket:id="copyGiverToEnder"
+								alt="Copy the quest starter to the quest ender"
+								class="copy copyDown" value="Copy" />
+							<div wicket:id="giverLocation" class="location"></div>
+						</div>
+
+						<div class="hr">
+							<hr />
+						</div>
+						<h4>
+							<wicket:message key="completion">[Completion]</wicket:message>
+						</h4>
+						<div class="formRow">
+							<label for="enderId"><wicket:message key="character">[Character]</wicket:message></label>
+							<div wicket:id="enderId" class="readonly"></div>
+							<div wicket:id="autoFillEnderDialog"></div>
+						</div>
+						<div class="formRow">
+							<textarea wicket:id="completeText" class="text" rows="8"
+								cols="24" />
+						</div>
+						<div class="formRow">
+							<div wicket:id="enderLocation" class="location"></div>
+						</div>
+
+						<div class="hr">
+							<hr />
+						</div>
+						<h4>
+							     <wicket:message key="acts">[Acts]</wicket:message>
+						</h4>
+
+						<div wicket:id="actDialog"></div>
+
+						<div wicket:id="objectiveDialog"></div>
+
+						<div wicket:id="actsActions" class="actsActions">
+							<input type="submit" wicket:id="newAct" value="New Act" /> <input
+								type="submit" wicket:id="newObjective" value="New Objective" />
+							<input type="submit" wicket:id="editActOrObjective" value="Edit" />
+							<input type="submit" wicket:id="removeActOrObjective"
+								value="Remove" /> <input type="submit" wicket:id="moveUp"
+								value="Up" class="moveUpAction" /> <input type="submit"
+								wicket:id="moveDown" value="Down" class="moveDownAction" />
+						</div>
+                        <div wicket:id="treeContainer">
+                            <div wicket:id="acts"></div>
+                        </div>
+
+						<div class="hr">
+							<hr />
+						</div>
+
+						<h4>
+							<wicket:message key="other">[Other]</wicket:message>
+						</h4>
+						<div class="checkRow">
+							<input type="checkbox" wicket:id="unabandon" /> <label
+								for="unabandon"><wicket:message key="unabandon">[Unabandon]</wicket:message></label>
+						</div>
+						<div class="checkRow">
+							<input type="checkbox" wicket:id="repeat" /> <label for="repeat"><wicket:message
+									key="repeat">[Repeat]</wicket:message></label>
+
+	                        <div class="checkInsert">
+	                            <label for="repeatDelayTimeUnit"><wicket:message
+	                                    key="repeatDelayTimeUnit">[Repeat Delay]</wicket:message>
+	                            </label>
+	                            <input type="text" wicket:id="repeatDelayAmount" size="3"/>
+	                            <div class="timeUnit" wicket:id="repeatDelayTimeUnit" />
+	                        </div>
+						</div>
+						<div class="checkRow">
+							<input type="checkbox" wicket:id="accountQuest" /> <label
+								for="accountQuest"><wicket:message key="accountQuest">[Account Quest]</wicket:message></label>
+						</div>
+
+						<div class="formActions">
+							<input type="submit" wicket:id="nextButton" class="nextButton"
+								value="Next" /> <input type="submit" wicket:id="previousButton"
+								class="previousButton" value="Previous" /> <input type="submit"
+								wicket:id="saveButton" value="Save" /> <input type="reset"
+								wicket:id="resetButton" value="Reset" />
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="contentArea">
+				<div wicket:id="entityActions"></div>
+				<form class="filterForm" wicket:id="filterForm">
+					<table class="items" wicket:id="table">
+					</table>
+				</form>
+			</div>
+		</div>
+		<div wicket:id="footer">Footer Component</div>
+		<script type="text/javascript">
+			$('input[title]').qtip();
+		</script>
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,58 @@
+#dialogsPage .contentArea {
+	width: 350px;
+}
+
+#dialogsPage .editArea {
+	width: 540px;
+}
+
+td.actions {
+    text-align: center;
+    width: 72px;
+}
+
+.pageNav {
+	margin: 6px;
+}
+
+.pageNav ul {
+    display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.pageNav li {
+	list-style: none;
+	display: inline-block;
+	margin: 0 16px 0 0;
+}
+
+.pageNav span {
+}
+
+.pageNav li a {
+    list-style: none;
+    padding: 6px;
+}
+
+.itemForm #title {
+	width: 32em;
+}
+
+.pageActions {
+	margin-top: 8px;
+	float: right;
+}
+
+td.entityId {
+    width: 40px;
+}
+
+textarea#value {
+	width: 100%;
+	height: 5em;
+}
+
+#editorContainer {
+    margin: 1em;
+}

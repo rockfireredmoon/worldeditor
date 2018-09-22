@@ -1,0 +1,7 @@
+.inventoryPanel {
+	width: 256px;
+}
+
+.inventoryItem {
+    float: left;
+}

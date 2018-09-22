@@ -1,0 +1,47 @@
+.mapPointPanel h3 {
+    padding-bottom: 4px;	
+}
+
+.entityImageContainer {
+    height: 24px;
+    width: 24px;
+    text-align: center;
+    float: left;
+    margin-right: 8px;
+}
+
+.entityImage {
+    margin-right: 8px;
+    width: 24px;
+}
+
+.details {
+	float: left;
+	width: 35%;
+    padding-top: 6px;
+}
+
+.rewards {
+	text-align: right;
+    float: right;
+    width: 60%;
+    padding-top: 6px;
+}
+
+.rewards .gold, .rewards .silver, .rewards .copper {
+	padding-top: 2px;
+	width: auto;
+}
+
+.fromQuestRow {
+	width: 100%;
+	margin: 4px 0;
+}
+
+.fromQuest {
+	font-style: italic;
+}
+
+.subtitle {
+	float: right;
+}

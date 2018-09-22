@@ -1,0 +1,24 @@
+table.items {
+	width: 540px;
+}
+
+td.actions {
+    text-align: center;
+    width: 10%;
+	max-width: 92px;
+}
+
+td.entityId {
+    width: 20%;
+}
+
+td.user {
+    width: 100px;
+    max-width: 100px;
+    overflow: hidden;
+}
+
+td.status {
+    width: 20%;
+}
+

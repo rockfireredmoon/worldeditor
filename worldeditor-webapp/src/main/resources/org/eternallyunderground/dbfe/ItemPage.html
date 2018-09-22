@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/" xml:lang="en" lang="en">
+
+<head>
+<title wicket:id="pageTitle">Eternally Underground</title>
+</head>
+<body>
+	<div wicket:id="header">Header</div>
+	<div id="mainContent">
+
+		<div class="leftBar">
+			<div class="itemArea">
+				<h2>
+					<wicket:message key="item">[Item]</wicket:message>
+				</h2>
+				<div class="inner">
+					<div class="avatarContainer">
+						<img wicket:id="avatar" class="avatar thumbnail" />
+					</div>
+					<div class="formRow">
+						<h3 wicket:id="displayName" />
+					</div>
+					<div class="formRow">
+						<h4>
+							Level <span wicket:id="level" />
+						</h4>
+					</div>
+					<div class="formRow">
+						<h4>
+							<span wicket:id="quality" />
+						</h4>
+					</div>
+					<div class="inner characterActions">
+						<a href="#" wicket:id="uploadPhoto" class="uploadLink"><wicket:message
+								key="uploadPhoto">[Upload Photo]</wicket:message></a>
+						<div wicket:id="uploadPhotoDialog">
+							<span wicket:id="uploadPhotoPanel" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div wicket:id="tabs" class="itemTabs">
+			<ul>
+				<li><a href="#tab1">Quests</a></li>
+			</ul>
+
+			<div id="tab1">
+				<form wicket:id="questsForm"></form>
+			</div>
+		</div>
+	</div>
+	<div wicket:id="footer">Footer Component</div>
+</body>
+</html>
+

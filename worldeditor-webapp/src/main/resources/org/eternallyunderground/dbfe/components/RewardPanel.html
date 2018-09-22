@@ -1,0 +1,16 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+<div wicket:id="itemContainer" class="rewardItem">
+    <div class="rewardIcon" wicket:id="rewardIcon">
+    </div>
+    <div class="itemId readonly" wicket:id="itemId">
+    </div>
+    <div class="itemCountContainer">
+	   <wicket:message key="itemCount"/>:
+	   <input type="text" wicket:id="itemCount" class="itemCount"/>
+	</div>
+    <div class="itemRequired">
+	    <input type="checkbox" wicket:id="required"/>
+	    <wicket:message key="required"/>
+	</div>
+</div>
+</wicket:panel>

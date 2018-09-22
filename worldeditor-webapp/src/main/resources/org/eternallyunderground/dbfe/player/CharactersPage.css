@@ -1,0 +1,89 @@
+td.entityId {
+    width: 60px;
+}
+
+td.actions {
+    text-align: center;
+    width: 72px;
+}
+
+td.level {
+    width: 48px;    
+}
+
+td.profession {
+	width: 32px;
+	text-align: center;
+}
+
+td.profession img {
+	height: 16px;
+	width: 16px;
+}
+
+.dexterity {
+	float: left;
+}
+
+#resistance table {
+	width: 100%;
+}
+
+#resistance td {
+	text-align: center;
+}
+
+#stats table  {
+	margin: 0 auto 1em auto;
+}
+
+#stats td {
+    text-align: center;
+}
+
+.inventory {
+	clear: both;
+	margin-left: 32px;
+}
+
+.equipment {
+	margin-top: 8px;
+	margin-left: 10px; 
+}
+
+.equipmentContainer {
+	clear: both;
+}
+
+.equipmentContainer input {
+	float: right;
+}
+
+.bags {
+	margin: 8px 0 0 8px;
+}
+
+.equipment .equipmentPanel {
+    position: relative;
+    width: 139px;
+    height: 286px;
+    background: no-repeat url(bodymap.png);
+}
+
+.bags .equipmentPanel {
+    position: relative;
+    width: 139px;
+    height: 32px;
+}
+
+.bags .equipmentIcon  a {
+	margin-right: 2px;
+}
+
+.collapseAction, .expandAction {
+	float: left;
+}
+
+.selector input[type=button] {
+    float: right;
+}

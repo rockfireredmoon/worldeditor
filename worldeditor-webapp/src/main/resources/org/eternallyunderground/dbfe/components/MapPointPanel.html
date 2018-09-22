@@ -1,0 +1,46 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+
+<div class="mapPointPanel">
+	<div class="entityImageContainer">
+	     <img wicket:id="avatar" class="entityImage thumbnail"/>
+	</div>
+	<h4 wicket:id="type">[Type]</h4>
+	<h3 wicket:id="text">
+	</h3>
+	<div class="subtitle">
+	   <span wicket:id="subtitle">[Sub]</span>
+	</div>
+    <div class="additional">
+        <wicket:enclosure>
+            <div class="fromQuestRow">
+                From quest <span class="fromQuest" wicket:id="fromQuest">[XX]</span>
+            </div>
+        </wicket:enclosure>
+    </div>
+	<div class="details">
+		<wicket:enclosure>
+			<div class="levelRow">
+			    Level <span wicket:id="level">[XX]</span>
+			</div>
+		</wicket:enclosure>
+		<wicket:enclosure>
+			<div class="partySizeRow">
+			    <span wicket:id="partySize">[Party Size]</span>
+			</div>
+		</wicket:enclosure>
+	</div>
+    <div class="rewards">
+        <wicket:enclosure>
+            <div class="expRow">
+                <span wicket:id="exp">[XX]</span> XP
+            </div>
+        </wicket:enclosure>
+		<wicket:enclosure>
+			<div class="coinRow">
+			    <span wicket:id="coin">[XX]</span>
+			</div>
+		</wicket:enclosure>
+	</div>
+</div>
+
+</wicket:panel>

@@ -1,0 +1,25 @@
+.goldSign, .silverSign, .copperSign {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    text-indent: -3000px;
+    padding: 0 4px 0 4px;
+}
+
+.goldSign {
+    background: url("gold.png") no-repeat center;
+}
+
+.silverSign {
+    background: url("silver.png") no-repeat center;
+}
+
+.copperSign {
+    background: url("copper.png") no-repeat center;
+}
+
+.goldView .gold, .goldView .silver, .goldView .copper {
+	display: inline-block;
+	width: 18px;
+	text-align: right;
+}

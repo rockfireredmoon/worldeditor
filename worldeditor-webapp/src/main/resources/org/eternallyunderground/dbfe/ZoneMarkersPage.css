@@ -1,0 +1,24 @@
+#zoneMarkersPage .contentArea {
+    width: 430px;
+}
+
+#zoneMarkersPage .editArea {
+    width: 460px;
+}
+
+
+td.actions {
+    text-align: center;
+	width: 72px;
+}
+
+td.entityId {
+	width: 80px;
+	text-align: right;
+}
+
+#markers .selectionBuilderItems {
+    max-height: 25em;
+    overflow: auto;	
+}
+

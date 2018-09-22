@@ -1,0 +1,10 @@
+.tipItem, .equippedItemContainer {
+    width: 180px;
+}
+
+.tipItem {
+}
+
+.equippedItemContainer {
+	font-size: 0.8em;
+}

@@ -1,0 +1,153 @@
+/*General */
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+caption {
+	font: 1.8em/1.8em Arial, Helvetica, sans-serif;
+	text-align: left;
+	text-indent: 10px;
+	background: url(bg_caption.jpg) right top;
+	height: 45px;
+	color: #FFAA00;
+}
+
+/* Headings */
+
+h1 {
+	color:  #295D0A;
+}
+
+/* Tables */
+table {
+	border-collapse:collapse;
+	border:1px solid #295D0A;
+}
+
+thead th {
+	background: url(bg_th.jpg) no-repeat right;
+	height: 47px;
+	color: #FFFFFF;
+	font-size: 0.8em;
+	font-weight: bold;
+	padding: 0px 7px;
+	margin: 20px 0px 0px;
+	text-align: left;
+	border-right: 1px solid #FCF1D4;
+}
+
+tbody tr {
+	background: url(bg_td1.jpg) repeat-x top;
+}
+
+tbody tr.odd {
+	background: #FFF8E8 url(bg_td2.jpg) repeat-x;
+}
+
+tbody th,td {
+	font-size: 0.8em;
+	line-height: 1.4em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #777777;
+	padding: 10px 7px;
+	border-top: 1px solid #295D0A;
+	border-right: 1px solid #DDDDDD;
+	text-align: left;
+}
+
+tfoot th {
+	background: url(bg_total.jpg) repeat-x bottom;
+	color: #FFFFFF;
+	height: 30px;
+}
+
+tfoot td {
+	background: url(bg_total.jpg) repeat-x bottom;
+	color: #FFFFFF;
+	height: 30px;
+}
+
+/* Links */
+
+a {
+	color: #777777;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #F8A704;
+	text-decoration: underline;
+}
+
+/* Navigation Bar */
+.navBar {
+	padding: 0 1px 1px;
+	margin-left: 0;
+}
+
+
+.navBar ul {
+	margin-bottom: 8px;
+	padding:0;
+}
+
+.navBar li {
+	list-style: none;
+	margin: 0;
+	border-top: 1px solid gray;
+	display: inline;
+}
+
+.navBar li a {
+	padding: 0.25em 0.5em 0.25em 0.75em;
+	border-left: 1em solid #AAB;
+	background: #CCD;
+	text-decoration: none;
+}
+
+.navBar li a:link { 
+	color: #448; 
+}
+
+.navBar li a:visited { 
+	color: #667; 
+}
+
+.navBar li a:hover {
+	border-color: #ff7700;
+	color: #FFF;
+	background: #295D0A;
+}
+
+/* Areas */
+.section {
+	width: 100%;
+	margin-top: 1em;
+}
+
+.yearBreakdown {
+	border-top:1px solid #295D0A;
+	width: 100%;
+	clear: both;
+}
+
+.totals {
+	width: 100%;
+	clear: both;
+}
+
+/* Graphs */
+
+.graphs {
+	border-top:1px solid #295D0A;
+	width: 100%;
+	clear: both;
+}
+
+.graphPanel {
+	float: left;
+	margin-right: 1em;
+	margin-bottom: 1em;
+}

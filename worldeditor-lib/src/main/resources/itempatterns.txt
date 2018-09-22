@@ -1,0 +1,28 @@
+# This file provides a list of suffixes or prefixes that may be used when generating
+# game items from appearances
+#
+# Some general patterns are provided, but for finer grained control you could use
+# patterns to match individual item(s).
+
+Backpack=Item-.*Backpack.*|DefaultSkin-MainUI-FBInventoryIcon.png
+Dagger=Item-.*Dagger.*|Icon-32-Dagger1.png
+Shield=Item-.*Shield.*|Icon-32-Shield1.png
+Sword=Item-.*Sword.*|Icon-32-Sword1.png
+Wand=Item-.*Wand.*|Icon-32-Ability-W_Wand_Weapons.png
+Staff=Item-.*Staff.*|Icon-32-Staff1.png
+Claw=Item-.*Claw.*|Icon-32-Claw1.png
+Axe=Item-.*Axe.*|Icon-32-Axe1.png
+Mace=Item-.*Mace.*|Icon-32-Mace1.png
+Katar=Item-.*Katar.*|Icon-32-Ability-W_Thrown_Weapons.png
+Talisman=Item-.*Talisman.*|Icon-32-Talisman_Wheel.png
+Bow=Item-.*Bow.*|Icon-32-Bow8.png
+Spear=Item-.*Spear.*|Icon-32-Battlefield_Spear.png
+Gorget=Armor-.*Gorget.*|Icon-32-Armor-Neck05.png
+Greaves=Armor-.*Greave.*|Icon-32-H_Armor-Feet01.png
+Pauldrons=Armor-.*Pauldron.*|Icon-32-C_Armor-Shldr01.png
+Backpack=Item-.*Backpack.*|Icon-32-Loot-Bag1.png
+Arrows=Item-.*Arrows.*|Icon-32-Talisman_Arrow.png
+Bucket=Item-.*Bucket.*|Icon-32-Bucket.png
+Dirk=Item-.*Dirk.*|Icon-32-Dirk.png
+Fishing Pole=Item-.*Fish.*|Icon-32-Rod1.png
+Earring=Item-.*Earring.*|Icon-32-Ring1.png

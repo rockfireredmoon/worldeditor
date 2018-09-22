@@ -1,0 +1,101 @@
+#! /bin/sh
+
+#
+# Copyright (c) 2016 Emerald Icemoon
+#
+
+
+### BEGIN INIT INFO
+# Provides:          worldeditor
+# Required-Start:    $network
+# Required-Stop:     $network
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Earth Eternal World Editor
+# Description:       Earth Eternal World Editor.
+### END INIT INFO
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DAEMON=/usr/bin/java
+NAME=worldeditor
+DESC="Earth Eternal World Editor"
+
+test -x $DAEMON || exit 0
+
+RUN_AS_USER=root
+
+CP=/usr/lib/worldeditor/forker-wrapper.jar
+CP=$CP:/usr/lib/worldeditor/forker-common.jar
+CP=$CP:/usr/lib/worldeditor/forker-client.jar
+CP=$CP:/usr/lib/worldeditor/forker-daemon.jar
+CP=$CP:/usr/lib/worldeditor/jna.jar
+CP=$CP:/usr/lib/worldeditor/commons-lang.jar
+CP=$CP:/usr/lib/worldeditor/commons-io.jar
+CP=$CP:/usr/lib/worldeditor/commons-cli.jar
+CP=$CP:/usr/lib/worldeditor/log4j.jar
+
+DAEMON_OPTS="-Djna.nosys=true -classpath $CP com.sshtools.forker.wrapper.ForkerWrapper"
+DAEMON_OPTS="$DAEMON_OPTS --daemon -c /etc/worldeditor/forker.cfg"
+
+set -e
+
+case "$1" in
+  start)
+	echo -n "Starting $DESC: "
+	start-stop-daemon --start --quiet --pidfile /var/run/$NAME.pid \
+		--exec $DAEMON -- $DAEMON_OPTS
+	echo "$NAME."
+	;;
+  stop)
+	echo -n "Stopping $DESC: "
+	start-stop-daemon --stop --oknodo --quiet --pidfile /var/run/$NAME.pid \
+		--exec $DAEMON
+	echo "$NAME."
+	;;
+  force-reload)
+	# check whether $DAEMON is running. If so, restart
+	start-stop-daemon --stop --test --quiet --pidfile \
+		/var/run/$NAME.pid --exec $DAEMON \
+	&& $0 restart \
+	|| exit 0
+	;;
+  restart)
+	echo -n "Restarting $DESC: "
+	start-stop-daemon --stop --oknodo --quiet --pidfile \
+		/var/run/$NAME.pid --exec $DAEMON
+	sleep 1
+	start-stop-daemon --start --quiet --pidfile \
+		/var/run/$NAME.pid --exec $DAEMON -- $DAEMON_OPTS
+	echo "$NAME."
+	;;
+  status)
+	if [ -s /var/run/$NAME.pid ]; then
+            RUNNING=$(cat /var/run/$NAME.pid)
+            if [ -d /proc/$RUNNING ]; then
+            	RUNNING_LINK=$(readlink /proc/$RUNNING/exe)
+            	BASE_RUNNING=$(basename $RUNNING_LINK)
+            	BASE_DAEMON=$(basename $DAEMON)
+                if [ $BASE_RUNNING = $BASE_DAEMON ]; then
+                    echo "$NAME is running."
+                    exit 0
+                fi
+            fi
+
+            # No such PID, or executables don't match
+            echo "$NAME is not running, but pidfile existed."
+            rm /var/run/$NAME.pid
+            exit 1
+        else
+            rm -f /var/run/$NAME.pid
+            echo "$NAME not running."
+            exit 1
+        fi
+	;;
+  *)
+	N=/etc/init.d/$NAME
+	echo "Usage: $N {start|stop|restart|force-reload}" >&2
+	exit 1
+	;;
+esac
+
+exit 0

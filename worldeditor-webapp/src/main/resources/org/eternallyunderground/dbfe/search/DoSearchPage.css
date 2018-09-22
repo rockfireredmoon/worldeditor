@@ -1,0 +1,71 @@
+#mainContent {
+    margin-top: 4px;
+    width: 100%;
+    border:1px solid #295D0A ;
+    background-color: white;
+    font-size: 9pt;
+    margin-bottom: 12px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+form {
+    display: block;
+    margin: 0 auto;
+}
+
+.searchRow {
+	padding-left: 2em;
+    width: 100%;
+}
+
+.searchRow input[type=text] {
+    width: 500px;
+}
+
+.avatarContainer {
+    float: left;
+    clear: left;
+    width: 64px;
+    text-align: center;
+    margin-right: 8px;
+}
+
+.avatar {
+    margin-right: 8px;
+    width: 64px;
+}
+
+.formRow {
+	padding: 0;
+}
+
+.results {
+    margin: 2em; 	
+}
+
+.result {
+	margin-bottom: 12px;
+    height: 64px;
+}
+
+.displayName {
+	font-size: 11pt;
+}
+
+.description {
+    font-size: 9pt;    
+    color: #333;
+}
+
+.resultType {
+	font-size: 8pt;    
+    color: #aaa;
+}
+
+.subtext {
+    font-size: 10pt;
+    color: #555;
+}

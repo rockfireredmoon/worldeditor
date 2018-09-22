@@ -1,0 +1,67 @@
+.subMenu {
+	
+}
+
+ul.menu {
+    margin: 0 0 4px 0;
+    padding: 0;
+    background: url(navbackground.jpg) repeat-x;
+    height: 27px;
+    color: #ff0000;
+    font-size: 9pt;
+    font-weight: bold;
+}
+
+.menu .subMenu {
+	display: none;
+	float: left;
+	top: 32px;
+	position: absolute;
+}
+
+.menu .subMenu ul {
+    margin: 0;
+	background: none;
+	height: auto;
+}
+
+.menu li {
+    list-style: none;
+    margin: 0;
+    float: left;
+    padding: 0;
+    display: inline;
+    text-align: center;
+}
+
+.menu .subMenu li {
+    display: block;
+    float: none;
+    text-align: left;
+}
+
+.menu li a {
+    display: block;
+    line-height: 27px;
+    margin: 0 0 0;
+    padding: 0 5px 0 5px;
+    text-decoration: none;
+}
+
+.menu li a:link { 
+    color: #FFF; 
+}
+
+.menu li a:visited {
+    color: #FFF; 
+}
+
+.menu li a:hover {
+    color: #FFF;
+    background: #FF6100;
+}
+
+.menu li.selected a:link, .menu li.selected a:visited {
+    background: #F69603;
+    cursor: default;
+}

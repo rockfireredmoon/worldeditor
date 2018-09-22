@@ -1,0 +1,119 @@
+.statusArea {
+    width: 100%;
+    border:1px solid #295D0A;
+    background-color: white;
+    font-size: 9pt;
+    margin-bottom: 12px;
+}
+
+.privacyArea {
+    width: 100%;
+    border:1px solid #295D0A;
+    background-color: white;
+    font-size: 9pt;
+    margin-bottom: 12px;
+}
+
+.privacyArea input[type=checkbox] {
+	padding: 0 6px;
+	float: left;
+}
+
+.privacyArea label {
+	float: none;
+	width: 200px;
+}
+
+.privacyArea input[type=checkbox] {
+    padding: 0 6px;
+    float: left;
+}  
+
+.statusArea input[type=text] {
+	width: 210px;
+	margin: 4px 0 4px 0;
+}
+
+.sessionArea {
+    width: 100%;
+    border:1px solid #295D0A;
+    background-color: white;
+    font-size: 9pt;
+    margin-bottom: 12px;
+}
+
+.sessionArea .formRow {
+	padding: 1px 0 1px 0;
+}
+.sessionArea label {
+    color: grey;
+}
+
+.inventory {
+	float: left;
+	margin-left: 32px;
+	margin-bottom: 8px;
+}
+
+.equipment {
+	float: right;
+    margin-right: 32px;
+}
+
+.equipment .equipmentPanel {
+    position: relative;
+    width: 139px;
+    height: 286px;
+    background: no-repeat url(bodymap.png);
+}
+
+.bags .equipmentPanel {
+    position: relative;
+	width: 139px;
+	height: 32px;
+}
+
+.bags {
+    float: right;
+    margin-right: 32px;
+}
+
+.groveForm span {
+	margin-top: 8px;
+}
+
+.questItem {
+	width: 100%;
+	height: 22px;
+	clear: both;
+}
+
+.questItem .questLink {
+	float: left;
+    display: inline-block;
+    width: 220px;
+}
+
+.questItem .partySize {
+	display: inline-block;
+	width: 96px;
+	float: left;
+}
+
+.questItem .level {
+    display: inline-block;
+    width: 96px;
+    float: left;
+}
+
+.completeQuestItems a {
+	padding-left: 20px;
+}
+
+#quests h4 {
+	padding: 8px 0;
+}
+
+.setItemName {
+	padding: 2px 0;
+}

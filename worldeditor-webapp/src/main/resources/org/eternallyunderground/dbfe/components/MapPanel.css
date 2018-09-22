@@ -1,0 +1,75 @@
+.imageContainer {
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.backgroundImage {
+    position: absolute;
+    display: block;
+}
+
+.pointLink {
+    position: absolute;
+    display: block;
+}
+
+.mapNavigator {
+    position: relative;
+    z-index: 100;
+    width: 94px;
+    float: right;
+    height: 150px;
+}
+
+.mapOptions {
+    position: relative;
+    z-index: 100;
+    clear: right;
+    width: 94px;
+    float: right;
+    height: 110px;
+}
+
+
+.up  {
+    position: absolute;
+    left: 28px;
+    top: 0px;  
+}
+
+.left {
+    position: absolute;
+    left: 0px;
+    top: 36px;  
+}
+
+.center {
+    position: absolute;
+    left: 36px;
+    top: 44px;  
+}
+
+.right {
+    position: absolute;
+    left: 58px;
+    top: 36px;  
+}
+
+.down {
+    position: absolute;
+    left: 28px;
+    top: 70px;  
+}
+
+.zoomin {
+    position: absolute;
+    left: 8px;
+    top: 108px;  
+}
+
+.zoomout {
+    position: absolute;
+    left: 36px;
+    top: 108px;  
+}

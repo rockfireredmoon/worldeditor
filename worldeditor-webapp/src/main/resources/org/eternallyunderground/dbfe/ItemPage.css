@@ -1,0 +1,19 @@
+.leftBar {
+    width: 300px;
+    float: left;
+}
+
+.itemArea {
+    width: 100%;
+    border:1px solid #F69603;
+    background-color: #333;
+    font-size: 9pt;
+    margin-bottom: 12px;
+}
+
+.itemTabs {
+    margin-left: 12px;
+    width: 570px;
+    height: 100%;
+    float: left;
+}

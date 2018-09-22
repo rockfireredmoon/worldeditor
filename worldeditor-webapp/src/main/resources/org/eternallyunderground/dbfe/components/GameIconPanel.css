@@ -1,0 +1,23 @@
+.gameIconContainer {
+	display: inline-block;
+}
+
+.gameIconContainer img {
+}
+
+.under {
+	display: inline;
+	position: relative;
+	z-index: 100;
+	margin: 0;
+	padding: 0;
+}
+
+.over {
+    display: inline;
+    margin: 0;
+    padding: 0;
+	position: relative;
+	z-index: 101;
+}
+
