@@ -125,6 +125,11 @@ public class CraftDef extends AbstractTableFileEntity<String, IDatabase> {
 			}
 		}
 
+		public RequireID(long itemId, int itemCount) {
+			this.itemId = itemId;
+			this.itemCount = itemCount;
+		}
+
 		public final long getItemId() {
 			return itemId;
 		}
@@ -143,6 +148,10 @@ public class CraftDef extends AbstractTableFileEntity<String, IDatabase> {
 	}
 
 	public static class RequireIDMult extends RequireID {
+		public RequireIDMult(long itemId, int itemCount) {
+			super(itemId, itemCount);
+		}
+
 		public RequireIDMult(String... args) {
 			super(args);
 		}
@@ -152,6 +161,12 @@ public class CraftDef extends AbstractTableFileEntity<String, IDatabase> {
 		private long itemId;
 		private int checkIndex;
 		private int mult;
+
+		public RequireIDXMult(long itemId, int checkIndex, int mult) {
+			this.itemId = itemId;
+			this.checkIndex = checkIndex;
+			this.mult = mult;
+		}
 
 		public RequireIDXMult(String... args) {
 			if (args.length > 0) {
@@ -193,6 +208,10 @@ public class CraftDef extends AbstractTableFileEntity<String, IDatabase> {
 	public static class ItemType extends AbstractCraftCondition {
 		private Type itemType;
 
+		public ItemType(Type itemType) {
+			this.itemType = itemType;
+		}
+
 		public ItemType(String... args) {
 			if (args.length > 0) {
 				itemType = Type.fromCode(Integer.parseInt(args[0]));
@@ -210,6 +229,10 @@ public class CraftDef extends AbstractTableFileEntity<String, IDatabase> {
 
 	public static class Quality extends AbstractCraftCondition {
 		private ItemQuality quality;
+
+		public Quality(ItemQuality quality) {
+			this.quality = quality;
+		}
 
 		public Quality(String... args) {
 			if (args.length > 0) {

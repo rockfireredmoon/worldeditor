@@ -2,8 +2,10 @@ package org.icemoon.worldeditor.components;
 
 import java.util.List;
 
+import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
+import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.FormComponentPanel;
 import org.apache.wicket.markup.html.form.IChoiceRenderer;
@@ -15,49 +17,71 @@ import org.icemoon.eartheternal.common.Util;
 
 @SuppressWarnings("serial")
 public abstract class ConditionPanel<T extends Condition> extends FormComponentPanel<T> {
-	
-	private Class<T> condition;
-	
+
+	private Class<? extends T> condition;
+	private Component panelComponent;
+
 	public ConditionPanel(final String id, IModel<T> propertyModel) {
 		super(id, propertyModel);
-		add(new DropDownChoice<Class<T>>("condition", new PropertyModel<Class<T>>(this, "condition"),  new PropertyModel<List<Class<T>>>(this, "conditions"))
-				.setChoiceRenderer(new IChoiceRenderer<Class<T>>() {
-					@Override
-					public Object getDisplayValue(Class<T> object) {
-						return Util.decamel(object.getSimpleName());
-					}
+		add(new DropDownChoice<Class<T>>("condition", new PropertyModel<Class<T>>(this, "condition"),
+				new PropertyModel<List<Class<T>>>(this, "conditions")) {
+			@Override
+			protected void onSelectionChanged(Class<T> newSelection) {
+				getParent().remove(panelComponent);
+				getParent().add(panelComponent = createPanel());
+				super.onSelectionChanged(newSelection);
+			}
 
-					@Override
-					public String getIdValue(Class<T> object, int index) {
-						return object.toString();
-					}
-				}));
+			@Override
+			protected boolean wantOnSelectionChangedNotifications() {
+				return true;
+			}
+
+		}.setChoiceRenderer(new IChoiceRenderer<Class<T>>() {
+			@Override
+			public Object getDisplayValue(Class<T> object) {
+				return Util.decamel(object.getSimpleName());
+			}
+
+			@Override
+			public String getIdValue(Class<T> object, int index) {
+				return object.toString();
+			}
+		}));
+		add(panelComponent = createPanel());
+	}
+
+	public Class<? extends T> getCondition() {
+		return condition;
+	}
+
+	public void setCondition(Class<? extends T> condition) {
+		this.condition = condition;
 	}
 
 	public abstract List<Class<? extends T>> getConditions();
 
+	protected abstract AbstractConditionDetailsPanel<? extends T> createPanel();
+
 	@Override
 	public void renderHead(IHeaderResponse response) {
 		super.renderHead(response);
-		response.render(CssHeaderItem.forReference(new CssResourceReference(ConditionPanel.class, "ConditionPanel.css")));
+		response.render(
+				CssHeaderItem.forReference(new CssResourceReference(ConditionPanel.class, "ConditionPanel.css")));
 	}
 
 	@Override
 	protected void onBeforeRender() {
-		// Long total = getModelObject();
-		// if(total == null)
-		// total = 0l;
-		// gold = (int) (total / 10000);
-		// silver = (int) ((total - (gold * 10000)) / 100);
-		// copper = (int) ((total - ((gold * 10000) + (silver * 100))));
-		// goldText.setConvertedInput(gold);
-		// silverText.setConvertedInput(silver);
-		// copperText.setConvertedInput(copper);
+		if (getModelObject() == null)
+			this.condition = null;
+		else
+			this.condition = (Class<? extends T>) getModelObject().getClass();
 		super.onBeforeRender();
 	}
 
 	@Override
 	protected void convertInput() {
+//		setConvertedInput(convertedInput);
 		// long coin = (10000l * goldText.getConvertedInput()) + (100l *
 		// silverText.getConvertedInput())
 		// + copperText.getConvertedInput();

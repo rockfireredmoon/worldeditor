@@ -427,7 +427,8 @@ public class Quest extends AbstractMultiINIFileEntity<Long, IDatabase> {
 			writer.println("AccountQuest=1");
 		if (heroism > 0)
 			writer.println("Heroism=" + heroism);
-		writer.println("Unabandon=" + Util.toBooleanString(unabandon));
+		if(unabandon)
+			writer.println("Unabandon=" + Util.toBooleanString(unabandon));
 		writer.println("QuestGiverID=" + giverId);
 		writer.println("QuestEnderID=" + enderId);
 		writer.println("Repeat=" + Util.toBooleanString(repeat));

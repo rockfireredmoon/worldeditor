@@ -59,7 +59,7 @@ public abstract class AbstractPage extends WebPage {
 
 	@Override
 	public final void renderHead(IHeaderResponse response) {
-		response.render(UnescapedMetaDataHeaderItem.forMetaTag("Content-Security-Policy", "default-src 'self';"));
+//		response.render(UnescapedMetaDataHeaderItem.forMetaTag("Content-Security-Policy", "default-src 'self';"));
 		response.render(CssHeaderItem.forReference(new CssResourceReference(AbstractPage.class, "AbstractPage.css")));
 		response.render(JavaScriptHeaderItem.forReference(CoreUIJavaScriptResourceReference.get()));
 		response.render(JavaScriptHeaderItem.forReference(new JavaScriptResourceReference(Application.class, "jquery.qtip.js")));

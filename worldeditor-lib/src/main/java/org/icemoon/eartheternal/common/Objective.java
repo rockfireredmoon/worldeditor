@@ -250,7 +250,7 @@ public class Objective extends AbstractINIFileEntity<Integer, IDatabase> {
 		writer.println(prefix + "completeText=" + Util.nonNull(completeText));
 		writer.println(prefix + "markerLocations=" + Util.toLocationList(markerLocations));
 		// At the point "TALK", "NONE", "KILL", "TRAVEL" needs no more
-		if (type.equals(ObjectiveType.ACTIVATE)) {
+		if (type.equals(ObjectiveType.ACTIVATE) || type.equals(ObjectiveType.GATHER)) {
 			writer.println(prefix + "ActivateTime=" + activateTime);
 			writer.println(prefix + "ActivateText=" + activateText);
 		}
