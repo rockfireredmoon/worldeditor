@@ -40,6 +40,10 @@ public interface BaseCreature extends Entity<Long> {
 	int getSpirit();
 
 	int getStrength();
+	
+	int getMinHealthPercent();
+	
+	int getMaxHealthPercent();
 
 	String getSubName();
 
@@ -94,4 +98,8 @@ public interface BaseCreature extends Entity<Long> {
 	Rarity getRarity();
 
 	void setRarity(Rarity rarity);
+	
+	void setMinHealthPercent(int minHealthPercen);
+	
+	void setMaxHealthPercent(int maxHealthPercent);
 }

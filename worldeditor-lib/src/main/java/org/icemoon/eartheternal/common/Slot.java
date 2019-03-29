@@ -1,6 +1,5 @@
 package org.icemoon.eartheternal.common;
 
-
 public enum Slot {
 	WEAPON_1(0), WEAPON_2(1), WEAPON_3(2), HEAD(3), NECK(4), SHOULDERS(5), CHEST(6), ARMS(7), HANDS(8), WAIST(9), LEGS(10), FEET(
 			11), RING_1(12), RING_2(13), AMULET(14), BAG_1(19), BAG_2(20), BAG_3(21), BAG_4(22);

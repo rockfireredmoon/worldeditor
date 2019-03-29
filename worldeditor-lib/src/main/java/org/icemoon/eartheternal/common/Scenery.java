@@ -19,7 +19,7 @@ public class Scenery<R extends IRoot> extends AbstractMultiINIFileEntity<Long, R
 	private int linkCount;
 	private List<XY> links = new ArrayList<XY>();
 	private long flags;
-	private int layer;
+	private String layer;
 	private int patrolSpeed;
 	private String patrolEvent;
 	private int facing;
@@ -28,8 +28,8 @@ public class Scenery<R extends IRoot> extends AbstractMultiINIFileEntity<Long, R
 	private int maxLeash;
 	private int leaseTime;
 	private int mobTotal;
-	private int outerRadius;
-	private int innerRadius;
+	private float outerRadius;
+	private float innerRadius;
 	private String aiModule;
 	private boolean sequential;
 	private int maxActive;
@@ -150,7 +150,7 @@ public class Scenery<R extends IRoot> extends AbstractMultiINIFileEntity<Long, R
 		return flags;
 	}
 
-	public final int getInnerRadius() {
+	public final float getInnerRadius() {
 		return innerRadius;
 	}
 
@@ -158,7 +158,7 @@ public class Scenery<R extends IRoot> extends AbstractMultiINIFileEntity<Long, R
 		return instanceId;
 	}
 
-	public final int getLayer() {
+	public final String getLayer() {
 		return layer;
 	}
 
@@ -182,7 +182,7 @@ public class Scenery<R extends IRoot> extends AbstractMultiINIFileEntity<Long, R
 		return name;
 	}
 
-	public final int getOuterRadius() {
+	public final float getOuterRadius() {
 		return outerRadius;
 	}
 
@@ -277,7 +277,7 @@ public class Scenery<R extends IRoot> extends AbstractMultiINIFileEntity<Long, R
 		} else if (name.equals("Flags")) {
 			flags = Integer.parseInt(value);
 		} else if (name.equals("Layer")) {
-			layer = Integer.parseInt(value);
+			layer = value;
 		} else if (name.equals("patrolSpeed")) {
 			patrolSpeed = Integer.parseInt(value);
 		} else if (name.equals("patrolEvent")) {
@@ -287,9 +287,9 @@ public class Scenery<R extends IRoot> extends AbstractMultiINIFileEntity<Long, R
 		} else if (name.equals("maxActive")) {
 			maxActive = Integer.parseInt(value);
 		} else if (name.equals("innerRadius")) {
-			innerRadius = Integer.parseInt(value);
+			innerRadius = Float.parseFloat(value);
 		} else if (name.equals("outerRadius")) {
-			outerRadius = Integer.parseInt(value);
+			outerRadius = Float.parseFloat(value);
 		} else if (name.equals("spawnName")) {
 			spawnName = value;
 		} else if (name.equals("loyaltyRadius")) {
@@ -325,7 +325,7 @@ public class Scenery<R extends IRoot> extends AbstractMultiINIFileEntity<Long, R
 		this.flags = flags;
 	}
 
-	public final void setInnerRadius(int innerRadius) {
+	public final void setInnerRadius(float innerRadius) {
 		this.innerRadius = innerRadius;
 	}
 
@@ -333,7 +333,7 @@ public class Scenery<R extends IRoot> extends AbstractMultiINIFileEntity<Long, R
 		this.instanceId = instanceId;
 	}
 
-	public final void setLayer(int layer) {
+	public final void setLayer(String layer) {
 		this.layer = layer;
 	}
 
@@ -353,7 +353,7 @@ public class Scenery<R extends IRoot> extends AbstractMultiINIFileEntity<Long, R
 		this.name = name;
 	}
 
-	public final void setOuterRadius(int outerRadius) {
+	public final void setOuterRadius(float outerRadius) {
 		this.outerRadius = outerRadius;
 	}
 
@@ -415,7 +415,7 @@ public class Scenery<R extends IRoot> extends AbstractMultiINIFileEntity<Long, R
 			writer.println("Facing=" + facing);
 		if (flags > 0)
 			writer.println("Flags=" + flags);
-		if (layer > 0)
+		if (layer != null && !layer.equals(""))
 			writer.println("Layer=" + layer);
 		if (patrolSpeed > 0)
 			writer.println("patrolSpeed=" + patrolSpeed);

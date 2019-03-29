@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>worldeditor-import</artifactId>
+	<name>Earth Eternal World Editor - SPM Importer</name>
+	<packaging>jar</packaging>
+
+	<parent>
+		<groupId>org.icemoon</groupId>
+		<artifactId>worldeditor</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+
+	<repositories>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<groupId>org.icemoon</groupId>
+			<artifactId>worldeditor-lib</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.13</version>
+		</dependency>
+
+	</dependencies>
+</project>

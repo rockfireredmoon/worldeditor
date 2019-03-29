@@ -29,9 +29,27 @@ public class CreatureSupport implements Serializable {
 	private long copper;
 	private String subName;
 	private Rarity rarity;
+	private int minHealthPercent;
+	private int maxHealthPercent = 100;
 
 	public CreatureSupport() {
 		super();
+	}
+
+	public int getMinHealthPercent() {
+		return minHealthPercent;
+	}
+
+	public void setMinHealthPercent(int minHealthPercent) {
+		this.minHealthPercent = minHealthPercent;
+	}
+
+	public int getMaxHealthPercent() {
+		return maxHealthPercent;
+	}
+
+	public void setMaxHealthPercent(int maxHealthPercent) {
+		this.maxHealthPercent = maxHealthPercent;
 	}
 
 	public final Appearance getAppearance() {
@@ -195,6 +213,10 @@ public class CreatureSupport implements Serializable {
 			subName = value;
 		} else if (name.equals("rarity")) {
 			rarity = Rarity.fromCode(Integer.parseInt(value));
+		} else if (name.equals("min_health_pc")) {
+			minHealthPercent = Integer.parseInt(value);
+		} else if (name.equals("max_health_pc")) {
+			maxHealthPercent = Integer.parseInt(value);
 		} else if (!name.equals("") || !value.equals("")) {
 			return false;
 		}
@@ -328,9 +350,9 @@ public class CreatureSupport implements Serializable {
 		if (damageResistDeath > 0) {
 			writer.println("damage_resist_death=" + damageResistMelee);
 		}
-		if(willRegen != 1)
+		if (willRegen != 1)
 			writer.println("will_regen=" + Util.compact(willRegen));
-		if(mightRegen != 1)
+		if (mightRegen != 1)
 			writer.println("might_regen=" + Util.compact(mightRegen));
 		if (offhandWeaponDamage > 0) {
 			writer.println("offhand_weapon_damage=" + offhandWeaponDamage);
@@ -341,7 +363,7 @@ public class CreatureSupport implements Serializable {
 		if (channelingBreakChance > 0) {
 			writer.println("channeling_break_chance=" + channelingBreakChance);
 		}
-		if(appearance != null && appearance.getName() != null) {
+		if (appearance != null && appearance.getName() != null) {
 			writer.println("appearance=" + appearance.toString());
 		}
 		if (eqAppearance != null && eqAppearance.getName() != null) {
@@ -357,5 +379,9 @@ public class CreatureSupport implements Serializable {
 		if (rarity != null) {
 			writer.println("rarity=" + rarity.getCode());
 		}
+		if (minHealthPercent != 0)
+			writer.println("min_health_pc=" + minHealthPercent);
+		if (maxHealthPercent != 100)
+			writer.println("max_health_pc=" + maxHealthPercent);
 	}
 }

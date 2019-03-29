@@ -1384,4 +1384,24 @@ public class GameCharacter extends AbstractSeparateINIFileEntity<Long, IUserData
 		}
 		// private EternalObject selectiveEqOverride;
 	}
+
+	@Override
+	public int getMinHealthPercent() {
+		return cs.getMinHealthPercent();
+	}
+
+	@Override
+	public int getMaxHealthPercent() {
+		return cs.getMaxHealthPercent();
+	}
+
+	@Override
+	public void setMinHealthPercent(int minHealthPercent) {
+		cs.setMinHealthPercent(minHealthPercent);
+	}
+
+	@Override
+	public void setMaxHealthPercent(int maxHealthPercent) {
+		cs.setMaxHealthPercent(maxHealthPercent);
+	}
 }

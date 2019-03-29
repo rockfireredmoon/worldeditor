@@ -8,11 +8,11 @@ import org.apache.wicket.markup.html.form.IChoiceRenderer;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.model.util.ListModel;
+import org.icemoon.eartheternal.common.GameItem;
+import org.icemoon.eartheternal.common.ItemQuality;
 import org.icemoon.eartheternal.common.Util;
 import org.icemoon.eartheternal.common.CraftDef.ItemType;
 import org.icemoon.eartheternal.common.CraftDef.Quality;
-import org.icemoon.eartheternal.common.GameItem;
-import org.icemoon.eartheternal.common.ItemQuality;
 
 public class ItemQualityPanel extends AbstractConditionDetailsPanel<Quality> {
 

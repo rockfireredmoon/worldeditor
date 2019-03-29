@@ -22,6 +22,7 @@ public class Creature extends AbstractMultiINIFileEntity<Long, IDatabase> implem
 	private String dropRateProfile;
 	private float dropRateMult = 1;
 	private float totalSize = 1;
+	
 	private List<Effect> effects = new ArrayList<Effect>();
 	{
 		setLevel(1);
@@ -489,5 +490,25 @@ public class Creature extends AbstractMultiINIFileEntity<Long, IDatabase> implem
 	@Override
 	public void setRarity(Rarity rarity) {
 		cs.setRarity(rarity);
+	}
+
+	@Override
+	public int getMinHealthPercent() {
+		return cs.getMinHealthPercent();
+	}
+
+	@Override
+	public int getMaxHealthPercent() {
+		return cs.getMaxHealthPercent();
+	}
+
+	@Override
+	public void setMinHealthPercent(int minHealthPercent) {
+		cs.setMinHealthPercent(minHealthPercent);
+	}
+
+	@Override
+	public void setMaxHealthPercent(int maxHealthPercent) {
+		cs.setMaxHealthPercent(maxHealthPercent);
 	}
 }

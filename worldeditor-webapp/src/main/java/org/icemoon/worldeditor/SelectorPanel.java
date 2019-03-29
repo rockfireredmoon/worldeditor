@@ -28,7 +28,6 @@ import org.icemoon.worldeditor.model.FilterableSortableEntitiesDataProvider;
 
 @SuppressWarnings("serial")
 public class SelectorPanel<K extends Serializable, T extends Entity<K>, L extends Serializable, R extends IRoot> extends FormComponentPanel<K> {
-	private AjaxLink<K> link;
 	private IModel<? extends Entities<T, K, L, R>> entities;
 	private SelectorDialog<K, T, L, R> dialog;
 	private String idProperty;
@@ -115,7 +114,7 @@ public class SelectorPanel<K extends Serializable, T extends Entity<K>, L extend
 			protected void onSelectEntity(AjaxRequestTarget target, T newEntity) {
 				final K newId = buildId(newEntity);
 				((SelectorPanel)getParent()).getModel().setObject(newId);
-				target.add(link);
+				target.add(getParent().get("selectorLink"));
 				onEntitySelected(target, newEntity);
 			}
 		});
@@ -142,14 +141,14 @@ public class SelectorPanel<K extends Serializable, T extends Entity<K>, L extend
 			@Override
 			protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
 				clear();
-				target.add(link);
+				target.add(getParent().get("selectorLink"));
 			}
 
 			@Override
 			protected void onError(AjaxRequestTarget target, Form<?> form) {
 			}
 		}.setDefaultFormProcessing(false));
-		link = new AjaxLink<K>("selectorLink", getModel()) {
+		AjaxLink<K> link = new AjaxLink<K>("selectorLink", getModel()) {
 			@Override
 			protected void onBeforeRender() {
 //				setEnabled(getParent().getDefaultModelObject() != null);

@@ -79,7 +79,8 @@ public class ObjectiveDialog extends FormComponentPanel<Objective> {
 		this.database = database;
 	}
 
-	public ObjectiveDialog(final String id, IModel<String> dialogTitle, IModel<Objective> model, IModel<IDatabase> database) {
+	public ObjectiveDialog(final String id, IModel<String> dialogTitle, IModel<Objective> model,
+			IModel<IDatabase> database) {
 		super(id, model);
 		this.database = database;
 		this.dialogTitle = dialogTitle;
@@ -146,17 +147,20 @@ public class ObjectiveDialog extends FormComponentPanel<Objective> {
 		f.get("creatureId").setVisibilityAllowed(ObjectiveType.TALK.equals(type));
 		f.get("itemId").setVisibilityAllowed(type.isActivateType());
 		f.get("quantity").setVisibilityAllowed(type.isActivateType());
-		f.get("activateText").setVisibilityAllowed(ObjectiveType.ACTIVATE.equals(type) || ObjectiveType.GATHER.equals(type));
-		f.get("activateTime").setVisibilityAllowed(ObjectiveType.ACTIVATE.equals(type) || ObjectiveType.GATHER.equals(type));
+		f.get("activateText")
+				.setVisibilityAllowed(ObjectiveType.ACTIVATE.equals(type) || ObjectiveType.GATHER.equals(type));
+		f.get("activateTime")
+				.setVisibilityAllowed(ObjectiveType.ACTIVATE.equals(type) || ObjectiveType.GATHER.equals(type));
 		f.get("distance").setVisibilityAllowed(ObjectiveType.TRAVEL.equals(type));
 	}
 
 	protected void addBasic(Form<?> f) {
 		f.add(feedback = new FeedbackPanel("objectiveFeedback"));
 		feedback.setOutputMarkupId(true);
-		f.add(new TextArea<String>("description", new PropertyModel<String>(this, "modelObject.description")).setRequired(true)
-				.setType(String.class).add(new LowASCIIValidator()).setOutputMarkupId(true));
-		f.add(new CheckBox("complete", new PropertyModel<Boolean>(this, "modelObject.complete")).setOutputMarkupId(true));
+		f.add(new TextArea<String>("description", new PropertyModel<String>(this, "modelObject.description"))
+				.setRequired(true).setType(String.class).add(new LowASCIIValidator()).setOutputMarkupId(true));
+		f.add(new CheckBox("complete", new PropertyModel<Boolean>(this, "modelObject.complete"))
+				.setOutputMarkupId(true));
 		DropDownChoice<ObjectiveType> type = new DropDownChoice<ObjectiveType>("type",
 				new PropertyModel<ObjectiveType>(this, "modelObject.type"), Arrays.asList(ObjectiveType.values()));
 		type.setOutputMarkupId(true);
@@ -175,25 +179,33 @@ public class ObjectiveDialog extends FormComponentPanel<Objective> {
 			}
 		}.setType(String.class).add(new LowASCIIValidator()).setOutputMarkupId(true));
 		f.add(new CreatureChooser("creatureId", new Model<String>("Creature To Talk To"), new Model<Long>() {
+
 			public Long getObject() {
-				// final List<Long> data2 = getModelObject().getData2Long();
-				// return data2.isEmpty() ? null : data2.iterator().next();
 				Objective modelObject = ObjectiveDialog.this.getModelObject();
-				if (modelObject != null && modelObject.getAct() != null && modelObject.getAct().getQuest() != null) {
-					if (modelObject.getAct().getQuest().getEnderId() == null || modelObject.getAct().getQuest().getEnderId() == 0)
-						return getModelObject().getCreatureId();
-					else
-						return modelObject.getAct().getQuest().getEnderId();
-				} else
-					return 0l;
+				if (ObjectiveType.TALK.equals(getSelectedType())) {
+					return modelObject == null ? 0l : modelObject.getCreatureId();
+				} else {
+					// final List<Long> data2 = getModelObject().getData2Long();
+					// return data2.isEmpty() ? null : data2.iterator().next();
+					if (modelObject != null && modelObject.getAct() != null
+							&& modelObject.getAct().getQuest() != null) {
+						if (modelObject.getAct().getQuest().getEnderId() == null
+								|| modelObject.getAct().getQuest().getEnderId() == 0)
+							return getModelObject().getCreatureId();
+						else
+							return modelObject.getAct().getQuest().getEnderId();
+					} else
+						return 0l;
+				}
 			}
 
 			public void setObject(Long creature) {
+				Objective modelObject = ObjectiveDialog.this.getModelObject();
 				if (ObjectiveType.TALK.equals(getSelectedType())) {
-					getModelObject().setCreatureId(creature);
-					if (ObjectiveDialog.this.getModelObject().getAct().getQuest().getEnderId() == null
-							|| ObjectiveDialog.this.getModelObject().getAct().getQuest().getEnderId() == 0)
-						ObjectiveDialog.this.getModelObject().getAct().getQuest().setEnderId(creature);
+					modelObject.setCreatureId(creature);
+					if (modelObject.getAct().getQuest().getEnderId() == null
+							|| modelObject.getAct().getQuest().getEnderId() == 0)
+						modelObject.getAct().getQuest().setEnderId(creature);
 					// getMo
 					// final List<Long> data2 = new ArrayList<Long>();
 					// data2.add(creature);
@@ -201,13 +213,13 @@ public class ObjectiveDialog extends FormComponentPanel<Objective> {
 				}
 			}
 		}, database) {
-			@Override
-			public boolean isEnabled() {
-				Objective modelObject = ObjectiveDialog.this.getModelObject();
-				return modelObject != null && modelObject.getAct() != null && modelObject.getAct().getQuest() != null
-						&& (modelObject.getAct().getQuest().getEnderId() == null
-								|| modelObject.getAct().getQuest().getEnderId() == 0);
-			}
+//			@Override
+//			public boolean isEnabled() {
+//				Objective modelObject = ObjectiveDialog.this.getModelObject();
+//				return modelObject != null && modelObject.getAct() != null && modelObject.getAct().getQuest() != null
+//						&& (modelObject.getAct().getQuest().getEnderId() == null
+//								|| modelObject.getAct().getQuest().getEnderId() == 0);
+//			}
 
 			@Override
 			public boolean isRequired() {
@@ -221,14 +233,14 @@ public class ObjectiveDialog extends FormComponentPanel<Objective> {
 			}
 		}.setShowLabel(true).setOutputMarkupId(true));
 		f.add(new SelectorPanel<Long, GameItem, String, IDatabase>("itemId", new Model<String>("Given Item"),
-				new GameItemsModel(database), "displayName", new PropertyModel<Long>(this, "modelObject.itemId"), GameItem.class,
-				Long.class, ItemsPage.class).setOutputMarkupId(true));
+				new GameItemsModel(database), "displayName", new PropertyModel<Long>(this, "modelObject.itemId"),
+				GameItem.class, Long.class, ItemsPage.class).setOutputMarkupId(true));
 	}
 
 	protected void checkMarkers(AjaxRequestTarget target, Creature entity) {
 		if (entity != null && markers.size() == 0) {
-			List<Scenery<IDatabase>> l = MapUtil.getSpawnsForCreature(Application.getAppSession(getRequestCycle()).getDatabase(),
-					entity);
+			List<Scenery<IDatabase>> l = MapUtil
+					.getSpawnsForCreature(Application.getAppSession(getRequestCycle()).getDatabase(), entity);
 			if (l.size() > 0) {
 				markers.add(l.get(0).getLocation());
 				info("Automatically added default marker positions. Adjust if required.");
@@ -278,7 +290,8 @@ public class ObjectiveDialog extends FormComponentPanel<Objective> {
 				return isVisibleInHierarchy();
 			}
 		}.add(new LowASCIIValidator()).setOutputMarkupId(true));
-		f.add(new TextField<Long>("activateTime", new PropertyModel<Long>(this, "modelObject.activateTime"), Long.class) {
+		f.add(new TextField<Long>("activateTime", new PropertyModel<Long>(this, "modelObject.activateTime"),
+				Long.class) {
 			@Override
 			public boolean isRequired() {
 				return isVisibleInHierarchy();
@@ -305,7 +318,8 @@ public class ObjectiveDialog extends FormComponentPanel<Objective> {
 				}
 				List<Long> data = modelObject.getData1Long();
 				Iterator<Long> it = data.iterator();
-				return new XYZ(it.hasNext() ? it.next() : 0, it.hasNext() ? it.next() : 0, it.hasNext() ? it.next() : 0);
+				return new XYZ(it.hasNext() ? it.next() : 0, it.hasNext() ? it.next() : 0,
+						it.hasNext() ? it.next() : 0);
 			}
 		});
 		p.setOutputMarkupId(true);
@@ -344,7 +358,8 @@ public class ObjectiveDialog extends FormComponentPanel<Objective> {
 	}
 
 	protected void addCreatures(Form<?> f) {
-		ListView<Long> creaturesField = new ListView<Long>("creatures", new PropertyModel<List<Long>>(this, "creatures")) {
+		ListView<Long> creaturesField = new ListView<Long>("creatures",
+				new PropertyModel<List<Long>>(this, "creatures")) {
 			@Override
 			protected void populateItem(final ListItem<Long> item) {
 				item.add(new AjaxLink<String>("removeCreature") {
@@ -406,7 +421,8 @@ public class ObjectiveDialog extends FormComponentPanel<Objective> {
 				new PropertyModel<List<Location>>(this, "markers")) {
 			@Override
 			protected void populateItem(final ListItem<Location> item) {
-				item.add(new Label("markerNumber", new Model<String>(String.valueOf((char) ('\u278A' + item.getIndex())))));
+				item.add(new Label("markerNumber",
+						new Model<String>(String.valueOf((char) ('\u278A' + item.getIndex())))));
 				item.add(new AjaxLink<String>("removeMarker") {
 					@Override
 					public void onClick(AjaxRequestTarget target) {
@@ -461,7 +477,8 @@ public class ObjectiveDialog extends FormComponentPanel<Objective> {
 	@Override
 	public void renderHead(IHeaderResponse response) {
 		super.renderHead(response);
-		response.render(CssHeaderItem.forReference(new PackageResourceReference(ObjectiveDialog.class, "ObjectiveDialog.css")));
+		response.render(
+				CssHeaderItem.forReference(new PackageResourceReference(ObjectiveDialog.class, "ObjectiveDialog.css")));
 	}
 
 	@SuppressWarnings("unchecked")
@@ -469,7 +486,8 @@ public class ObjectiveDialog extends FormComponentPanel<Objective> {
 	protected void onBeforeRender() {
 		Objective act = getModelObject();
 		creatures = act == null ? new ArrayList<Long>() : new ArrayList<Long>(act.getData1Long());
-		markers = act == null ? new ArrayList<Location>() : (List<Location>) UnoptimizedDeepCopy.copy(act.getMarkerLocations());
+		markers = act == null ? new ArrayList<Location>()
+				: (List<Location>) UnoptimizedDeepCopy.copy(act.getMarkerLocations());
 		super.onBeforeRender();
 	}
 

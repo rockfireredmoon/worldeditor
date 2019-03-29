@@ -78,6 +78,11 @@ public abstract class AbstractCreaturesPage<T extends BaseCreature, D extends Ba
 			.add(new RangeValidator<Integer>(0, Integer.MAX_VALUE)));
 		form.add(new TextField<Integer>("channelingBreakChance", Integer.class).add(new RangeValidator<Integer>(0,
 			Integer.MAX_VALUE)));
+
+		form.add(new TextField<Integer>("minHealthPercent", Integer.class).add(new RangeValidator<Integer>(0,
+			100)));
+		form.add(new TextField<Integer>("maxHealthPercent", Integer.class).add(new RangeValidator<Integer>(0,
+				100)));
 		
 		form.add(new TextField<Integer>("damageResistMelee", Integer.class).add(new RangeValidator<Integer>(0, Integer.MAX_VALUE)));
 		form.add(new TextField<Integer>("damageResistFire", Integer.class).add(new RangeValidator<Integer>(0, Integer.MAX_VALUE)));

@@ -8,10 +8,10 @@ import org.apache.wicket.markup.html.form.IChoiceRenderer;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.model.util.ListModel;
+import org.icemoon.eartheternal.common.GameItem;
 import org.icemoon.eartheternal.common.Util;
 import org.icemoon.eartheternal.common.CraftDef.ItemType;
 import org.icemoon.eartheternal.common.CraftDef.RequireID;
-import org.icemoon.eartheternal.common.GameItem;
 
 public class ItemTypePanel extends AbstractConditionDetailsPanel<ItemType> {
 	

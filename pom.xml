@@ -14,10 +14,12 @@
 	<packaging>pom</packaging>
 
 	<modules>
-	<module>worldeditor-lib</module> 
-	<module>worldeditor-webapp</module>
+	    <module>worldeditor-lib</module> 
+	    <module>worldeditor-webapp</module>
         <module>worldeditor-pkg</module>
         <module>worldeditor-server</module>
+	    <module>worldeditor-statup</module> 
+        <module>worldeditor-import</module>
 	</modules>
 
 </project>
