@@ -71,7 +71,7 @@ Sorting
 You may sort the entire table using the value of any column. For example, to sort alphabetically by Ability Name, click on the Name table header. To reverse the direction the sort, click on it again.
 Filtering
 
-You may filter the rows displayed by typing all or part of a search term in the fields at the top of each table column. For example, to find all abilities with the word 'Storm' them, type in 'storm' in the text field in the Name column of Abilties, and then eithe press the Enter key on your keyboard, or click the little magnifying glass icon.
+You may filter the rows displayed by typing all or part of a search term in the fields at the top of each table column. For example, to find all abilities with the word 'Storm' them, type in 'storm' in the text field in the Name column of Abilities, and then eithe press the Enter key on your keyboard, or click the little magnifying glass icon.
 
 So filter fields provide a drop down list of their possible values to help you.
 
