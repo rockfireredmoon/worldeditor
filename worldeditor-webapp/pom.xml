@@ -8,7 +8,7 @@
 		Earth Eternal World Editor - Webapp
 	</name>
 	<properties>
-		<wicketVersion>6.29.0</wicketVersion>
+		<wicketVersion>7.17.0</wicketVersion>
 		<wiqueryVersion>6.13.0</wiqueryVersion>
 	</properties>
 	<parent>
